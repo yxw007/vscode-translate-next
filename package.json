@@ -40,8 +40,12 @@
   "contributes": {
     "commands": [
       {
-        "command": "vscode-translate-next.helloWorld",
-        "title": "Hello World"
+        "command": "extension.translateText",
+        "title": "Translate selections"
+      },
+      {
+        "command": "extension.setTargetLanguage",
+        "title": "Set target language"
       }
     ]
   },
@@ -87,5 +91,8 @@
     "lint-staged": "^15.2.10",
     "npm-run-all": "^4.1.5",
     "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "@yxw007/translate": "^0.0.3"
   }
 }
