@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@yxw007/translate':
-        specifier: ^0.0.3
-        version: 0.0.3
+        specifier: ^0.0.4
+        version: 0.0.4
     devDependencies:
       '@commitlint/config-conventional':
         specifier: ^19.4.1
@@ -42,9 +42,6 @@ importers:
       commitlint:
         specifier: ^19.4.1
         version: 19.4.1(@types/node@20.16.5)(typescript@5.6.2)
-      dotenv:
-        specifier: ^16.4.5
-        version: 16.4.5
       esbuild:
         specifier: ^0.23.1
         version: 0.23.1
@@ -728,8 +725,8 @@ packages:
     resolution: {integrity: sha512-Gc6EdaLANdktQ1t+zozoBVRynfIsMKMc94Svu1QreOBC8y76x4tvaK32TljrLi1LI2+PK58sDVbL7ALdqf3VRQ==}
     engines: {node: '>=16'}
 
-  '@yxw007/translate@0.0.3':
-    resolution: {integrity: sha512-2d3Hmce2ldqJtuBPhayNb+U0m5RV3LanmnnEYsH7k9JXLgCER+vl/bjlgnFbX/bR/YSGlU8uqTaV626MqfDfTg==}
+  '@yxw007/translate@0.0.4':
+    resolution: {integrity: sha512-/pfuL8jGBB9x/hb0pVJcvGW2dv1ZBmLcZHEM6mIXGfcoOqPbnYrGiSbgvkzQI2O7CGfoON49KBZgolsh7coDwg==}
 
   JSONStream@1.3.5:
     resolution: {integrity: sha512-E+iruNOY8VV9s4JEbe1aNEm6MiszPRr/UfcHMz0TQh1BXSxHK+ASV1R6W4HpjBhSeS+54PIsAMCBmwD06LLsqQ==}
@@ -3500,7 +3497,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@yxw007/translate@0.0.3':
+  '@yxw007/translate@0.0.4':
     dependencies:
       '@aws-sdk/client-translate': 3.645.0
       '@smithy/smithy-client': 3.3.0

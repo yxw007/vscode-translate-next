@@ -93,6 +93,6 @@
     "typescript": "^5.5.4"
   },
   "dependencies": {
-    "@yxw007/translate": "^0.0.3"
+    "@yxw007/translate": "^0.0.4"
   }
 }
