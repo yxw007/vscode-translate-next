@@ -37,18 +37,6 @@
   "license": "MIT",
   "activationEvents": [],
   "main": "./dist/extension.js",
-  "contributes": {
-    "commands": [
-      {
-        "command": "extension.translateText",
-        "title": "Translate selections"
-      },
-      {
-        "command": "extension.setTargetLanguage",
-        "title": "Set target language"
-      }
-    ]
-  },
   "scripts": {
     "vscode:prepublish": "pnpm run package",
     "compile": "pnpm run check-types && pnpm run lint && node esbuild.js",
@@ -94,5 +82,173 @@
   },
   "dependencies": {
     "@yxw007/translate": "^0.0.4"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.translateText",
+        "title": "Translate selections"
+      },
+      {
+        "command": "extension.setTargetLanguage",
+        "title": "Set target language"
+      }
+    ],
+    "configuration": {
+      "title": "Translate-next",
+      "properties": {
+        "Translate-next.targetLanguage": {
+          "type": "string",
+          "enum": [
+            "Afrikaans",
+            "Albanian",
+            "Amharic",
+            "Arabic",
+            "Armenian",
+            "Azeerbaijani",
+            "Basque",
+            "Belarusian",
+            "Bengali",
+            "Bosnian",
+            "Bulgarian",
+            "Catalan",
+            "Cebuano",
+            "Chinese (Simplified)",
+            "Chinese (Traditional)",
+            "Corsican",
+            "Croatian",
+            "Czech",
+            "Danish",
+            "Dutch",
+            "English",
+            "Esperanto",
+            "Estonian",
+            "Finnish",
+            "French",
+            "Frisian",
+            "Galician",
+            "Georgian",
+            "German",
+            "Greek",
+            "Gujarati",
+            "Haitian Creole",
+            "Hausa",
+            "Hawaiian",
+            "Hebrew",
+            "Hindi",
+            "Hmong",
+            "Hungarian",
+            "Icelandic",
+            "Igbo",
+            "Indonesian",
+            "Irish",
+            "Italian",
+            "Japanese",
+            "Javanese",
+            "Kannada",
+            "Kazakh",
+            "Khmer",
+            "Korean",
+            "Kurdish",
+            "Kyrgyz",
+            "Lao",
+            "Latin",
+            "Latvian",
+            "Lithuanian",
+            "Luxembourgish",
+            "Macedonian",
+            "Malagasy",
+            "Malay",
+            "Malayalam",
+            "Maltese",
+            "Maori",
+            "Marathi",
+            "Mongolian",
+            "Myanmar",
+            "Nepali",
+            "Norwegian",
+            "Nyanja",
+            "Pashto",
+            "Persian",
+            "Polish",
+            "Portuguese",
+            "Punjabi",
+            "Romanian",
+            "Russian",
+            "Samoan",
+            "Scots Gaelic",
+            "Serbian",
+            "Sesotho",
+            "Shona",
+            "Sindhi",
+            "Sinhala",
+            "Slovak",
+            "Slovenian",
+            "Somali",
+            "Spanish",
+            "Sundanese",
+            "Swahili",
+            "Swedish",
+            "Tagalog",
+            "Tajik",
+            "Tamil",
+            "Telugu",
+            "Thai",
+            "Turkish",
+            "Ukrainian",
+            "Urdu",
+            "Uyghur",
+            "Uzbek",
+            "Vietnamese",
+            "Welsh",
+            "Xhosa",
+            "Yiddish",
+            "Yoruba",
+            "Zulu"
+          ],
+          "default": "English",
+          "description": "Change target language"
+        },
+        "Translate-next.defaultEngine": {
+          "type": "string",
+          "enum": [
+            "google",
+            "azure",
+            "amazon",
+            "baidu"
+          ],
+          "default": "google",
+          "description": "The translation engine to use"
+        },
+        "Translate-next.azure.region": {
+          "type": "string",
+          "default": "your-region"
+        },
+        "Translate-next.azure.key": {
+          "type": "string",
+          "default": null
+        },
+        "Translate-next.amazon.region": {
+          "type": "string",
+          "default": "your-region"
+        },
+        "Translate-next.amazon.key_id": {
+          "type": "string",
+          "default": null
+        },
+        "Translate-next.amazon.access_key": {
+          "type": "string",
+          "default": null
+        },
+        "Translate-next.baidu.app_id": {
+          "type": "string",
+          "default": null
+        },
+        "Translate-next.baidu.secret_key": {
+          "type": "string",
+          "default": null
+        }
+      }
+    }
   }
 }
