@@ -31,6 +31,16 @@ type TranslateRes = {
 	translation: string
 }
 
+interface RecentlyUsed {
+	label: string;
+	description?: string;
+}
+
+/**
+ * The list of recently used languages
+ */
+const recentlyUsed: string[] = [];
+
 /**
  * Extracts a text from the active document selection
  *
@@ -73,7 +83,7 @@ function getTranslationPromise(editor: vscode.TextEditor, selectedText: string, 
 			backgroundColor: "transparent"
 		});
 		editor.setDecorations(decoration, [selection]);
-		const engine = vscode.workspace.getConfiguration('Translate-next').get("defaultEngine") ?? "google";
+		const engine = vscode.workspace.getConfiguration('Translate-next').get("defaultEngine") as string;
 		translator.translate(selectedText, { to: targetLanguage, engine })
 			.then((res: string[]) => {
 				resolve({ selection, translation: res[0] });
@@ -86,45 +96,200 @@ function getTranslationPromise(editor: vscode.TextEditor, selectedText: string, 
 	});
 }
 
-function registerCommands(context: vscode.ExtensionContext) {
-	const translateText = vscode.commands.registerCommand('extension.translateText', () => {
-		//TODO: 如何没有设置目标语言，提示用户设置目标语言
-		const editor = vscode.window.activeTextEditor;
-		if (!editor) {
-			vscode.window.showInformationMessage('No active text editor found !');
+function updateLanguageList(selectedLanguage: string) {
+	const index = recentlyUsed.findIndex((r) => r === selectedLanguage);
+	if (index !== -1) {
+		// Remove the recently used language from the list
+		recentlyUsed.splice(index, 1);
+	}
+	// Add the language in recently used languages
+	recentlyUsed.splice(0, 0, selectedLanguage);
+}
+
+async function handleSetTargetLanguage() {
+	const quickPickData: RecentlyUsed[] = recentlyUsed
+		.map((r) => ({
+			label: r,
+			description: "(recently used)",
+		}));
+	quickPickData.push(...Object.keys(languageNames).map(k => ({ label: k })));
+
+	const selectedLanguage = await vscode.window.showQuickPick(quickPickData);
+	if (!selectedLanguage) {
+		return;
+	}
+
+	updateLanguageList(selectedLanguage.label);
+
+	vscode.workspace
+		.getConfiguration()
+		.update("Translate-next.targetLanguage", normalLanguage(selectedLanguage.label), vscode.ConfigurationTarget.Global);
+	return selectedLanguage.label;
+}
+
+function normalLanguage(language: string) {
+	let arr = language.split("");
+	arr[0] = arr[0].toLocaleUpperCase();
+	return arr.join("");
+}
+
+async function choiceTargetLanguage(): Promise<string | undefined> {
+	const quickPickData: RecentlyUsed[] = recentlyUsed
+		.map((r) => ({
+			label: r,
+			description: "(recently used)",
+		}));
+	quickPickData.concat(Object.keys(languageNames).map(k => ({ label: k })));
+	return vscode.window.showQuickPick(quickPickData).then(r => r?.label);
+}
+
+function updateTargetLanguage(selectedLanguage: string) {
+	vscode.workspace
+		.getConfiguration()
+		.update("Translate-next.targetLanguage", selectedLanguage, vscode.ConfigurationTarget.Global);
+}
+
+function checkAzureConfigValid() {
+	const azureConfig = vscode.workspace.getConfiguration('Translate-next.azure');
+	const key = azureConfig.get("key");
+	const region = azureConfig.get("region");
+	if (!key || !region) {
+		throw new Error('Azure config is invalid ! Please check your settings !');
+	}
+}
+
+function checkAmazonConfigValid() {
+	const amazonConfig = vscode.workspace.getConfiguration('Translate-next.amazon');
+	const region = amazonConfig.get("region");
+	const key_id = amazonConfig.get("key_id");
+	const access_key = amazonConfig.get("access_key");
+	if (!region || !key_id || !access_key) {
+		throw new Error('Amazon config is invalid ! Please check your settings !');
+	}
+}
+
+function checkBaiduConfigValid() {
+	const baiduConfig = vscode.workspace.getConfiguration('Translate-next.baidu');
+	const app_id = baiduConfig.get("app_id");
+	const secret_key = baiduConfig.get("secret_key");
+	if (!app_id || !secret_key) {
+		throw new Error('Baidu config is invalid ! Please check your settings !');
+	}
+}
+
+async function choiceEngine(): Promise<string | undefined> {
+	const quickPickData = [
+		"google",
+		"azure",
+		"amazon",
+		"baidu"
+	];
+
+	let engine = await vscode.window.showQuickPick(quickPickData);
+	if (!engine) {
+		vscode.window.showWarningMessage('choice engine is invalid !');
+		return;
+	}
+
+	switch (engine) {
+		case "azure":
+			checkAzureConfigValid();
+			break;
+		case "amazon":
+			checkAmazonConfigValid();
+			break;
+		case "baidu":
+			checkBaiduConfigValid();
+			break;
+		default:
+			break;
+	}
+
+	return engine;
+}
+
+function updateEngine(defaultEngine: string) {
+	vscode.workspace
+		.getConfiguration()
+		.update("Translate-next.defaultEngine", defaultEngine, vscode.ConfigurationTarget.Global);
+}
+
+async function handleTranslateText() {
+	let selectedLanguage: string | undefined = vscode.workspace.getConfiguration('Translate-next').get('targetLanguage');
+	if (!selectedLanguage) {
+		selectedLanguage = await choiceTargetLanguage();
+		if (!selectedLanguage) {
+			vscode.window.showWarningMessage('No target language found !');
 			return;
 		}
-		//TODO: 从配置中获取目标语言
-		//TODO: 获取当前选中的翻译引擎
-		const selectedLanguage: string = vscode.workspace.getConfiguration('translate-next').get('targetLanguage') ?? "english";
-		const targetLanguage = Object.keys(languageNames).find((key) => selectedLanguage.toLowerCase().indexOf(key) >= 0) ?? "english";
-		const { document, selections } = editor;
+	}
+	updateTargetLanguage(selectedLanguage);
 
-		const translationsPromiseArray = getTranslationsPromiseArray(
-			editor,
-			Array.from(selections),
-			document,
-			targetLanguage
-		);
-		Promise.all(translationsPromiseArray)
-			.then(function (results) {
-				editor.edit((builder) => {
-					results.forEach((r) => {
-						if (!!r.translation) {
-							builder.replace(r.selection, r.translation);
-						}
-					});
+	const editor = vscode.window.activeTextEditor;
+	if (!editor) {
+		vscode.window.showWarningMessage('No active text editor found !');
+		return;
+	}
+
+	const targetLanguage = Object.keys(languageNames).find((key) => selectedLanguage.toLowerCase().indexOf(key) >= 0) ?? "english";
+	const { document, selections } = editor;
+
+	let defaultEngine: string | undefined = vscode.workspace.getConfiguration('Translate-next').get("defaultEngine");
+	if (!defaultEngine) {
+		const success = handleSetDefaultEngine();
+		if (!success) {
+			return;
+		}
+	}
+
+	const translationsPromiseArray = getTranslationsPromiseArray(
+		editor,
+		Array.from(selections),
+		document,
+		targetLanguage
+	);
+
+	Promise.all(translationsPromiseArray)
+		.then(function (results) {
+			editor.edit((builder) => {
+				results.forEach((r) => {
+					if (!!r.translation) {
+						builder.replace(r.selection, r.translation);
+					}
 				});
-			})
-			.catch((e) => vscode.window.showErrorMessage(e.message));
+			});
+		})
+		.catch((e) => vscode.window.showErrorMessage(e.message));
+}
 
-	});
+async function handleSetDefaultEngine() {
+	let engine = null;
+	try {
+		engine = await choiceEngine();
+	} catch (error: any) {
+		vscode.window.showWarningMessage(error?.message);
+		return;
+	}
+
+	if (!engine) {
+		vscode.window.showWarningMessage('No engine found !');
+		return;
+	}
+
+	updateEngine(engine);
+
+	return true;
+}
+
+function registerCommands(context: vscode.ExtensionContext) {
+	const translateText = vscode.commands.registerCommand('extension.translateText', handleTranslateText);
 	context.subscriptions.push(translateText);
 
-	const setTargetLanguage = vscode.commands.registerCommand('extension.setTargetLanguage', () => {
-		//TODO: 弹出一个选中列表，让用户选择目标语言
-	});
+	const setTargetLanguage = vscode.commands.registerCommand('extension.setTargetLanguage', handleSetTargetLanguage);
 	context.subscriptions.push(setTargetLanguage);
+
+	const setDefaultEngine = vscode.commands.registerCommand('extension.setDefaultEngine', handleSetDefaultEngine);
+	context.subscriptions.push(setDefaultEngine);
 }
 
 export function activate(context: vscode.ExtensionContext) {
@@ -132,7 +297,7 @@ export function activate(context: vscode.ExtensionContext) {
 		initTranslator();
 		registerCommands(context);
 	} catch (error: any) {
-		vscode.window.showInformationMessage(`${pkg.name} extension active failed ! error:`, error);
+		vscode.window.showInformationMessage(`${pkg.name} extension active failed ! error:`, error.message);
 	}
 }
 

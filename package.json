@@ -81,7 +81,7 @@
     "typescript": "^5.5.4"
   },
   "dependencies": {
-    "@yxw007/translate": "^0.0.4"
+    "@yxw007/translate": "^0.0.5"
   },
   "contributes": {
     "commands": [
@@ -92,6 +92,10 @@
       {
         "command": "extension.setTargetLanguage",
         "title": "Set target language"
+      },
+      {
+        "command": "extension.setDefaultEngine",
+        "title": "Set default translation engine"
       }
     ],
     "configuration": {
@@ -222,7 +226,96 @@
         },
         "Translate-next.azure.region": {
           "type": "string",
-          "default": "your-region"
+          "enum": [
+            "eastus",
+            "southcentralus",
+            "westus2",
+            "westus3",
+            "australiaeast",
+            "southeastasia",
+            "northeurope",
+            "swedencentral",
+            "uksouth",
+            "westeurope",
+            "centralus",
+            "southafricanorth",
+            "centralindia",
+            "eastasia",
+            "japaneast",
+            "koreacentral",
+            "canadacentral",
+            "francecentral",
+            "germanywestcentral",
+            "italynorth",
+            "norwayeast",
+            "polandcentral",
+            "spaincentral",
+            "switzerlandnorth",
+            "mexicocentral",
+            "uaenorth",
+            "brazilsouth",
+            "israelcentral",
+            "qatarcentral",
+            "eastus2stage",
+            "eastusstage",
+            "westus2stage",
+            "westusstage",
+            "northcentralusstage",
+            "centralusstage",
+            "southcentralusstage",
+            "israel",
+            "italy",
+            "newzealand",
+            "poland",
+            "qatar",
+            "sweden",
+            "uae",
+            "australia",
+            "brazil",
+            "germany",
+            "france",
+            "korea",
+            "canada",
+            "unitedstates",
+            "unitedstateseuap",
+            "southafrica",
+            "norway",
+            "europe",
+            "global",
+            "japan",
+            "switzerland",
+            "singapore",
+            "asiapacific",
+            "asia",
+            "india",
+            "uk",
+            "southeastasiastage",
+            "eastasiastage",
+            "brazilus",
+            "eastus2",
+            "northcentralus",
+            "westus",
+            "japanwest",
+            "jioindiawest",
+            "westcentralus",
+            "southafricawest",
+            "australiacentral",
+            "australiacentral2",
+            "australiasoutheast",
+            "jioindiacentral",
+            "koreasouth",
+            "southindia",
+            "westindia",
+            "canadaeast",
+            "francesouth",
+            "germanynorth",
+            "norwaywest",
+            "switzerlandwest",
+            "ukwest",
+            "uaecentral",
+            "brazilsoutheast"
+          ],
+          "default": "East Asia"
         },
         "Translate-next.azure.key": {
           "type": "string",
@@ -230,7 +323,26 @@
         },
         "Translate-next.amazon.region": {
           "type": "string",
-          "default": "your-region"
+          "enum": [
+            "Asia Pacific (Hong Kong)",
+            "Asia Pacific (Mumbai)",
+            "Asia Pacific (Seoul)",
+            "Asia Pacific (Singapore)",
+            "Asia Pacific (Sydney)",
+            "Asia Pacific (Tokyo)",
+            "AWS GovCloud (US-West)",
+            "Canada (Central)",
+            "Europe (Frankfurt)",
+            "Europe (Ireland)",
+            "Europe (London)",
+            "Europe (Paris)",
+            "Europe (Stockholm)",
+            "US East (Northern Virginia)",
+            "US East (Ohio)",
+            "US West (Northern California)",
+            "US West (Oregon)"
+          ],
+          "default": "Asia Pacific (Hong Kong)"
         },
         "Translate-next.amazon.key_id": {
           "type": "string",
@@ -249,6 +361,26 @@
           "default": null
         }
       }
-    }
+    },
+    "keybindings": [
+      {
+        "command": "extension.translateText",
+        "key": "alt+shift+t",
+        "mac": "alt+shift+t",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "extension.setTargetLanguage",
+        "key": "ctrl+alt+shift+l",
+        "mac": "cmd+alt+shift+l",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "extension.setDefaultEngine",
+        "key": "alt+shift+e",
+        "mac": "alt+shift+e",
+        "when": "editorTextFocus"
+      }
+    ]
   }
 }
