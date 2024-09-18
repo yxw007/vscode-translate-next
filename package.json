@@ -50,6 +50,7 @@
     "check-types": "tsc --noEmit",
     "lint": "eslint src",
     "test": "vscode-test",
+    "release": "npx changelogen --release -i",
     "prepare": "husky"
   },
   "husky": {

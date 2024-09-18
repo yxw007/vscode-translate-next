@@ -1,0 +1,85 @@
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  id-token: write
+  contents: write
+  pull-requests: write
+
+env:
+  skip: false
+
+name: Deploy Extension
+jobs:
+  Publish:
+    name: Publish
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4.1.7
+        with:
+          ref: master
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 8
+          run_install: false
+
+      - name: Use Node.js 22.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: "22"
+
+      - name: Install build tools
+        run: sudo apt-get install -y build-essential
+
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
+
+      - name: Add Git Config
+        run: |
+          git config user.name "Potter"
+          git config user.email "aa4790139@gmail.com"
+          git remote set-url origin https://x-access-token:${{ secrets.TOKEN }}@github.com/yxw007/vscode-translate-next.git
+
+      - name: Compare tag with package.json version
+        run: |
+          closest_tag=$(git describe --tags --exact-match 2>/dev/null || echo "")
+          echo "Closest tag: $closest_tag"
+          if [ "$closest_tag" != "" ]; then
+            echo "skip=true" >> $GITHUB_ENV
+          else
+            echo "skip=false" >> $GITHUB_ENV
+          fi
+
+      - name: Output skip
+        run: |
+          echo "skip: $skip"
+
+        # skip = true means skip steps below
+      - name: Generate Changelog and Create Release
+        if: env.skip == 'false'
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        run: |
+          pnpm run release --no-git-checks
+
+      - name: Commit changes
+        if: env.skip == 'false'
+        run: |
+          git diff --quiet || git commit -am "chore: auto update for release"
+
+      - uses: ad-m/github-push-action@v0.6.0
+        if: env.skip == 'false'
+        with:
+          github_token: ${{ secrets.TOKEN }}
+          branch: master
+          
+      - name: Publish to Visual Studio Marketplace
+        if: env.skip == 'false'
+        uses: HaaLeo/publish-vscode-extension@v1
+        with:
+          pat: ${{ secrets.VSCE_TOKEN }}
+          registryUrl: https://marketplace.visualstudio.com
