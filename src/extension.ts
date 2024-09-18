@@ -17,8 +17,8 @@ function initTranslator() {
 	}));
 	translator.use(engines.amazon({
 		region: get(amazonConfig, "region"),
-		key_id: get(amazonConfig, "key_id"),
-		access_key: get(amazonConfig, "access_key")
+		accessKeyId: get(amazonConfig, "key_id"),
+		secretAccessKey: get(amazonConfig, "access_key")
 	}));
 	translator.use(engines.baidu({
 		appId: get(baiduConfig, "app_id"),
