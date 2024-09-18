@@ -36,7 +36,7 @@ jobs:
         run: sudo apt-get install -y build-essential
 
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
+        run: npm install --no-frozen-lockfile
 
       - name: Add Git Config
         run: |
@@ -64,7 +64,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
         run: |
-          pnpm run release --no-git-checks
+          npm run release --no-git-checks
 
       - name: Commit changes
         if: env.skip == 'false'
