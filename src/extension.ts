@@ -2,11 +2,12 @@ import * as vscode from 'vscode';
 
 const { translator, engines, languageNames } = require("@yxw007/translate");
 const pkg = require("../package.json");
+const appName = normalName(pkg.name.split("-").slice(1).join("-"));
 
 function initTranslator() {
-	const azureConfig = vscode.workspace.getConfiguration('Translate-next.azure');
-	const amazonConfig = vscode.workspace.getConfiguration('Translate-next.amazon');
-	const baiduConfig = vscode.workspace.getConfiguration('Translate-next.baidu');
+	const azureConfig = vscode.workspace.getConfiguration(`${appName}.azure`);
+	const amazonConfig = vscode.workspace.getConfiguration(`${appName}.amazon`);
+	const baiduConfig = vscode.workspace.getConfiguration(`${appName}.baidu`);
 
 	const get = (config: vscode.WorkspaceConfiguration, key: string): string => (config.get(key) ?? "");
 
@@ -83,7 +84,7 @@ function getTranslationPromise(editor: vscode.TextEditor, selectedText: string, 
 			backgroundColor: "transparent"
 		});
 		editor.setDecorations(decoration, [selection]);
-		const engine = vscode.workspace.getConfiguration('Translate-next').get("defaultEngine") as string;
+		const engine = vscode.workspace.getConfiguration(appName).get("defaultEngine") as string;
 		translator.translate(selectedText, { to: targetLanguage, engine })
 			.then((res: string[]) => {
 				resolve({ selection, translation: res[0] });
@@ -123,12 +124,12 @@ async function handleSetTargetLanguage() {
 
 	vscode.workspace
 		.getConfiguration()
-		.update("Translate-next.targetLanguage", normalLanguage(selectedLanguage.label), vscode.ConfigurationTarget.Global);
+		.update(`${appName}.targetLanguage`, normalName(selectedLanguage.label), vscode.ConfigurationTarget.Global);
 	return selectedLanguage.label;
 }
 
-function normalLanguage(language: string) {
-	let arr = language.split("");
+function normalName(name: string) {
+	let arr = name.split("");
 	arr[0] = arr[0].toLocaleUpperCase();
 	return arr.join("");
 }
@@ -146,11 +147,11 @@ async function choiceTargetLanguage(): Promise<string | undefined> {
 function updateTargetLanguage(selectedLanguage: string) {
 	vscode.workspace
 		.getConfiguration()
-		.update("Translate-next.targetLanguage", selectedLanguage, vscode.ConfigurationTarget.Global);
+		.update(`${appName}.targetLanguage`, selectedLanguage, vscode.ConfigurationTarget.Global);
 }
 
 function checkAzureConfigValid() {
-	const azureConfig = vscode.workspace.getConfiguration('Translate-next.azure');
+	const azureConfig = vscode.workspace.getConfiguration(`${appName}.azure`);
 	const key = azureConfig.get("key");
 	const region = azureConfig.get("region");
 	if (!key || !region) {
@@ -159,7 +160,7 @@ function checkAzureConfigValid() {
 }
 
 function checkAmazonConfigValid() {
-	const amazonConfig = vscode.workspace.getConfiguration('Translate-next.amazon');
+	const amazonConfig = vscode.workspace.getConfiguration(`${appName}.amazon`);
 	const region = amazonConfig.get("region");
 	const key_id = amazonConfig.get("key_id");
 	const access_key = amazonConfig.get("access_key");
@@ -169,7 +170,7 @@ function checkAmazonConfigValid() {
 }
 
 function checkBaiduConfigValid() {
-	const baiduConfig = vscode.workspace.getConfiguration('Translate-next.baidu');
+	const baiduConfig = vscode.workspace.getConfiguration(`${appName}.baidu`);
 	const app_id = baiduConfig.get("app_id");
 	const secret_key = baiduConfig.get("secret_key");
 	if (!app_id || !secret_key) {
@@ -211,11 +212,11 @@ async function choiceEngine(): Promise<string | undefined> {
 function updateEngine(defaultEngine: string) {
 	vscode.workspace
 		.getConfiguration()
-		.update("Translate-next.defaultEngine", defaultEngine, vscode.ConfigurationTarget.Global);
+		.update(`${appName}.defaultEngine`, defaultEngine, vscode.ConfigurationTarget.Global);
 }
 
 async function handleTranslateText() {
-	let selectedLanguage: string | undefined = vscode.workspace.getConfiguration('Translate-next').get('targetLanguage');
+	let selectedLanguage: string | undefined = vscode.workspace.getConfiguration(appName).get('targetLanguage');
 	if (!selectedLanguage) {
 		selectedLanguage = await choiceTargetLanguage();
 		if (!selectedLanguage) {
@@ -234,7 +235,7 @@ async function handleTranslateText() {
 	const targetLanguage = Object.keys(languageNames).find((key) => selectedLanguage.toLowerCase().indexOf(key) >= 0) ?? "english";
 	const { document, selections } = editor;
 
-	let defaultEngine: string | undefined = vscode.workspace.getConfiguration('Translate-next').get("defaultEngine");
+	let defaultEngine: string | undefined = vscode.workspace.getConfiguration(appName).get("defaultEngine");
 	if (!defaultEngine) {
 		const success = handleSetDefaultEngine();
 		if (!success) {
@@ -292,10 +293,49 @@ function registerCommands(context: vscode.ExtensionContext) {
 	context.subscriptions.push(setDefaultEngine);
 }
 
+function createStatusBarItem(commandId: string, tooltip: string) {
+	let item = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 100);
+	item.command = commandId;
+
+	let tips = new vscode.MarkdownString(`click to set target language`);
+	tips.isTrusted = true;
+	item.tooltip = tips;
+
+	item.show();
+	return item;
+}
+
+function registerStatusBar(context: vscode.ExtensionContext) {
+	let targetBar = createStatusBarItem("extension.setTargetLanguage", `${appName}: click to set target language`);
+	let defaultEngineBar = createStatusBarItem("extension.setDefaultEngine", `${appName}: click to set default engine`);
+
+	context.subscriptions.push(targetBar);
+	context.subscriptions.push(defaultEngineBar);
+
+	vscode.workspace.onDidChangeConfiguration((e) => {
+		if (e.affectsConfiguration(`${appName}.targetLanguage`) || e.affectsConfiguration(`${appName}.defaultEngine`)) {
+			updateStatusBarItem();
+		}
+	});
+
+	function updateStatusBarItem() {
+		let targetLanguage = vscode.workspace.getConfiguration(appName).get('targetLanguage');
+		targetBar.text = targetLanguage ? `${targetLanguage}` : `Select target language`;
+		targetBar.show();
+
+		let defaultEngine = vscode.workspace.getConfiguration(appName).get('defaultEngine');
+		defaultEngineBar.text = defaultEngine ? `${defaultEngine}` : `Select default engine`;
+		defaultEngineBar.show();
+	}
+
+	updateStatusBarItem();
+}
+
 export function activate(context: vscode.ExtensionContext) {
 	try {
 		initTranslator();
 		registerCommands(context);
+		registerStatusBar(context);
 	} catch (error: any) {
 		vscode.window.showInformationMessage(`${pkg.name} extension active failed ! error:`, error.message);
 	}
