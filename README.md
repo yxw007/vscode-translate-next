@@ -2,6 +2,10 @@
 
 English | [简体中文](./README_zh-CN.md)
 
+![GitHub top language](https://img.shields.io/github/languages/top/yxw007/vscode-translate-next)
+![GitHub License](https://img.shields.io/github/license/yxw007/vscode-translate-next)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/yxw007/vscode-translate-next/release.yml)
+
 Quickly translate texts in batches to make internationalization easier 🚀
 
 ## ✨ Features

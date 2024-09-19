@@ -2,6 +2,10 @@
 
 简体中文 | [English](./README.md)
 
+![GitHub top language](https://img.shields.io/github/languages/top/yxw007/vscode-translate-next)
+![GitHub License](https://img.shields.io/github/license/yxw007/vscode-translate-next)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/yxw007/vscode-translate-next/release.yml)
+
 快速批量翻译文本，让国际化更加轻松🚀
 
 ## ✨ 特性
