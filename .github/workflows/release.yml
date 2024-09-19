@@ -15,6 +15,8 @@ name: Deploy Extension
 jobs:
   Publish:
     name: Publish
+    # prevents this action from running on forks
+    if: github.repository == 'yxw007/vscode-translate-next'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4.1.7
