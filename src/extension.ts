@@ -297,7 +297,7 @@ function createStatusBarItem(commandId: string, tooltip: string) {
 	let item = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 100);
 	item.command = commandId;
 
-	let tips = new vscode.MarkdownString(`click to set target language`);
+	let tips = new vscode.MarkdownString(tooltip);
 	tips.isTrusted = true;
 	item.tooltip = tips;
 
