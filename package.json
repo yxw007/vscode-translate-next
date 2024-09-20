@@ -17,7 +17,8 @@
     "url": "https://github.com/yxw007/vscode-translate-next/issues"
   },
   "engines": {
-    "vscode": "^1.93.0"
+    "vscode": "^1.93.0",
+    "node": ">=22.3.0"
   },
   "categories": [
     "Other"
@@ -54,6 +55,7 @@
     "check-types": "tsc --noEmit",
     "lint": "eslint src",
     "test": "vscode-test",
+    "build": "npx vsce package",
     "release": "npx changelogen --release -i",
     "prepare": "husky"
   },
@@ -76,17 +78,18 @@
     "@typescript-eslint/parser": "^8.6.0",
     "@vscode/test-cli": "^0.0.10",
     "@vscode/test-electron": "^2.4.1",
-    "changelogen": "^0.5.5",
+    "changelogen": "^0.5.7",
     "commitlint": "^19.5.0",
     "esbuild": "^0.23.1",
     "eslint": "^9.10.0",
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
     "npm-run-all": "^4.1.5",
-    "typescript": "^5.6.2"
+    "typescript": "^5.6.2",
+    "vsce": "^2.15.0"
   },
   "dependencies": {
-    "@yxw007/translate": "^0.0.6"
+    "@yxw007/translate": "^0.0.7"
   },
   "contributes": {
     "commands": [
@@ -228,6 +231,10 @@
           ],
           "default": "google",
           "description": "The translation engine to use"
+        },
+        "Translate-next.deepl.key": {
+          "type": "string",
+          "default": null
         },
         "Translate-next.azure.region": {
           "type": "string",
@@ -389,6 +396,7 @@
       }
     ]
   },
+  "packageManager": "npm@10.8.1",
   "volta": {
     "node": "22.3.0"
   }

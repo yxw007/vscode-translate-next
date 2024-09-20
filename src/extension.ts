@@ -8,6 +8,7 @@ function initTranslator() {
 	const azureConfig = vscode.workspace.getConfiguration(`${appName}.azure`);
 	const amazonConfig = vscode.workspace.getConfiguration(`${appName}.amazon`);
 	const baiduConfig = vscode.workspace.getConfiguration(`${appName}.baidu`);
+	const deeplConfig = vscode.workspace.getConfiguration(`${appName}.deepl`);
 
 	const get = (config: vscode.WorkspaceConfiguration, key: string): string => (config.get(key) ?? "");
 
@@ -24,6 +25,9 @@ function initTranslator() {
 	translator.use(engines.baidu({
 		appId: get(baiduConfig, "app_id"),
 		secretKey: get(baiduConfig, "secret_key")
+	}));
+	translator.use(engines.deepl({
+		key: get(deeplConfig, "key")
 	}));
 }
 
@@ -178,12 +182,21 @@ function checkBaiduConfigValid() {
 	}
 }
 
+function checkDeeplConfigValid() {
+	const deeplConfig = vscode.workspace.getConfiguration(`${appName}.deepl`);
+	const key = deeplConfig.get("key");
+	if (!key) {
+		throw new Error('Deepl config is invalid ! Please check your settings !');
+	}
+}
+
 async function choiceEngine(): Promise<string | undefined> {
 	const quickPickData = [
 		"google",
 		"azure",
 		"amazon",
-		"baidu"
+		"baidu",
+		"deepl"
 	];
 
 	let engine = await vscode.window.showQuickPick(quickPickData);
@@ -201,6 +214,9 @@ async function choiceEngine(): Promise<string | undefined> {
 			break;
 		case "baidu":
 			checkBaiduConfigValid();
+			break;
+		case "deepl":
+			checkDeeplConfigValid();
 			break;
 		default:
 			break;
