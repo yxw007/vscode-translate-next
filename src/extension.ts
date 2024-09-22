@@ -1,8 +1,10 @@
 import * as vscode from 'vscode';
 
-const { translator, engines, languageNames } = require("@yxw007/translate");
+const { translator, engines, getLanguage } = require("@yxw007/translate");
 const pkg = require("../package.json");
 const appName = normalName(pkg.name.split("-").slice(1).join("-"));
+let originLanguages: string[] = [];
+let targetLanguages: string[] = [];
 
 function initTranslator() {
 	const azureConfig = vscode.workspace.getConfiguration(`${appName}.azure`);
@@ -117,7 +119,8 @@ async function handleSetTargetLanguage() {
 			label: r,
 			description: "(recently used)",
 		}));
-	quickPickData.push(...Object.keys(languageNames).map(k => ({ label: k })));
+	quickPickData.push(...Object.keys(targetLanguages).map(k => ({ label: k })));
+
 
 	const selectedLanguage = await vscode.window.showQuickPick(quickPickData);
 	if (!selectedLanguage) {
@@ -144,7 +147,7 @@ async function choiceTargetLanguage(): Promise<string | undefined> {
 			label: r,
 			description: "(recently used)",
 		}));
-	quickPickData.concat(Object.keys(languageNames).map(k => ({ label: k })));
+	quickPickData.concat(targetLanguages.map(k => ({ label: k })));
 	return vscode.window.showQuickPick(quickPickData).then(r => r?.label);
 }
 
@@ -229,6 +232,15 @@ function updateEngine(defaultEngine: string) {
 	vscode.workspace
 		.getConfiguration()
 		.update(`${appName}.defaultEngine`, defaultEngine, vscode.ConfigurationTarget.Global);
+
+	//update target Language list
+	const languages = getLanguage(defaultEngine);
+	originLanguages = Object.keys(languages.from);
+	targetLanguages = Object.keys(languages.to);
+
+	//reset default target language as English
+	const config = vscode.workspace.getConfiguration();
+	config.update(`${appName}.targetLanguage`, "English", vscode.ConfigurationTarget.Global);
 }
 
 async function handleTranslateText() {
@@ -248,7 +260,7 @@ async function handleTranslateText() {
 		return;
 	}
 
-	const targetLanguage = Object.keys(languageNames).find((key) => selectedLanguage.toLowerCase().indexOf(key) >= 0) ?? "english";
+	const targetLanguage = targetLanguages.find((key) => selectedLanguage.toLowerCase().indexOf(key) >= 0) ?? "english";
 	const { document, selections } = editor;
 
 	let defaultEngine: string | undefined = vscode.workspace.getConfiguration(appName).get("defaultEngine");
