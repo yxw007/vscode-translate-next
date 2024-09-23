@@ -298,6 +298,9 @@ function updateEngine(defaultEngine: Engines) {
 		.getConfiguration()
 		.update(`${appName}.defaultEngine`, defaultEngine, vscode.ConfigurationTarget.Global);
 
+	//clear recentlyUsed
+	recentlyUsed.length = 0;
+
 	//update language config
 	updateLanguageConfig(defaultEngine);
 
