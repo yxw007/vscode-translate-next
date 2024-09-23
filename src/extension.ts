@@ -5,32 +5,71 @@ const pkg = require("../package.json");
 const appName = normalName(pkg.name.split("-").slice(1).join("-"));
 let originLanguages: string[] = [];
 let targetLanguages: string[] = [];
+let registeredEngines: string[] = [];
+
+const getConfigValue = (config: vscode.WorkspaceConfiguration, key: string): string => (config.get(key) ?? "");
 
 function initTranslator() {
-	const azureConfig = vscode.workspace.getConfiguration(`${appName}.azure`);
-	const amazonConfig = vscode.workspace.getConfiguration(`${appName}.amazon`);
-	const baiduConfig = vscode.workspace.getConfiguration(`${appName}.baidu`);
-	const deeplConfig = vscode.workspace.getConfiguration(`${appName}.deepl`);
+	let google = engines.google()
+	addEngine(google);
+	updateLanguageConfig(google.name);
+	updateDefaultTargetLanguage(targetLanguages);
+}
 
-	const get = (config: vscode.WorkspaceConfiguration, key: string): string => (config.get(key) ?? "");
+function addEngine(engine: any) {
+	if (registeredEngines.includes(engine.name)) {
+		return;
+	}
 
-	translator.use(engines.google());
-	translator.use(engines.azure({
-		key: get(azureConfig, "key"),
-		region: get(azureConfig, "region")
-	}));
-	translator.use(engines.amazon({
-		region: get(amazonConfig, "region"),
-		accessKeyId: get(amazonConfig, "key_id"),
-		secretAccessKey: get(amazonConfig, "access_key")
-	}));
-	translator.use(engines.baidu({
-		appId: get(baiduConfig, "app_id"),
-		secretKey: get(baiduConfig, "secret_key")
-	}));
-	translator.use(engines.deepl({
-		key: get(deeplConfig, "key")
-	}));
+	translator.use(engine);
+	registeredEngines.push(engine.name as string);
+}
+
+function registerEngine(engineName: string) {
+	if (registeredEngines.includes(engineName)) {
+		return;
+	}
+
+	switch (engineName) {
+		case "azure": {
+			const azureConfig = vscode.workspace.getConfiguration(`${appName}.azure`);
+			addEngine(engines.azure({
+				key: getConfigValue(azureConfig, "key"),
+				region: getConfigValue(azureConfig, "region")
+			}));
+			break;
+		}
+		case "amazon": {
+			const amazonConfig = vscode.workspace.getConfiguration(`${appName}.amazon`);
+			addEngine(engines.amazon({
+				region: getConfigValue(amazonConfig, "region"),
+				accessKeyId: getConfigValue(amazonConfig, "key_id"),
+				secretAccessKey: getConfigValue(amazonConfig, "access_key")
+			}))
+			break;
+		}
+		case "baidu": {
+			const baiduConfig = vscode.workspace.getConfiguration(`${appName}.baidu`);
+			addEngine(engines.baidu({
+				appId: getConfigValue(baiduConfig, "app_id"),
+				secretKey: getConfigValue(baiduConfig, "secret_key")
+			}));
+			break;
+		}
+		case "deepl": {
+			const deeplConfig = vscode.workspace.getConfiguration(`${appName}.deepl`);
+			addEngine(engines.deepl({
+				key: getConfigValue(deeplConfig, "key")
+			}));
+			break;
+		}
+		case "google": {
+			break;
+		}
+		default: {
+			throw new Error(`Engine ${engineName} is not supported !`);
+		}
+	}
 }
 
 type TranslateRes = {
@@ -119,8 +158,7 @@ async function handleSetTargetLanguage() {
 			label: r,
 			description: "(recently used)",
 		}));
-	quickPickData.push(...Object.keys(targetLanguages).map(k => ({ label: k })));
-
+	quickPickData.push(...targetLanguages.map(k => ({ label: k })));
 
 	const selectedLanguage = await vscode.window.showQuickPick(quickPickData);
 	if (!selectedLanguage) {
@@ -204,7 +242,6 @@ async function choiceEngine(): Promise<string | undefined> {
 
 	let engine = await vscode.window.showQuickPick(quickPickData);
 	if (!engine) {
-		vscode.window.showWarningMessage('choice engine is invalid !');
 		return;
 	}
 
@@ -228,19 +265,34 @@ async function choiceEngine(): Promise<string | undefined> {
 	return engine;
 }
 
+function updateLanguageConfig(engine: string) {
+	const languages = getLanguage(engine);
+	originLanguages = Object.keys(languages.from);
+	targetLanguages = Object.keys(languages.to);
+}
+
+function updateDefaultTargetLanguage(targetLanguages: string[]) {
+	const config = vscode.workspace.getConfiguration();
+	const englishIdx = targetLanguages.findIndex((key) => key.toLowerCase().indexOf("english") >= 0);
+	if (englishIdx == -1) {
+		throw new Error('No English language found !');
+	}
+	const english = targetLanguages[englishIdx]
+	config.update(`${appName}.targetLanguage`, english, vscode.ConfigurationTarget.Global);
+}
+
 function updateEngine(defaultEngine: string) {
+	registerEngine(defaultEngine);
+
 	vscode.workspace
 		.getConfiguration()
 		.update(`${appName}.defaultEngine`, defaultEngine, vscode.ConfigurationTarget.Global);
 
-	//update target Language list
-	const languages = getLanguage(defaultEngine);
-	originLanguages = Object.keys(languages.from);
-	targetLanguages = Object.keys(languages.to);
+	//update language config
+	updateLanguageConfig(defaultEngine);
 
 	//reset default target language as English
-	const config = vscode.workspace.getConfiguration();
-	config.update(`${appName}.targetLanguage`, "English", vscode.ConfigurationTarget.Global);
+	updateDefaultTargetLanguage(targetLanguages);
 }
 
 async function handleTranslateText() {
@@ -260,9 +312,13 @@ async function handleTranslateText() {
 		return;
 	}
 
-	const targetLanguage = targetLanguages.find((key) => selectedLanguage.toLowerCase().indexOf(key) >= 0) ?? "english";
-	const { document, selections } = editor;
+	const targetLanguage = targetLanguages.find((key) => selectedLanguage.toLowerCase().indexOf(key.toLowerCase()) >= 0);
+	if (!targetLanguage) {
+		vscode.window.showWarningMessage('No target language found !');
+		return;
+	}
 
+	const { document, selections } = editor;
 	let defaultEngine: string | undefined = vscode.workspace.getConfiguration(appName).get("defaultEngine");
 	if (!defaultEngine) {
 		const success = handleSetDefaultEngine();
@@ -301,7 +357,6 @@ async function handleSetDefaultEngine() {
 	}
 
 	if (!engine) {
-		vscode.window.showWarningMessage('No engine found !');
 		return;
 	}
 
