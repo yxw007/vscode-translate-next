@@ -41,6 +41,7 @@
     "*"
   ],
   "main": "./dist/extension.js",
+  "type": "module",
   "icon": "icon.png",
   "scripts": {
     "vscode:prepublish": "npm run package",
@@ -89,7 +90,7 @@
     "vsce": "^2.15.0"
   },
   "dependencies": {
-    "@yxw007/translate": "^0.0.8",
+    "@yxw007/translate": "^0.0.11",
     "deepl-node": "^1.14.0"
   },
   "contributes": {

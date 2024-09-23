@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
+import { translator, engines, getLanguage, Engines, ToLanguage } from "@yxw007/translate";
 
-const { translator, engines, getLanguage } = require("@yxw007/translate");
 const pkg = require("../package.json");
 const appName = normalName(pkg.name.split("-").slice(1).join("-"));
 let originLanguages: string[] = [];
@@ -10,9 +10,9 @@ let registeredEngines: string[] = [];
 const getConfigValue = (config: vscode.WorkspaceConfiguration, key: string): string => (config.get(key) ?? "");
 
 function initTranslator() {
-	let google = engines.google()
+	let google = engines.google();
 	addEngine(google);
-	updateLanguageConfig(google.name);
+	updateLanguageConfig(google.name as Engines);
 	updateDefaultTargetLanguage(targetLanguages);
 }
 
@@ -45,7 +45,7 @@ function registerEngine(engineName: string) {
 				region: getConfigValue(amazonConfig, "region"),
 				accessKeyId: getConfigValue(amazonConfig, "key_id"),
 				secretAccessKey: getConfigValue(amazonConfig, "access_key")
-			}))
+			}));
 			break;
 		}
 		case "baidu": {
@@ -129,10 +129,11 @@ function getTranslationPromise(editor: vscode.TextEditor, selectedText: string, 
 			backgroundColor: "transparent"
 		});
 		editor.setDecorations(decoration, [selection]);
-		const engine = vscode.workspace.getConfiguration(appName).get("defaultEngine") as string;
-		translator.translate(selectedText, { to: targetLanguage, engine })
-			.then((res: string[]) => {
-				resolve({ selection, translation: res[0] });
+		const engine = vscode.workspace.getConfiguration(appName).get("defaultEngine") as Engines;
+		translator.translate(selectedText, { to: targetLanguage as ToLanguage<typeof engine>, engine })
+			.then((res) => {
+				const result = res as string[];
+				resolve({ selection, translation: result[0] as string });
 				decoration.dispose();
 			})
 			.catch((e: any) => {
@@ -265,7 +266,7 @@ async function choiceEngine(): Promise<string | undefined> {
 	return engine;
 }
 
-function updateLanguageConfig(engine: string) {
+function updateLanguageConfig(engine: Engines) {
 	const languages = getLanguage(engine);
 	originLanguages = Object.keys(languages.from);
 	targetLanguages = Object.keys(languages.to);
@@ -274,14 +275,14 @@ function updateLanguageConfig(engine: string) {
 function updateDefaultTargetLanguage(targetLanguages: string[]) {
 	const config = vscode.workspace.getConfiguration();
 	const englishIdx = targetLanguages.findIndex((key) => key.toLowerCase().indexOf("english") >= 0);
-	if (englishIdx == -1) {
+	if (englishIdx === -1) {
 		throw new Error('No English language found !');
 	}
-	const english = targetLanguages[englishIdx]
+	const english = targetLanguages[englishIdx];
 	config.update(`${appName}.targetLanguage`, english, vscode.ConfigurationTarget.Global);
 }
 
-function updateEngine(defaultEngine: string) {
+function updateEngine(defaultEngine: Engines) {
 	registerEngine(defaultEngine);
 
 	vscode.workspace
@@ -360,7 +361,7 @@ async function handleSetDefaultEngine() {
 		return;
 	}
 
-	updateEngine(engine);
+	updateEngine(engine as Engines);
 
 	return true;
 }
