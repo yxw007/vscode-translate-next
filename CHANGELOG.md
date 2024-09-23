@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.3-alpha.0
+
+[compare changes](https://github.com/yxw007/vscode-translate-next/compare/v0.0.2...v0.0.3-alpha.0)
+
+### 🩹 Fixes
+
+- **ci:** Remove unnecessary pnpm setup step in release workflow ([35607f9](https://github.com/yxw007/vscode-translate-next/commit/35607f9))
+
+### ❤️ Contributors
+
+- Potter ([@yxw007](http://github.com/yxw007))
+
 ## v0.0.2
 
 [compare changes](https://github.com/yxw007/vscode-translate-next/compare/v0.0.1...v0.0.2)
