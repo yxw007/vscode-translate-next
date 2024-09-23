@@ -1,6 +1,36 @@
 # Changelog
 
 
+## v0.0.2
+
+[compare changes](https://github.com/yxw007/vscode-translate-next/compare/v0.0.1...v0.0.2)
+
+### 🚀 Enhancements
+
+- Support deepl translate engine ([d715fdc](https://github.com/yxw007/vscode-translate-next/commit/d715fdc))
+- Automatically update target language list when changing default engine ([72e3cb2](https://github.com/yxw007/vscode-translate-next/commit/72e3cb2))
+
+### 🔥 Performance
+
+- Improve the extension experience ([b1b712d](https://github.com/yxw007/vscode-translate-next/commit/b1b712d))
+
+### 🩹 Fixes
+
+- Ts type prompt error ([e652359](https://github.com/yxw007/vscode-translate-next/commit/e652359))
+
+### 📖 Documentation
+
+- Add license badge to README_zh-CN.md ([1ef6aab](https://github.com/yxw007/vscode-translate-next/commit/1ef6aab))
+
+### 🤖 CI
+
+- Remove unnecessary git configuration and commit steps ([b538e92](https://github.com/yxw007/vscode-translate-next/commit/b538e92))
+- Prevent release workflow from running on forks ([e47a26c](https://github.com/yxw007/vscode-translate-next/commit/e47a26c))
+
+### ❤️ Contributors
+
+- Potter ([@yxw007](http://github.com/yxw007))
+
 ## v0.0.1
 
 
