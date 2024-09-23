@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.4
+
+[compare changes](https://github.com/yxw007/vscode-translate-next/compare/v0.0.3...v0.0.4)
+
+### 🩹 Fixes
+
+- Use a bad solution to solve the problem that the extension cannot be used ([649125c](https://github.com/yxw007/vscode-translate-next/commit/649125c))
+
+### ❤️ Contributors
+
+- Potter ([@yxw007](http://github.com/yxw007))
+
 ## v0.0.3
 
 [compare changes](https://github.com/yxw007/vscode-translate-next/compare/v0.0.3-alpha.0...v0.0.3)
