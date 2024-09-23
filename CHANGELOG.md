@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.5
+
+[compare changes](https://github.com/yxw007/vscode-translate-next/compare/v0.0.4...v0.0.5)
+
+### 🩹 Fixes
+
+- Avoid manual define type ([cd1a5f4](https://github.com/yxw007/vscode-translate-next/commit/cd1a5f4))
+
+### ❤️ Contributors
+
+- Potter ([@yxw007](http://github.com/yxw007))
+
 ## v0.0.4
 
 [compare changes](https://github.com/yxw007/vscode-translate-next/compare/v0.0.3...v0.0.4)
