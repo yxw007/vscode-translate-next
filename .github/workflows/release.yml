@@ -24,11 +24,6 @@ jobs:
           ref: master
           fetch-depth: 0
 
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 8
-          run_install: false
-
       - name: Use Node.js 22.x
         uses: actions/setup-node@v2
         with:
