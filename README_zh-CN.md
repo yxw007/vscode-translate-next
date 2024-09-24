@@ -25,6 +25,8 @@
 
 ## 🛠️ 使用
 
+下载：[vscode-translate-next](https://marketplace.visualstudio.com/items?itemName=yxw007.vscode-translate-next)
+
 ![alt text](assets/images/usage.gif)
 
 ### ⌨️ 快捷键

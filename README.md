@@ -25,6 +25,8 @@ Quickly translate texts in batches to make internationalization easier 🚀
 
 ## 🛠️ Usage
 
+Download：[vscode-translate-next](https://marketplace.visualstudio.com/items?itemName=yxw007.vscode-translate-next)
+
 ![alt text](assets/images/usage.gif)
 
 ### ⌨️ Shortcut key
