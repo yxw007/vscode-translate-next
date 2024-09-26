@@ -121,7 +121,8 @@
             "google",
             "azure",
             "amazon",
-            "baidu"
+            "baidu",
+            "deepl"
           ],
           "default": "google",
           "description": "The translation engine to use"
