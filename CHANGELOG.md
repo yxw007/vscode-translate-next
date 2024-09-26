@@ -1,6 +1,29 @@
 # Changelog
 
 
+## v0.0.6
+
+[compare changes](https://github.com/yxw007/vscode-translate-next/compare/v0.0.5...v0.0.6)
+
+### 🩹 Fixes
+
+- Clear recentlyUsed after change default engine，avoid of invalid language issues ([41c5182](https://github.com/yxw007/vscode-translate-next/commit/41c5182))
+- Can't set deepl as default engine in setting config view ([e91a7eb](https://github.com/yxw007/vscode-translate-next/commit/e91a7eb))
+
+### 📖 Documentation
+
+- Add download link to README ([04a52b8](https://github.com/yxw007/vscode-translate-next/commit/04a52b8))
+
+### 🏡 Chore
+
+- Add github sponsor config ([6653903](https://github.com/yxw007/vscode-translate-next/commit/6653903))
+- Add issue templates ([abf3c71](https://github.com/yxw007/vscode-translate-next/commit/abf3c71))
+- Update doc image ([28ad160](https://github.com/yxw007/vscode-translate-next/commit/28ad160))
+
+### ❤️ Contributors
+
+- Potter ([@yxw007](http://github.com/yxw007))
+
 ## v0.0.5
 
 [compare changes](https://github.com/yxw007/vscode-translate-next/compare/v0.0.4...v0.0.5)
