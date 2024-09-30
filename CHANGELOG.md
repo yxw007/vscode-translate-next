@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.7
+
+[compare changes](https://github.com/yxw007/vscode-translate-next/compare/v0.0.6...v0.0.7)
+
+### 🩹 Fixes
+
+- Don't update target language after changing the engine in the setting ([fa64272](https://github.com/yxw007/vscode-translate-next/commit/fa64272))
+
+### ❤️ Contributors
+
+- Potter ([@yxw007](http://github.com/yxw007))
+
 ## v0.0.6
 
 [compare changes](https://github.com/yxw007/vscode-translate-next/compare/v0.0.5...v0.0.6)
