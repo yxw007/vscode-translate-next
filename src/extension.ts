@@ -427,11 +427,25 @@ function registerStatusBar(context: vscode.ExtensionContext) {
 	updateStatusBarItem();
 }
 
+function listenConfigChange(context: vscode.ExtensionContext) {
+	vscode.workspace.onDidChangeConfiguration((e) => {
+		if (e.affectsConfiguration(`${appName}.defaultEngine`)) {
+			const defaultEngine = vscode.workspace.getConfiguration(appName).get('defaultEngine');
+			if (!defaultEngine) {
+				vscode.window.showWarningMessage('No default engine found !');
+				return;
+			}
+			updateEngine(defaultEngine as Engines);
+		}
+	});
+}
+
 export function activate(context: vscode.ExtensionContext) {
 	try {
 		initTranslator();
 		registerCommands(context);
 		registerStatusBar(context);
+		listenConfigChange(context);
 	} catch (error: any) {
 		vscode.window.showInformationMessage(`${pkg.name} extension active failed ! error:`, error.message);
 	}
