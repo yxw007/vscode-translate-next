@@ -5,6 +5,8 @@
 		"lib": [
 			"ESNext"
 		],
+		"resolveJsonModule": true,
+		"esModuleInterop": true,
 		"sourceMap": true,
 		"rootDir": "src",
 		"strict": true

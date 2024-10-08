@@ -1,16 +1,8 @@
 import * as vscode from 'vscode';
-import type { Engines, ToLanguage } from "@yxw007/translate";
-const { translator, engines, getLanguage } = require("@yxw007/translate");
+import type { Engines, ToLanguage, Engine } from "@yxw007/translate";
+import { translator, engines, getLanguage } from "@yxw007/translate";
+import pkg from "../package.json";
 
-/* 
-There are currently 2 issues
-Question 1: After using esm packaging, an error will be reported. As a result, the plug-in cannot be used, esm is not supported, 
-	related issue： https://github.com/microsoft/vscode/issues/130367
-Question 2: After the introduction of require, there was no type prompt, and no solution was found after searching,
-	 Use esm when types are required, otherwise use require
-*/
-
-const pkg = require("../package.json");
 const appName = normalName(pkg.name.split("-").slice(1).join("-"));
 let originLanguages: string[] = [];
 let targetLanguages: string[] = [];
@@ -25,7 +17,7 @@ function initTranslator() {
 	updateDefaultTargetLanguage(targetLanguages);
 }
 
-function addEngine(engine: any) {
+function addEngine(engine: Engine) {
 	if (registeredEngines.includes(engine.name)) {
 		return;
 	}
@@ -140,7 +132,7 @@ function getTranslationPromise(editor: vscode.TextEditor, selectedText: string, 
 		editor.setDecorations(decoration, [selection]);
 		const engine = vscode.workspace.getConfiguration(appName).get("defaultEngine") as Engines;
 		translator.translate(selectedText, { to: targetLanguage as ToLanguage<typeof engine>, engine })
-			.then((res: any) => {
+			.then((res) => {
 				const result = res as string[];
 				resolve({ selection, translation: result[0] as string });
 				decoration.dispose();
