@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.8
+
+[compare changes](https://github.com/yxw007/vscode-translate-next/compare/v0.0.7...v0.0.8)
+
+### 🩹 Fixes
+
+- Can't use esm import problem and no type prompt problem ([e73dac7](https://github.com/yxw007/vscode-translate-next/commit/e73dac7))
+
+### ❤️ Contributors
+
+- Potter ([@yxw007](http://github.com/yxw007))
+
 ## v0.0.7
 
 [compare changes](https://github.com/yxw007/vscode-translate-next/compare/v0.0.6...v0.0.7)
