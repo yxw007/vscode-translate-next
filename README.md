@@ -31,11 +31,11 @@ Download：[vscode-translate-next](https://marketplace.visualstudio.com/items?it
 
 ### ⌨️ Shortcut key
 
-| 名称                                                                | 快捷键                |
+| Description                                                         | Shortcut key          |
 | ------------------------------------------------------------------- | --------------------- |
-| The translation is selected from source language to Target language | shift + alt + t       |
-| Switch the target language                                          | ctrl + alt + shit + l |
-| Switch the default translation engine                               | alt + shit + e        |
+| The translation is selected from source language to Target language | Shift + Alt + T       |
+| Switch the target language                                          | Ctrl + Alt + Shit + L |
+| Switch the default translation engine                               | Alt + Shit + E        |
 
 Tip: If your editor environment has conflicting shortcuts, you can modify and adjust them yourself. If you forget the shortcut keys, you can use the status bar button provided in the bottom status bar to switch between the target language and the default translation engine, as shown in the following figure:
 
