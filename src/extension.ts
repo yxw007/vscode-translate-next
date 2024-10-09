@@ -11,10 +11,11 @@ let registeredEngines: string[] = [];
 const getConfigValue = (config: vscode.WorkspaceConfiguration, key: string): string => (config.get(key) ?? "");
 
 function initTranslator() {
-	let google = engines.google();
-	addEngine(google);
-	updateLanguageConfig(google.name as Engines);
-	updateDefaultTargetLanguage(targetLanguages);
+	let engine = getConfigValue(vscode.workspace.getConfiguration(appName), "defaultEngine");
+	if (!engine) {
+		engine = "google";
+	}
+	updateEngine(engine as Engines);
 }
 
 function addEngine(engine: Engine) {
