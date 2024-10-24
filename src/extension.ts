@@ -66,6 +66,7 @@ function registerEngine(engineName: string) {
 			break;
 		}
 		case "google": {
+			addEngine(engines.google());
 			break;
 		}
 		default: {
