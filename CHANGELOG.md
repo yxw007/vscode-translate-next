@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.10
+
+[compare changes](https://github.com/yxw007/vscode-translate-next/compare/v0.0.9...v0.0.10)
+
+### 🩹 Fixes
+
+- Engine google not found. Resolved #3 ([#3](https://github.com/yxw007/vscode-translate-next/issues/3))
+
+### ❤️ Contributors
+
+- Potter ([@yxw007](http://github.com/yxw007))
+
 ## v0.0.9
 
 [compare changes](https://github.com/yxw007/vscode-translate-next/compare/v0.0.8...v0.0.9)
