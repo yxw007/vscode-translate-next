@@ -1,6 +1,8 @@
 import * as vscode from 'vscode';
 import { Engine, engines, Engines, getLanguage, translator } from '@yxw007/translate';
-import { appName, getConfigValue, originLanguages, recentlyUsed, registeredEngines, targetLanguages } from '../common';
+import { appName, originLanguages, recentlyUsed, registeredEngines, targetLanguages, useConfig } from '../common';
+
+const { getRegionConfig, updateGlobalConfig } = useConfig();
 
 export function updateTargetLanguage(selectedLanguage: string) {
   vscode.workspace
@@ -61,7 +63,7 @@ async function choiceEngine(): Promise<string | undefined> {
 }
 
 function checkAzureConfigValid() {
-  const azureConfig = vscode.workspace.getConfiguration(`${appName}.azure`);
+  const azureConfig = getRegionConfig("azure");
   const key = azureConfig.get("key");
   const region = azureConfig.get("region");
   if (!key || !region) {
@@ -70,7 +72,7 @@ function checkAzureConfigValid() {
 }
 
 function checkAmazonConfigValid() {
-  const amazonConfig = vscode.workspace.getConfiguration(`${appName}.amazon`);
+  const amazonConfig = getRegionConfig("amazon");
   const region = amazonConfig.get("region");
   const key_id = amazonConfig.get("key_id");
   const access_key = amazonConfig.get("access_key");
@@ -80,7 +82,7 @@ function checkAmazonConfigValid() {
 }
 
 function checkBaiduConfigValid() {
-  const baiduConfig = vscode.workspace.getConfiguration(`${appName}.baidu`);
+  const baiduConfig = getRegionConfig("baidu");
   const app_id = baiduConfig.get("app_id");
   const secret_key = baiduConfig.get("secret_key");
   if (!app_id || !secret_key) {
@@ -89,7 +91,7 @@ function checkBaiduConfigValid() {
 }
 
 function checkDeeplConfigValid() {
-  const deeplConfig = vscode.workspace.getConfiguration(`${appName}.deepl`);
+  const deeplConfig = getRegionConfig("deepl");
   const key = deeplConfig.get("key");
   if (!key) {
     throw new Error('Deepl config is invalid ! Please check your settings !');
@@ -112,34 +114,34 @@ function registerEngine(engineName: string) {
 
   switch (engineName) {
     case "azure": {
-      const azureConfig = vscode.workspace.getConfiguration(`${appName}.azure`);
+      const azureConfig = getRegionConfig("azure");
       addEngine(engines.azure({
-        key: getConfigValue(azureConfig, "key"),
-        region: getConfigValue(azureConfig, "region")
+        key: azureConfig.get("key")!,
+        region: azureConfig.get("region")!
       }));
       break;
     }
     case "amazon": {
-      const amazonConfig = vscode.workspace.getConfiguration(`${appName}.amazon`);
+      const amazonConfig = getRegionConfig("amazon");
       addEngine(engines.amazon({
-        region: getConfigValue(amazonConfig, "region"),
-        accessKeyId: getConfigValue(amazonConfig, "key_id"),
-        secretAccessKey: getConfigValue(amazonConfig, "access_key")
+        region: amazonConfig.get("region")!,
+        accessKeyId: amazonConfig.get("key_id")!,
+        secretAccessKey: amazonConfig.get("access_key")!
       }));
       break;
     }
     case "baidu": {
-      const baiduConfig = vscode.workspace.getConfiguration(`${appName}.baidu`);
+      const baiduConfig = getRegionConfig("baidu");
       addEngine(engines.baidu({
-        appId: getConfigValue(baiduConfig, "app_id"),
-        secretKey: getConfigValue(baiduConfig, "secret_key")
+        appId: baiduConfig.get("app_id")!,
+        secretKey: baiduConfig.get("secret_key")!
       }));
       break;
     }
     case "deepl": {
-      const deeplConfig = vscode.workspace.getConfiguration(`${appName}.deepl`);
+      const deeplConfig = getRegionConfig("deepl");
       addEngine(engines.deepl({
-        key: getConfigValue(deeplConfig, "key")
+        key: deeplConfig.get("key")!
       }));
       break;
     }
@@ -156,9 +158,7 @@ function registerEngine(engineName: string) {
 export function updateEngine(defaultEngine: Engines) {
   registerEngine(defaultEngine);
 
-  vscode.workspace
-    .getConfiguration()
-    .update(`${appName}.defaultEngine`, defaultEngine, vscode.ConfigurationTarget.Global);
+  updateGlobalConfig("defaultEngine", defaultEngine);
 
   //clear recentlyUsed
   recentlyUsed.length = 0;

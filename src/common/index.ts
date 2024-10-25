@@ -8,6 +8,20 @@ export let registeredEngines: string[] = [];
 
 export const getConfigValue = (config: vscode.WorkspaceConfiguration, key: string): string => (config.get(key) ?? "");
 
+export function useConfig() {
+  const globalConfig = vscode.workspace.getConfiguration();
+  const appConfig = vscode.workspace.getConfiguration(appName)
+  return {
+    getRegionConfig: (region: string) => {
+      return vscode.workspace.getConfiguration(`${appName}.${region}`);
+    },
+    getAppConfigValue: getConfigValue.bind(null, appConfig),
+    updateGlobalConfig: (key: string, value: any) => {
+      globalConfig.update(`${appName}.${key}`, value, vscode.ConfigurationTarget.Global);
+    }
+  }
+}
+
 export function normalName(name: string) {
   let arr = name.split("");
   arr[0] = arr[0].toLocaleUpperCase();

@@ -1,7 +1,11 @@
 import { HoverProvider, languages, Hover } from 'vscode'
+import { useConfig } from '../common';
+
+const { getAppConfigValue } = useConfig();
 
 const hoverHandler: HoverProvider = {
   async provideHover(document, position, token) {
+    const hoverEnable = getAppConfigValue("hover.enable");
     /*
     TODO: 
     1. 获取配置，是否启用hover翻译

@@ -2,11 +2,13 @@ import * as vscode from 'vscode';
 import type { Engines } from "@yxw007/translate";
 
 import { hoverText, translateText, changeTargetLanguage, changeEngine, updateEngine } from "./subscriptions"
-import { appName, getConfigValue } from './common';
+import { appName, useConfig } from './common';
 import { registerStatusBar } from './ui';
 
+const { getAppConfigValue } = useConfig();
+
 function initTranslator() {
-	let engine = getConfigValue(vscode.workspace.getConfiguration(appName), "defaultEngine");
+	let engine = getAppConfigValue("defaultEngine");
 	if (!engine) {
 		engine = "google";
 	}
