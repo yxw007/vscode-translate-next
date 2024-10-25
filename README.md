@@ -8,6 +8,8 @@ English | [简体中文](./README_zh-CN.md)
 
 Quickly translate texts in batches to make internationalization easier 🚀
 
+> Note: Underlying translation support provided by [translate](https://github.com/yxw007/translate)
+
 ## ✨ Features
 
 - Simple and easy to use
@@ -22,6 +24,17 @@ Quickly translate texts in batches to make internationalization easier 🚀
   ![alt text](assets/images/config.jpg)
 
   Tips: In addition to the Google Translate engine, if you set other translation engines as the default translation engine, you need to configure the corresponding translation engine configuration, if other translation engines do not use it, you can do without configuration
+
+## 💻Supported Translation Engines  
+
+| Name             | Support | Description                                                                                                                                               |
+| ---------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| google           | √       | Commissioned and ready for use                                                                                                                            |
+| azure translate  | √       | Commissioned and ready for use                                                                                                                            |
+| amazon translate | √       | Commissioned and ready for use                                                                                                                            |
+| baidu            | √       | Commissioned and ready for use                                                                                                                            |
+| deepl            | √       | Commissioned and ready for use                                                                                                                            |
+| yandex           |         | I have not tuned in as I do not have a bank account supported by the platform (help from those who are in a position to do so is welcome and appreciated) |
 
 ## 🛠️ Usage
 
@@ -45,7 +58,7 @@ Tip: If your editor environment has conflicting shortcuts, you can modify and ad
 
 This plugin has been used normally, everyone is welcome to experience, if you have any questions and suggestions, you can send me an issue to give feedback.
 If you are interested, you are especially welcome to join us, and let's improve this tool together.
-Help to make a star⭐, let more people know about this tool, thank you 🙏
+Help to click star ⭐, let more people know about this tool, thank you 🙏
 
 ## 📄 License
 

@@ -6,7 +6,9 @@
 ![GitHub License](https://img.shields.io/github/license/yxw007/vscode-translate-next)
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/yxw007/vscode-translate-next/release.yml)
 
-快速批量翻译文本，让国际化更加轻松🚀
+快速批量翻译文本，让国际化更加轻松🚀 
+
+> 说明：由[translate](https://github.com/yxw007/translate)提供底层翻译支持
 
 ## ✨ 特性
 
@@ -22,6 +24,17 @@
   ![alt text](assets/images/config.jpg)
 
   提示：除了google翻译引擎不用配置，如果设置成其他翻译引擎为默认翻译engine，就需要配好对应的翻译引擎配置，如果其他翻译引擎不用，可以不用配置
+
+## 💻支持的翻译引擎  
+
+| name             | 支持 | 描述                                                                       |
+| ---------------- | ---- | -------------------------------------------------------------------------- |
+| google           | √    | 已投产，可以正常使用                                                       |
+| azure translate  | √    | 已投产，可以正常使用                                                       |
+| amazon translate | √    | 已投产，可以正常使用                                                       |
+| baidu            | √    | 已投产，可以正常使用                                                       |
+| deepl            | √    | 已投产，可以正常使用                                                       |
+| yandex           |      | 由于我没有平台支持的银行账号，所以未调通（欢迎有条件的朋友帮忙调通，感谢） |
 
 ## 🛠️ 使用
 
