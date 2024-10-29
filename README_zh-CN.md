@@ -15,6 +15,7 @@
 - 简单易用
 - 支持多翻译引擎：Google,Azure,Amazon,Baidu等
 - 支持从一种语言翻译至各种语言
+- 支持悬停翻译
 
 ## 📋 要求
 
@@ -40,7 +41,8 @@
 
 下载：[vscode-translate-next](https://marketplace.visualstudio.com/items?itemName=yxw007.vscode-translate-next)
 
-![alt text](assets/images/usage.gif)
+![translateText](assets/images/usage.gif)
+![hover](assets/images/hover.gif)
 
 ### ⌨️ 快捷键
 
@@ -59,6 +61,9 @@
 此插件已可以正常使用，欢迎大家体验、如果你有任何问题和建议都可以提Issue给我反馈。
 如果你感兴趣，特别欢迎你的加入，让我们一起完善好这个工具。
 帮忙点个star⭐，让更多人知道这个工具，感谢大家🙏
+
+## 🙏 特别致谢
+- [vscode-comment-translate](https://github.com/intellism/vscode-comment-translate)：提供的hover实现方式
 
 ## 📄 许可证
 

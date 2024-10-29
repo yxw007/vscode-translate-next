@@ -1,18 +1,23 @@
 import * as vscode from 'vscode';
 import type { Engines } from "@yxw007/translate";
 
-import { hoverText, translateText, changeTargetLanguage, changeEngine, updateEngine } from "./subscriptions"
-import { appName, useConfig } from './common';
+import { hoverText, translateText, changeTargetLanguage, changeEngine, updateEngine, addSelection, outputPanel } from "./subscriptions";
+import { appName, canLanguages, getCanLanguageIds, logger, pkg, useConfig } from './common';
 import { registerStatusBar } from './ui';
+import { createComment } from './syntax';
 
+export let ctx: vscode.ExtensionContext;
 const { getAppConfigValue } = useConfig();
 
-function initTranslator() {
+async function initTranslator() {
 	let engine = getAppConfigValue("defaultEngine");
 	if (!engine) {
 		engine = "google";
 	}
 	updateEngine(engine as Engines);
+	canLanguages.length = 0;
+	canLanguages.push(...(await getCanLanguageIds()));
+	logger.log("canLanguages", canLanguages);
 }
 
 function registerCommands(context: vscode.ExtensionContext) {
@@ -20,6 +25,8 @@ function registerCommands(context: vscode.ExtensionContext) {
 	context.subscriptions.push(changeTargetLanguage);
 	context.subscriptions.push(changeEngine);
 	context.subscriptions.push(hoverText);
+	context.subscriptions.push(addSelection);
+	context.subscriptions.push(outputPanel);
 }
 
 function listenConfigChange(context: vscode.ExtensionContext) {
@@ -35,9 +42,11 @@ function listenConfigChange(context: vscode.ExtensionContext) {
 	});
 }
 
-export function activate(context: vscode.ExtensionContext) {
+export async function activate(context: vscode.ExtensionContext) {
 	try {
-		initTranslator();
+		ctx = context;
+		await initTranslator();
+		await createComment();
 		registerCommands(context);
 		registerStatusBar(context);
 		listenConfigChange(context);

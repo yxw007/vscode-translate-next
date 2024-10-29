@@ -1,11 +1,11 @@
-import { commands } from 'vscode'
+import { commands } from 'vscode';
 import * as vscode from 'vscode';
 import { translator } from "@yxw007/translate";
 import type { Engines, ToLanguage } from "@yxw007/translate";
 
-import { appName, targetLanguages } from "../common"
+import { appName, targetLanguages, TranslateRes } from "../common";
 import { choiceTargetLanguage } from "./changeTargetLanguage";
-import { updateTargetLanguage, handleSetDefaultEngine } from "./changeEngine"
+import { updateTargetLanguage, handleSetDefaultEngine } from "./changeEngine";
 
 /**
  * Extracts a text from the active document selection
@@ -105,7 +105,7 @@ async function handleTranslateText() {
   Promise.all(translationsPromiseArray)
     .then(function (results) {
       editor.edit((builder) => {
-        results.forEach((r) => {
+        results.forEach((r: any) => {
           if (!!r.translation) {
             builder.replace(r.selection, r.translation);
           }

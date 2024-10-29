@@ -15,6 +15,7 @@ Quickly translate texts in batches to make internationalization easier 🚀
 - Simple and easy to use
 - Support for multiple translation engines: Google, Azure, Amazon, Baidu, etc
 - Support for translation from one language to any language
+- Support hover translate
 
 ## 📋 Requirements
 
@@ -40,7 +41,8 @@ Quickly translate texts in batches to make internationalization easier 🚀
 
 Download：[vscode-translate-next](https://marketplace.visualstudio.com/items?itemName=yxw007.vscode-translate-next)
 
-![alt text](assets/images/usage.gif)
+![translateText](assets/images/usage.gif)
+![hover](assets/images/hover.gif)
 
 ### ⌨️ Shortcut key
 
@@ -59,6 +61,9 @@ Tip: If your editor environment has conflicting shortcuts, you can modify and ad
 This plugin has been used normally, everyone is welcome to experience, if you have any questions and suggestions, you can send me an issue to give feedback.
 If you are interested, you are especially welcome to join us, and let's improve this tool together.
 Help to click star ⭐, let more people know about this tool, thank you 🙏
+
+## 🙏 Special thanks
+- [vscode-comment-translate](https://github.com/intellism/vscode-comment-translate)：The provided hover implementation
 
 ## 📄 License
 

@@ -1,4 +1,6 @@
 const esbuild = require("esbuild");
+const { wasmLoader } = require("esbuild-plugin-wasm");
+const { copy } = require('esbuild-plugin-copy');
 
 const production = process.argv.includes('--production');
 const watch = process.argv.includes('--watch');
@@ -38,8 +40,17 @@ async function main() {
 		external: ['vscode'],
 		logLevel: 'silent',
 		plugins: [
-			/* add to the end of plugins array */
+			copy({
+				resolveFrom: 'cwd',
+				assets:{
+					from: ["node_modules/onigasm/lib/onigasm.wasm"],
+					to: ["dist/onigasm.wasm"]
+				}
+			}),
 			esbuildProblemMatcherPlugin,
+			wasmLoader({
+				mode: 'deferred'
+			})
 		],
 	});
 	if (watch) {
