@@ -1,6 +1,27 @@
 # Changelog
 
 
+## v0.0.11
+
+[compare changes](https://github.com/yxw007/vscode-translate-next/compare/v0.0.10...v0.0.11)
+
+### 🚀 Enhancements
+
+- Hover translate ([f07688b](https://github.com/yxw007/vscode-translate-next/commit/f07688b))
+
+### 💅 Refactors
+
+- Split function ([cfd752c](https://github.com/yxw007/vscode-translate-next/commit/cfd752c))
+- Config's relative code ([6efc019](https://github.com/yxw007/vscode-translate-next/commit/6efc019))
+
+### 📖 Documentation
+
+- Improve document ([afc233e](https://github.com/yxw007/vscode-translate-next/commit/afc233e))
+
+### ❤️ Contributors
+
+- Potter ([@yxw007](http://github.com/yxw007))
+
 ## v0.0.10
 
 [compare changes](https://github.com/yxw007/vscode-translate-next/compare/v0.0.9...v0.0.10)
