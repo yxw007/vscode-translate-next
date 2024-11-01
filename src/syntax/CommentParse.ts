@@ -118,7 +118,7 @@ export class CommentParse {
         return this._lines[lineNumber];
     }
 
-    private _posOffsetTokens(position: Position) {
+    private _getPosTokenIndex(position: Position) {
         const { tokens1 } = this._getTokensAtLine(position.line);
         let index = -1;
         for (let i = tokens1.length - 1; i >= 0; i--) {
@@ -134,13 +134,13 @@ export class CommentParse {
     /**
      * Parses the contents of a Token at a given position in the token line
      * @param {number} line - The line number to parse.
-     * @param {number} index - The token index to parse.
+     * @param {number} tokenIdx - The token index to parse.
      * @return {{startIndex: number, endIndex: number, text: string, scopes: string[]}}
      *         An object containing the start index, end index, text, and scopes of the token.
      */
-    private _posScopesParse(line: number, index: number) {
+    private _getPosStructInfo(line: number, tokenIdx: number) {
         const { tokens1: tokens } = this._getTokensAtLine(line);
-        const { startIndex, endIndex, scopes: prevScope } = tokens[index];
+        const { startIndex, endIndex, scopes: prevScope } = tokens[tokenIdx];
         const text = this._model[line].substring(startIndex, endIndex);
         const scopes = prevScope.reduce<string[]>((s, item) => [item, ...s], []);
 
@@ -155,8 +155,8 @@ export class CommentParse {
     public commentScopeParse(position: Position, checkHandle: checkScopeFunction, single: boolean = false, opts?: { skipHandle?: checkScopeFunction, ignoreHandle?: checkScopeFunction }): ICommentBlock {
         const { skipHandle } = opts || {};
         const { line: originLine } = position;
-        const index = this._posOffsetTokens(position);
-        let { startIndex, endIndex } = this._posScopesParse(originLine, index);
+        const index = this._getPosTokenIndex(position);
+        let { startIndex, endIndex } = this._getPosStructInfo(originLine, index);
         let startLine = originLine;
         let endLine = originLine;
 
@@ -170,7 +170,7 @@ export class CommentParse {
                 // 空白行，如同skipHandle
             }
             for (; i >= 0; i--) {
-                const { scopes, startIndex: si } = this._posScopesParse(line, i);
+                const { scopes, startIndex: si } = this._getPosStructInfo(line, i);
 
                 if (checkHandle(scopes)) {
                     startIndex = si;
@@ -196,7 +196,7 @@ export class CommentParse {
             }
 
             for (; i < tokens1.length; i++) {
-                const { scopes, endIndex: ei } = this._posScopesParse(line, i);
+                const { scopes, endIndex: ei } = this._getPosStructInfo(line, i);
                 if (checkHandle(scopes)) {
                     endIndex = ei;
                     endLine = line;
@@ -249,19 +249,19 @@ export class CommentParse {
             let sTextIndex = 0;
             let eTextIndex = this._model[line].length;
             if (line === startLine) {
-                sIndex = this._posOffsetTokens(range.start);
+                sIndex = this._getPosTokenIndex(range.start);
                 sTextIndex = range.start.character;
             }
 
             if (line === endLine) {
                 // 结束位置，不是真实的位置。如字符串end
-                eIndex = this._posOffsetTokens(new Position(line, range.end.character - 1));
+                eIndex = this._getPosTokenIndex(new Position(line, range.end.character - 1));
                 eTextIndex = range.end.character;
             }
 
             let i = sIndex;
             for (; i < tk.length; i++) {
-                let res = this._posScopesParse(line, i);
+                let res = this._getPosStructInfo(line, i);
                 // 行首的忽略，包括空白符与注释符号
                 if (opts?.skipHandle && opts.skipHandle(res.scopes)) {
                     ignoreStart += res.text.length;
@@ -278,7 +278,7 @@ export class CommentParse {
             }
 
             for (let j = eIndex; j >= i; j -= 1) {
-                let res = this._posScopesParse(line, j);
+                let res = this._getPosStructInfo(line, j);
                 // 行尾的忽略，只需要忽略注释符号，默认不存在空白符
                 if (opts?.ignoreHandle && opts.ignoreHandle(res.scopes)) {
                     ignoreEnd += res.text.length;
@@ -310,13 +310,13 @@ export class CommentParse {
         for (let line = startLine; line <= endLine; line += 1) {
             let { tokens1 } = this._getTokensAtLine(line);
             for (let index = 0; index < tokens1.length; index += 1) {
-                const { scopes, startIndex } = this._posScopesParse(line, index);
+                const { scopes, startIndex } = this._getPosStructInfo(line, index);
                 if (scopes && checkHandle(scopes)) {
                     let block = this.commentScopeParse(new Position(line, startIndex + 1), checkHandle, single, opts);
                     blocks.push(block);
                     line = block.range.end.line;
                     tokens1 = this._getTokensAtLine(line).tokens1;
-                    index = this._posOffsetTokens(block.range.end);
+                    index = this._getPosTokenIndex(block.range.end);
                 }
             }
         }
@@ -334,8 +334,8 @@ export class CommentParse {
     }
 
     public computeText(position: Position): ICommentBlock | null {
-        const index = this._posOffsetTokens(position);
-        const { scopes, startIndex, endIndex, text } = this._posScopesParse(position.line, index);
+        const index = this._getPosTokenIndex(position);
+        const { scopes, startIndex, endIndex, text } = this._getPosStructInfo(position.line, index);
         const stringHover = getAppConfigValue<boolean>('hover.string');
         const variableHover = getAppConfigValue<boolean>('hover.variable');
         if (scopes && isComment(scopes)) {
@@ -360,8 +360,8 @@ export class CommentParse {
     }
 
     public getWordAtPosition(position: Position) {
-        const index = this._posOffsetTokens(position);
-        const { scopes, startIndex, endIndex, text } = this._posScopesParse(position.line, index);
+        const index = this._getPosTokenIndex(position);
+        const { scopes, startIndex, endIndex, text } = this._getPosStructInfo(position.line, index);
 
         if (scopes && isBase(scopes)) {
             const range = new Range(new Position(position.line, startIndex), new Position(position.line, endIndex - 1));
