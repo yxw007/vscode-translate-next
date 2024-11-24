@@ -3,8 +3,6 @@
 
 ## v0.1.5
 
-[compare changes](https://github.com/yxw007/vscode-translate-next/compare/v0.1.4...v0.1.5)
-
 ### 🚀 Enhancements
 
 - Finer grained control over the hover enable type ([c6a63b8](https://github.com/yxw007/vscode-translate-next/commit/c6a63b8))
@@ -28,8 +26,6 @@
 
 ## v0.1.4
 
-[compare changes](https://github.com/yxw007/vscode-translate-next/compare/v0.1.3...v0.1.4)
-
 ### 📖 Documentation
 
 - Add FAQ Frequently Asked Questions ([daf44fa](https://github.com/yxw007/vscode-translate-next/commit/daf44fa))
@@ -39,8 +35,6 @@
 - Potter <75838259@qq.com>
 
 ## v0.1.3
-
-[compare changes](https://github.com/yxw007/vscode-translate-next/compare/v0.1.2...v0.1.3)
 
 ### 🚀 Enhancements
 
@@ -64,8 +58,6 @@
 
 ## v0.1.2
 
-[compare changes](https://github.com/yxw007/vscode-translate-next/compare/v0.1.1...v0.1.2)
-
 ### 🚀 Enhancements
 
 - Add terminal translate text ([b59fc35](https://github.com/yxw007/vscode-translate-next/commit/b59fc35))
@@ -82,8 +74,6 @@
 
 ## v0.1.1
 
-[compare changes](https://github.com/yxw007/vscode-translate-next/compare/v0.1.0...v0.1.1)
-
 ### 🩹 Fixes
 
 - The plugin cannot be used because ctx is called before initialization is complete ([b8f4752](https://github.com/yxw007/vscode-translate-next/commit/b8f4752))
@@ -93,8 +83,6 @@
 - Potter ([@yxw007](http://github.com/yxw007))
 
 ## v0.1.0
-
-[compare changes](https://github.com/yxw007/vscode-translate-next/compare/v0.0.15...v0.1.0)
 
 ### 🚀 Enhancements
 
@@ -123,8 +111,6 @@
 
 ## v0.0.15
 
-[compare changes](https://github.com/yxw007/vscode-translate-next/compare/v0.0.14...v0.0.15)
-
 ### 📖 Documentation
 
 - Add FAQ to readme ([ba2c01d](https://github.com/yxw007/vscode-translate-next/commit/ba2c01d))
@@ -138,8 +124,6 @@
 - Potter ([@yxw007](http://github.com/yxw007))
 
 ## v0.0.14
-
-[compare changes](https://github.com/yxw007/vscode-translate-next/compare/v0.0.13...v0.0.14)
 
 ### 🚀 Enhancements
 
@@ -156,8 +140,6 @@
 
 ## v0.0.13
 
-[compare changes](https://github.com/yxw007/vscode-translate-next/compare/v0.0.12...v0.0.13)
-
 ### 🩹 Fixes
 
 - Hover markdown don't translate ([c3a7d46](https://github.com/yxw007/vscode-translate-next/commit/c3a7d46))
@@ -167,8 +149,6 @@
 - Potter <75838259@qq.com>
 
 ## v0.0.12
-
-[compare changes](https://github.com/yxw007/vscode-translate-next/compare/v0.0.11...v0.0.12)
 
 ### 🚀 Enhancements
 
@@ -183,8 +163,6 @@
 - Potter <75838259@qq.com>
 
 ## v0.0.11
-
-[compare changes](https://github.com/yxw007/vscode-translate-next/compare/v0.0.10...v0.0.11)
 
 ### 🚀 Enhancements
 
@@ -205,8 +183,6 @@
 
 ## v0.0.10
 
-[compare changes](https://github.com/yxw007/vscode-translate-next/compare/v0.0.9...v0.0.10)
-
 ### 🩹 Fixes
 
 - Engine google not found. Resolved #3 ([#3](https://github.com/yxw007/vscode-translate-next/issues/3))
@@ -216,8 +192,6 @@
 - Potter ([@yxw007](http://github.com/yxw007))
 
 ## v0.0.9
-
-[compare changes](https://github.com/yxw007/vscode-translate-next/compare/v0.0.8...v0.0.9)
 
 ### 🩹 Fixes
 
@@ -234,8 +208,6 @@
 
 ## v0.0.8
 
-[compare changes](https://github.com/yxw007/vscode-translate-next/compare/v0.0.7...v0.0.8)
-
 ### 🩹 Fixes
 
 - Can't use esm import problem and no type prompt problem ([e73dac7](https://github.com/yxw007/vscode-translate-next/commit/e73dac7))
@@ -246,8 +218,6 @@
 
 ## v0.0.7
 
-[compare changes](https://github.com/yxw007/vscode-translate-next/compare/v0.0.6...v0.0.7)
-
 ### 🩹 Fixes
 
 - Don't update target language after changing the engine in the setting ([fa64272](https://github.com/yxw007/vscode-translate-next/commit/fa64272))
@@ -257,8 +227,6 @@
 - Potter ([@yxw007](http://github.com/yxw007))
 
 ## v0.0.6
-
-[compare changes](https://github.com/yxw007/vscode-translate-next/compare/v0.0.5...v0.0.6)
 
 ### 🩹 Fixes
 
@@ -281,8 +249,6 @@
 
 ## v0.0.5
 
-[compare changes](https://github.com/yxw007/vscode-translate-next/compare/v0.0.4...v0.0.5)
-
 ### 🩹 Fixes
 
 - Avoid manual define type ([cd1a5f4](https://github.com/yxw007/vscode-translate-next/commit/cd1a5f4))
@@ -292,8 +258,6 @@
 - Potter ([@yxw007](http://github.com/yxw007))
 
 ## v0.0.4
-
-[compare changes](https://github.com/yxw007/vscode-translate-next/compare/v0.0.3...v0.0.4)
 
 ### 🩹 Fixes
 
@@ -305,11 +269,7 @@
 
 ## v0.0.3
 
-[compare changes](https://github.com/yxw007/vscode-translate-next/compare/v0.0.3-alpha.0...v0.0.3)
-
 ## v0.0.3-alpha.0
-
-[compare changes](https://github.com/yxw007/vscode-translate-next/compare/v0.0.2...v0.0.3-alpha.0)
 
 ### 🩹 Fixes
 
@@ -320,8 +280,6 @@
 - Potter ([@yxw007](http://github.com/yxw007))
 
 ## v0.0.2
-
-[compare changes](https://github.com/yxw007/vscode-translate-next/compare/v0.0.1...v0.0.2)
 
 ### 🚀 Enhancements
 
