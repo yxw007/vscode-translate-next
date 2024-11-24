@@ -1,0 +1,409 @@
+{
+  "name": "vscode-translate-next",
+  "version": "0.1.5",
+  "displayName": "vscode-translate-next",
+  "publisher": "yxw007",
+  "author": {
+    "name": "Potter",
+    "email": "aa4790139@gmail.com"
+  },
+  "description": "A translate vscode extension that supports multiple translation engines",
+  "homepage": "https://github.com/yxw007/vscode-translate-next",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yxw007/vscode-translate-next.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yxw007/vscode-translate-next/issues"
+  },
+  "engines": {
+    "vscode": "^1.93.0",
+    "node": ">=22.3.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "vscode",
+    "extension",
+    "translate",
+    "i18n",
+    "localization",
+    "internationalization",
+    "language",
+    "google",
+    "azure translator",
+    "amazon translate",
+    "baidu",
+    "deepl"
+  ],
+  "license": "MIT",
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./dist/extension.js",
+  "icon": "icon.png",
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "npm run check-types && npm run lint && node esbuild.js",
+    "watch": "npm-run-all -p watch:*",
+    "watch:esbuild": "node esbuild.js --watch",
+    "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+    "package": "npm run check-types && npm run lint && node esbuild.js --production",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "check-types": "tsc --noEmit",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "test": "vscode-test",
+    "build": "npx vsce package",
+    "release": "npx changelogen --release -i",
+    "prepare": "husky"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{ts}": [
+      "npm lint"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/config-conventional": "^19.5.0",
+    "@types/marked": "^5.0.2",
+    "@types/mocha": "^10.0.8",
+    "@types/node": "~20.16.5",
+    "@types/vscode": "^1.93.0",
+    "@typescript-eslint/eslint-plugin": "^8.6.0",
+    "@typescript-eslint/parser": "^8.6.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "changelogen": "^0.5.7",
+    "commitlint": "^19.5.0",
+    "esbuild": "^0.23.1",
+    "esbuild-plugin-copy": "^2.1.1",
+    "esbuild-plugin-wasm": "^1.1.0",
+    "eslint": "^9.10.0",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5.6.2",
+    "vsce": "^2.15.0"
+  },
+  "dependencies": {
+    "@yxw007/translate": "^0.0.18",
+    "deepl-node": "^1.14.0",
+    "entities": "^5.0.0",
+    "humanize-string": "^3.0.0",
+    "marked": "^5.0.2",
+    "onigasm": "^2.2.5",
+    "vscode-textmate": "^4.3.0"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.translateText",
+        "title": "Translate selections"
+      },
+      {
+        "command": "extension.setTargetLanguage",
+        "title": "Set target language"
+      },
+      {
+        "command": "extension.setParentLanguage",
+        "title": "Set parent language"
+      },
+      {
+        "command": "extension.setDefaultEngine",
+        "title": "Set default translation engine"
+      }
+    ],
+    "configuration": {
+      "title": "Translate-next",
+      "properties": {
+        "Translate-next.targetLanguage": {
+          "type": "string",
+          "default": "English",
+          "description": "Change target language"
+        },
+        "Translate-next.defaultEngine": {
+          "type": "string",
+          "enum": [
+            "google",
+            "azure",
+            "amazon",
+            "baidu",
+            "deepl"
+          ],
+          "default": "google",
+          "description": "The translation engine to use"
+        },
+        "Translate-next.deepl.key": {
+          "type": "string",
+          "default": null
+        },
+        "Translate-next.azure.region": {
+          "type": "string",
+          "enum": [
+            "eastus",
+            "southcentralus",
+            "westus2",
+            "westus3",
+            "australiaeast",
+            "southeastasia",
+            "northeurope",
+            "swedencentral",
+            "uksouth",
+            "westeurope",
+            "centralus",
+            "southafricanorth",
+            "centralindia",
+            "eastasia",
+            "japaneast",
+            "koreacentral",
+            "canadacentral",
+            "francecentral",
+            "germanywestcentral",
+            "italynorth",
+            "norwayeast",
+            "polandcentral",
+            "spaincentral",
+            "switzerlandnorth",
+            "mexicocentral",
+            "uaenorth",
+            "brazilsouth",
+            "israelcentral",
+            "qatarcentral",
+            "eastus2stage",
+            "eastusstage",
+            "westus2stage",
+            "westusstage",
+            "northcentralusstage",
+            "centralusstage",
+            "southcentralusstage",
+            "israel",
+            "italy",
+            "newzealand",
+            "poland",
+            "qatar",
+            "sweden",
+            "uae",
+            "australia",
+            "brazil",
+            "germany",
+            "france",
+            "korea",
+            "canada",
+            "unitedstates",
+            "unitedstateseuap",
+            "southafrica",
+            "norway",
+            "europe",
+            "global",
+            "japan",
+            "switzerland",
+            "singapore",
+            "asiapacific",
+            "asia",
+            "india",
+            "uk",
+            "southeastasiastage",
+            "eastasiastage",
+            "brazilus",
+            "eastus2",
+            "northcentralus",
+            "westus",
+            "japanwest",
+            "jioindiawest",
+            "westcentralus",
+            "southafricawest",
+            "australiacentral",
+            "australiacentral2",
+            "australiasoutheast",
+            "jioindiacentral",
+            "koreasouth",
+            "southindia",
+            "westindia",
+            "canadaeast",
+            "francesouth",
+            "germanynorth",
+            "norwaywest",
+            "switzerlandwest",
+            "ukwest",
+            "uaecentral",
+            "brazilsoutheast"
+          ],
+          "default": "eastasia",
+          "markdownDescription": "Notice: select the region selected when you create the translate application on azure. Otherwise, 401001 is displayed"
+        },
+        "Translate-next.azure.key": {
+          "type": "string",
+          "default": null
+        },
+        "Translate-next.amazon.region": {
+          "type": "string",
+          "enum": [
+            "us-east-1",
+            "us-west-1",
+            "us-west-2",
+            "ap-east-1",
+            "ap-south-1",
+            "ap-northeast-2",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-northeast-1",
+            "ca-central-1",
+            "eu-central-1",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "eu-north-1",
+            "us-gov-west-1"
+          ],
+          "default": "ap-southeast-1",
+          "markdownDescription": "The region to use for Amazon Translate, [More](https://docs.aws.amazon.com/general/latest/gr/translate-service.html)"
+        },
+        "Translate-next.amazon.keyId": {
+          "type": "string",
+          "default": null
+        },
+        "Translate-next.amazon.accessKey": {
+          "type": "string",
+          "default": null
+        },
+        "Translate-next.baidu.appId": {
+          "type": "string",
+          "default": null
+        },
+        "Translate-next.baidu.secretKey": {
+          "type": "string",
+          "default": null
+        },
+        "Translate-next.hover.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable hover translation"
+        },
+        "Translate-next.hover.string": {
+          "type": "boolean",
+          "default": false,
+          "order": 24,
+          "description": "string hover"
+        },
+        "Translate-next.hover.variable": {
+          "type": "boolean",
+          "default": false,
+          "order": 24,
+          "description": "variable hover"
+        },
+        "Translate-next.hover.prompt": {
+          "type": "boolean",
+          "default": true,
+          "order": 24,
+          "description": "prompt hover"
+        },
+        "Translate-next.hover.comment": {
+          "type": "boolean",
+          "default": true,
+          "order": 24,
+          "description": "comment hover"
+        },
+        "Translate-next.hover.diagnostics": {
+          "type": "boolean",
+          "default": true,
+          "order": 24,
+          "description": "diagnostics hover"
+        },
+        "Translate-next.parentLanguage": {
+          "type": "string",
+          "default": "Chinese"
+        },
+        "Translate-next.multiLineMerge": {
+          "type": "boolean",
+          "default": false,
+          "order": 25,
+          "description": "multiline merge"
+        },
+        "Translate-next.openOutputPanel": {
+          "type": "boolean",
+          "default": false,
+          "order": 25,
+          "description": "open output panel"
+        },
+        "Translate-next.cacheTime": {
+          "type": "number",
+          "default": 600000,
+          "description": "translate cache time in milliseconds"
+        }
+      }
+    },
+    "keybindings": [
+      {
+        "command": "extension.translateText",
+        "key": "alt+shift+t",
+        "mac": "alt+shift+t",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "extension.setTargetLanguage",
+        "key": "ctrl+alt+shift+l",
+        "mac": "cmd+alt+shift+l",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "extension.setDefaultEngine",
+        "key": "alt+shift+e",
+        "mac": "alt+shift+e",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "extension.openOutputPanel",
+        "key": "alt+shift+o",
+        "mac": "alt+shift+o",
+        "when": "editorTextFocus || terminalFocus"
+      },
+      {
+        "command": "extension.clearOutputPanel",
+        "key": "alt+c",
+        "mac": "alt+c",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "extension.translateTerminalText",
+        "key": "alt+`",
+        "mac": "alt+`",
+        "when": "terminalFocus"
+      }
+    ],
+    "icons": {
+      "i18n-icon": {
+        "description": "i18n icon",
+        "default": {
+          "fontPath": "assets/font/iconfont.woff",
+          "fontCharacter": "\\e654"
+        }
+      },
+      "engine-icon": {
+        "description": "engine icon",
+        "default": {
+          "fontPath": "assets/font/iconfont.woff",
+          "fontCharacter": "\\e6e6"
+        }
+      },
+      "parent-language-icon": {
+        "description": "engine icon",
+        "default": {
+          "fontPath": "assets/font/iconfont.woff",
+          "fontCharacter": "\\e61b"
+        }
+      }
+    }
+  },
+  "packageManager": "npm@10.8.1",
+  "volta": {
+    "node": "22.3.0"
+  }
+}
