@@ -1,6 +1,21 @@
 # Changelog
 
 
+## v0.1.7
+
+
+
+### 🏡 Chore
+
+- Update docs 
+- Ignore unnecessary files 
+- Update deps 
+- Update release workflow and add content replacement script 
+
+### ❤️ Contributors
+
+- FreeCoderX <aa4790139@gmail.com>
+
 ## v0.1.6
 
 
@@ -225,7 +240,7 @@
 
 ### 🩹 Fixes
 
-- Engine google not found. Resolved #3 ([#3](https://github.com/yxw007/translate-ide/issues/3))
+- Engine google not found. Resolved #3 ([#3](https://github.com/yxw007/vscode-translate-next/issues/3))
 
 ### ❤️ Contributors
 

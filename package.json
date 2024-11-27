@@ -1,6 +1,6 @@
 {
   "name": "vscode-translate-next",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "displayName": "vscode-translate-next",
   "publisher": "yxw007",
   "author": {
@@ -58,6 +58,7 @@
     "lint:fix": "eslint src --fix",
     "test": "vscode-test",
     "build": "npx vsce package",
+    "replace-contents": "node scripts/replace-contents.js",
     "pick-docs": "node scripts/pick-docs.js",
     "release": "npx changelogen --release -i",
     "prepare": "husky"
