@@ -1,9 +1,9 @@
-# vscode-translate-next
+# translate-ide
 
 简体中文 | [English](./README.md)
 
-![GitHub top language](https://img.shields.io/github/languages/top/yxw007/vscode-translate-next)
-![GitHub License](https://img.shields.io/github/license/yxw007/vscode-translate-next)
+![GitHub top language](https://img.shields.io/github/languages/top/yxw007/translate-ide)
+![GitHub License](https://img.shields.io/github/license/yxw007/translate-ide)
 
 每个程序员都必备的一款vscode翻译插件神器，它让你不在惧怕多国语言，而是让你更专注的沉浸式写代码🚀
 
@@ -40,7 +40,7 @@
 
 ## 🛠️ 使用
 
-下载：[vscode-translate-next](https://marketplace.visualstudio.com/items?itemName=yxw007.vscode-translate-next)
+下载：[translate-ide](https://marketplace.visualstudio.com/items?itemName=yxw007.translate-ide)
 
 - 选中翻译文本
   ![translateText](assets/images/usage.gif)
@@ -93,7 +93,6 @@
     - 关注我 + 一键三连我的视频 (bilibili: [向往自由的码](https://space.bilibili.com/3546754775517426?spm_id_from=333.788.0.0))
     - github上帮我项目的点star ⭐
     - 对产品提升有更好的建议和想法，私信告诉我
-    - 给我的项目提PR，解决bug、拓展支持更多好用的功能
     - 成为我的赞助人： https://github.com/sponsors/yxw007
     - 打赏我，请我喝杯咖啡☕
         ![alt text](assets/images/give_a_reward.jpg)

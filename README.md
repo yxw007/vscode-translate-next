@@ -1,9 +1,9 @@
-# vscode-translate-next
+# translate-ide
 
 English | [简体中文](./README_zh-CN.md)
 
-![GitHub top language](https://img.shields.io/github/languages/top/yxw007/vscode-translate-next)
-![GitHub License](https://img.shields.io/github/license/yxw007/vscode-translate-next)
+![GitHub top language](https://img.shields.io/github/languages/top/yxw007/translate-ide)
+![GitHub License](https://img.shields.io/github/license/yxw007/translate-ide)
 
 Every programmer must have a vscode translation plugin artifact, it allows you to not be afraid of multi-language, but let you more focused immersive writing code! 🚀
 
@@ -40,7 +40,7 @@ Every programmer must have a vscode translation plugin artifact, it allows you t
 
 ## 🛠️ Usage
 
-Download：[vscode-translate-next](https://marketplace.visualstudio.com/items?itemName=yxw007.vscode-translate-next)
+Download：[translate-ide](https://marketplace.visualstudio.com/items?itemName=yxw007.translate-ide)
 
 - Select translated text
   ![translateText](assets/images/usage.gif)
@@ -83,6 +83,7 @@ Tip: If your editor environment has conflicting shortcuts, you can modify and ad
     | 54003      | restricted access | The opened service may be a generic text translation service, which needs to be switched to a domain translation service. |
     
   > For more error codes, see [Error Code List](https://api.fanyi.baidu.com/doc/22).
+   
 
 ## 📢 More
 
@@ -92,7 +93,6 @@ Tip: If your editor environment has conflicting shortcuts, you can modify and ad
     - Follow me + one-click trifecta of my videos (bilibili: [向往自由的码](https://space.bilibili.com/3546754775517426?spm_id_from=333.788.0.0))
     - Points on github for helping my project star ⭐
     - Have better suggestions and ideas for product enhancements, private message me!
-    - PR for my project to fix bugs and expand support for more useful features!
     - Become my sponsor： https://github.com/sponsors/yxw007
     - Reward me and buy me a cup of coffee ☕
         ![alt text](assets/images/give_a_reward.jpg)
@@ -101,4 +101,4 @@ Thank you to everyone who has supported and helped me, your support is my greate
 
 ## 📄 License
 
-vscode-translate-next is released under the MIT license. for more information, see the [LICENSE](./LICENSE) file.
+translate-ide is released under the MIT license. for more information, see the [LICENSE](./LICENSE) file.
