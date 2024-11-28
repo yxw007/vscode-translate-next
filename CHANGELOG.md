@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.1.8
+
+
+
+### 🚀 Enhancements
+
+- Integrate amplitude analytics 
+
+### ❤️ Contributors
+
+- FreeCoderX <aa4790139@gmail.com>
+
 ## v0.1.7
 
 
