@@ -2,7 +2,6 @@
 
 English | [简体中文](./README_zh-CN.md)
 
-![GitHub top language](https://img.shields.io/github/languages/top/yxw007/vscode-translate-next)
 ![GitHub License](https://img.shields.io/github/license/yxw007/vscode-translate-next)
 
 Every programmer must have a vscode translation plugin artifact, it allows you to not be afraid of multi-language, but let you more focused immersive writing code! 🚀

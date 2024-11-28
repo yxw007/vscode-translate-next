@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v0.1.9
+
+
+
+### 🩹 Fixes
+
+- PromptHover translating only one line in multiple lines  close #7 ([#7](https://github.com/yxw007/vscode-translate-next/issues/7))
+- Avoid translating empty comments 
+
+### 📖 Documentation
+
+- Update readme 
+
+### ❤️ Contributors
+
+- FreeCoderX <aa4790139@gmail.com>
+
 ## v0.1.8
 
 

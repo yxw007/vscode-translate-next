@@ -2,7 +2,6 @@
 
 简体中文 | [English](./README.md)
 
-![GitHub top language](https://img.shields.io/github/languages/top/yxw007/vscode-translate-next)
 ![GitHub License](https://img.shields.io/github/license/yxw007/vscode-translate-next)
 
 每个程序员都必备的一款vscode翻译插件神器，它让你不在惧怕多国语言，而是让你更专注的沉浸式写代码🚀
