@@ -1,6 +1,29 @@
 # Changelog
 
 
+## v0.1.10
+
+
+
+### 🔥 Performance
+
+- Special characters skip translation directly 
+- Auto refresh the engine configuration after change the configuration to avoid restart 
+
+### 🩹 Fixes
+
+- Hover prompt translate not newline 
+- **ci:** Relevant contents of. github are not deployed 
+- IsEmptyComment judgment mistake 
+
+### 💅 Refactors
+
+- GetMarkdownTextValue logic 
+
+### ❤️ Contributors
+
+- FreeCoderX <aa4790139@gmail.com>
+
 ## v0.1.9
 
 
