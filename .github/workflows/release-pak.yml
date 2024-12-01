@@ -31,12 +31,12 @@ jobs:
       - name: Extract latest changelog
         id: changelog
         run: |
-          LATEST_TAG=$(awk '/^## /{print; exit}' CHANGELOG.md | sed 's/^## v//')
-          echo "LATEST_TAG=v${LATEST_TAG}" >> $GITHUB_ENV
-          echo "LATEST_TAG:${LATEST_TAG}"
-          CHANGELOG_CONTENT=$(awk '/^## '"${LATEST_TAG}"'/{flag=1; next} /^## /{flag=0} flag' CHANGELOG.md)
+          LATEST_CHANGELOG=$(awk '/^## /{print; exit}' CHANGELOG.md | sed 's/^## v//')
+          echo "LATEST_CHANGELOG=v${LATEST_CHANGELOG}" >> $GITHUB_ENV
+          echo "LATEST_CHANGELOG:${LATEST_CHANGELOG}"
+          CHANGELOG_CONTENT=$(awk '/^## /{flag=1; next} /^## /{flag=0} flag' CHANGELOG.md)
+          echo "CHANGELOG_CONTENT:${CHANGELOG_CONTENT}"
           echo "CHANGELOG_CONTENT<<EOF" >> $GITHUB_ENV
-          echo "CHANGELOG_CONTENT: ${CHANGELOG_CONTENT}"
           echo "${CHANGELOG_CONTENT}" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
 
@@ -45,7 +45,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          if gh release view "${{ env.LATEST_TAG }}" > /dev/null 2>&1; then
+          if gh release view "${{ env.LATEST_CHANGELOG }}" > /dev/null 2>&1; then
             echo "Release already exists."
             echo "RELEASE_EXISTS=true" >> $GITHUB_ENV
           else
@@ -57,12 +57,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git tag "${{ env.LATEST_TAG }}"
-          git push origin "${{ env.LATEST_TAG }}"
+          git tag "${{ env.LATEST_CHANGELOG }}"
+          git push origin "${{ env.LATEST_CHANGELOG }}"
 
       - name: Create GitHub Release
         if: env.RELEASE_EXISTS == 'false'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh release create "${LATEST_TAG}" --title "${LATEST_TAG}" --notes "${CHANGELOG_CONTENT}"
+          gh release create "${LATEST_CHANGELOG}" --title "${LATEST_CHANGELOG}" --notes "${CHANGELOG_CONTENT}"
