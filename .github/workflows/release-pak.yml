@@ -34,7 +34,7 @@ jobs:
           LATEST_CHANGELOG=$(awk '/^## /{print; exit}' CHANGELOG.md | sed 's/^## v//' | awk '{print "v"$0}')
           echo "LATEST_CHANGELOG=${LATEST_CHANGELOG}" >> $GITHUB_ENV
           echo "LATEST_CHANGELOG:${LATEST_CHANGELOG}"
-          CHANGELOG_CONTENT=$(awk '/^## /{flag=1; next} /^## /{flag=0} flag' CHANGELOG.md)
+          CHANGELOG_CONTENT=$(awk '/^## '"${LATEST_CHANGELOG}"'/{flag=1; next} /^## /{flag=0} flag' CHANGELOG.md)
           echo "CHANGELOG_CONTENT:${CHANGELOG_CONTENT}"
           echo "CHANGELOG_CONTENT<<EOF" >> $GITHUB_ENV
           echo "${CHANGELOG_CONTENT}" >> $GITHUB_ENV
