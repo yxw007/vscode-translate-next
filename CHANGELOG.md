@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.2.0
+
+
+
+### 🚀 Enhancements
+
+- Integrate openai 
+
+### ❤️ Contributors
+
+- FreeCoderX <aa4790139@gmail.com>
+
 ## v0.1.10
 
 

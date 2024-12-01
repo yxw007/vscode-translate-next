@@ -1,6 +1,6 @@
 {
   "name": "vscode-translate-next",
-  "version": "0.1.10",
+  "version": "0.2.0",
   "displayName": "vscode-translate-next",
   "publisher": "yxw007",
   "author": {
@@ -98,7 +98,7 @@
   },
   "dependencies": {
     "@amplitude/analytics-node": "^1.3.6",
-    "@yxw007/translate": "^0.1.1",
+    "@yxw007/translate": "^0.1.4",
     "deepl-node": "^1.14.0",
     "entities": "^5.0.0",
     "humanize-string": "^3.0.0",
@@ -124,6 +124,10 @@
       {
         "command": "extension.setDefaultEngine",
         "title": "Set default translation engine"
+      },
+      {
+        "command": "extension.setDefaultLLM",
+        "title": "Set default LLM"
       }
     ],
     "configuration": {
@@ -141,7 +145,8 @@
             "azure",
             "amazon",
             "baidu",
-            "deepl"
+            "deepl",
+            "openai"
           ],
           "default": "google",
           "description": "The translation engine to use"
@@ -287,6 +292,45 @@
           "type": "string",
           "default": null
         },
+        "Translate-next.openai.apiKey": {
+          "type": "string",
+          "default": null
+        },
+        "Translate-next.openai.llm": {
+          "type": "string",
+          "enum": [
+            "o1-preview",
+            "o1-preview-2024-09-12",
+            "o1-mini-2024-09-12",
+            "o1-mini",
+            "dall-e-2",
+            "gpt-3.5-turbo",
+            "gpt-3.5-turbo-0125",
+            "babbage-002",
+            "davinci-002",
+            "dall-e-3",
+            "text-embedding-3-large",
+            "gpt-3.5-turbo-16k",
+            "tts-1-hd-1106",
+            "text-embedding-ada-002",
+            "text-embedding-3-small",
+            "tts-1-hd",
+            "whisper-1",
+            "gpt-3.5-turbo-1106",
+            "gpt-3.5-turbo-instruct",
+            "gpt-4o-mini-2024-07-18",
+            "gpt-4o-mini",
+            "tts-1",
+            "tts-1-1106",
+            "gpt-3.5-turbo-instruct-0914"
+          ],
+          "default": "gpt-3.5-turbo"
+        },
+        "Translate-next.openai.outputLog": {
+          "type": "boolean",
+          "default": false,
+          "description": "output openai log"
+        },
         "Translate-next.hover.enable": {
           "type": "boolean",
           "default": true,
@@ -403,6 +447,13 @@
         "default": {
           "fontPath": "assets/font/iconfont.woff",
           "fontCharacter": "\\e61b"
+        }
+      },
+      "model-icon": {
+        "description": "model icon",
+        "default": {
+          "fontPath": "assets/font/iconfont.woff",
+          "fontCharacter": "\\e615"
         }
       }
     }
