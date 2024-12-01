@@ -50,14 +50,6 @@ jobs:
             echo "RELEASE_EXISTS=false" >> $GITHUB_ENV
           fi
 
-      - name: Create tag if not exists
-        if: env.RELEASE_EXISTS == 'false'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git tag "${{ env.LATEST_CHANGELOG }}"
-          git push origin "${{ env.LATEST_CHANGELOG }}"
-
       - name: Create GitHub Release
         if: env.RELEASE_EXISTS == 'false'
         env:
