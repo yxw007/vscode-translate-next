@@ -1,0 +1,58 @@
+name: Release Package
+
+on:
+  push:
+    branches:
+      - master
+
+permissions:
+  id-token: write
+  contents: write
+  pull-requests: write
+
+env:
+  skip: false
+
+jobs:
+  Publish:
+    name: CI
+    # prevents this action from running on forks
+    if: github.repository == 'yxw007/vscode-translate-next'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Use Node.js 22.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: "22"
+
+      - name: Extract latest changelog
+        id: changelog
+        run: |
+          LATEST_CHANGELOG=$(awk '/^## /{print; exit}' CHANGELOG.md)
+          echo "LATEST_CHANGELOG=${LATEST_CHANGELOG}" >> $GITHUB_ENV
+          CHANGELOG_CONTENT=$(awk '/^## /{flag=1; next} /^## /{flag=0} flag' CHANGELOG.md)
+          echo "CHANGELOG_CONTENT<<EOF" >> $GITHUB_ENV
+          echo "${CHANGELOG_CONTENT}" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+
+      - name: Check if release exists
+        id: check_release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if gh release view "${{ env.LATEST_CHANGELOG }}" > /dev/null 2>&1; then
+            echo "Release already exists."
+            echo "RELEASE_EXISTS=true" >> $GITHUB_ENV
+          else
+            echo "RELEASE_EXISTS=false" >> $GITHUB_ENV
+          fi
+
+      - name: Create GitHub Release
+        if: env.RELEASE_EXISTS == 'false'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "${LATEST_CHANGELOG}" --title "${LATEST_CHANGELOG}" --notes "${CHANGELOG_CONTENT}"
