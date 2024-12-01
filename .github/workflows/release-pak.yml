@@ -31,8 +31,8 @@ jobs:
       - name: Extract latest changelog
         id: changelog
         run: |
-          LATEST_CHANGELOG=$(awk '/^## /{print; exit}' CHANGELOG.md | sed 's/^## v//')
-          echo "LATEST_CHANGELOG=v${LATEST_CHANGELOG}" >> $GITHUB_ENV
+          LATEST_CHANGELOG=$(awk '/^## /{print; exit}' CHANGELOG.md | sed 's/^## v//' | awk '{print "v"$0}')
+          echo "LATEST_CHANGELOG=${LATEST_CHANGELOG}" >> $GITHUB_ENV
           echo "LATEST_CHANGELOG:${LATEST_CHANGELOG}"
           CHANGELOG_CONTENT=$(awk '/^## /{flag=1; next} /^## /{flag=0} flag' CHANGELOG.md)
           echo "CHANGELOG_CONTENT:${CHANGELOG_CONTENT}"
