@@ -1,4 +1,4 @@
-# vscode-translate-next
+# translate-ide
 
 English | [简体中文](./README_zh-CN.md)
 
@@ -35,11 +35,12 @@ Every programmer must have a vscode translation plugin artifact, it allows you t
 | amazon translate | √       | Commissioned and ready for use                                                                                                                            |
 | baidu            | √       | Commissioned and ready for use                                                                                                                            |
 | deepl            | √       | Commissioned and ready for use                                                                                                                            |
+| openai           | √       | Commissioned and ready for use     (Poor results, cue words are hard to tune in)                                                                          |
 | yandex           |         | I have not tuned in as I do not have a bank account supported by the platform (help from those who are in a position to do so is welcome and appreciated) |
 
 ## 🛠️ Usage
 
-Download：[vscode-translate-next](https://marketplace.visualstudio.com/items?itemName=yxw007.vscode-translate-next)
+Download：[translate-ide](https://marketplace.visualstudio.com/items?itemName=yxw007.translate-ide)
 
 - Select translated text
   ![translateText](assets/images/usage.gif)
@@ -47,6 +48,8 @@ Download：[vscode-translate-next](https://marketplace.visualstudio.com/items?it
   ![hover](assets/images/hover.gif)
 - Translation terminal selected text
   ![translate-terminal-text](assets/images/translate-terminal-text.gif)
+- How to use openai 
+  ![alt text](assets/images/open_ai_usage.gif)
     
 ### ⌨️ Shortcut key
 
@@ -100,4 +103,4 @@ Thank you to everyone who has supported and helped me, your support is my greate
 
 ## 📄 License
 
-vscode-translate-next is released under the MIT license. for more information, see the [LICENSE](./LICENSE) file.
+translate-ide is released under the MIT license. for more information, see the [LICENSE](./LICENSE) file.

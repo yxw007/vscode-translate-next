@@ -1,4 +1,4 @@
-# vscode-translate-next
+# translate-ide
 
 简体中文 | [English](./README.md)
 
@@ -35,11 +35,12 @@
 | amazon translate | √    | 已投产，可以正常使用                                                       |
 | baidu            | √    | 已投产，可以正常使用                                                       |
 | deepl            | √    | 已投产，可以正常使用                                                       |
+| openai           | √    | 已投产，可以正常使用 (效果不佳，提示词很难调好)                            |
 | yandex           |      | 由于我没有平台支持的银行账号，所以未调通（欢迎有条件的朋友帮忙调通，感谢） |
 
 ## 🛠️ 使用
 
-下载：[vscode-translate-next](https://marketplace.visualstudio.com/items?itemName=yxw007.vscode-translate-next)
+下载：[translate-ide](https://marketplace.visualstudio.com/items?itemName=yxw007.translate-ide)
 
 - 选中翻译文本
   ![translateText](assets/images/usage.gif)
@@ -47,7 +48,8 @@
   ![hover](assets/images/hover.gif)
 - 翻译终端选中文本
   ![translate-terminal-text](assets/images/translate-terminal-text.gif)
-    
+- 如何使用openai 
+  ![alt text](assets/images/open_ai_usage.gif)
 
 ### ⌨️ 快捷键
 

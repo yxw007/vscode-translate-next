@@ -8,13 +8,13 @@
     "email": "aa4790139@gmail.com"
   },
   "description": "A translate vscode extension that supports multiple translation engines",
-  "homepage": "https://github.com/yxw007/vscode-translate-next",
+  "homepage": "https://github.com/yxw007/translate-ide",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yxw007/vscode-translate-next.git"
+    "url": "https://github.com/yxw007/translate-ide.git"
   },
   "bugs": {
-    "url": "https://github.com/yxw007/vscode-translate-next/issues"
+    "url": "https://github.com/yxw007/translate-ide/issues"
   },
   "engines": {
     "vscode": "^1.93.0",
