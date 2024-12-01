@@ -63,4 +63,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh release create "${LATEST_TAG}" --title "v${LATEST_TAG}" --notes "${CHANGELOG_CONTENT}"
+          gh release create "${LATEST_TAG}" --title "${LATEST_TAG}" --notes "${CHANGELOG_CONTENT}"
