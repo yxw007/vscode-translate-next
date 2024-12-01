@@ -33,8 +33,10 @@ jobs:
         run: |
           LATEST_TAG=$(awk '/^## /{print; exit}' CHANGELOG.md | sed 's/^## v//')
           echo "LATEST_TAG=v${LATEST_TAG}" >> $GITHUB_ENV
+          echo "LATEST_TAG:${LATEST_TAG}"
           CHANGELOG_CONTENT=$(awk '/^## '"${LATEST_TAG}"'/{flag=1; next} /^## /{flag=0} flag' CHANGELOG.md)
           echo "CHANGELOG_CONTENT<<EOF" >> $GITHUB_ENV
+          echo "CHANGELOG_CONTENT: ${CHANGELOG_CONTENT}"
           echo "${CHANGELOG_CONTENT}" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
 
