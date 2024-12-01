@@ -1,6 +1,6 @@
 {
   "name": "vscode-translate-next",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "displayName": "vscode-translate-next",
   "publisher": "yxw007",
   "author": {
@@ -8,13 +8,13 @@
     "email": "aa4790139@gmail.com"
   },
   "description": "A translate vscode extension that supports multiple translation engines",
-  "homepage": "https://github.com/yxw007/translate-ide",
+  "homepage": "https://github.com/yxw007/vscode-translate-next",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yxw007/translate-ide.git"
+    "url": "https://github.com/yxw007/vscode-translate-next.git"
   },
   "bugs": {
-    "url": "https://github.com/yxw007/translate-ide/issues"
+    "url": "https://github.com/yxw007/vscode-translate-next/issues"
   },
   "engines": {
     "vscode": "^1.93.0",

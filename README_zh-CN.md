@@ -1,4 +1,4 @@
-# translate-ide
+# vscode-translate-next
 
 简体中文 | [English](./README.md)
 
@@ -40,7 +40,7 @@
 
 ## 🛠️ 使用
 
-下载：[translate-ide](https://marketplace.visualstudio.com/items?itemName=yxw007.translate-ide)
+下载：[vscode-translate-next](https://marketplace.visualstudio.com/items?itemName=yxw007.vscode-translate-next)
 
 - 选中翻译文本
   ![translateText](assets/images/usage.gif)

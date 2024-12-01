@@ -1,4 +1,4 @@
-# translate-ide
+# vscode-translate-next
 
 English | [简体中文](./README_zh-CN.md)
 
@@ -40,7 +40,7 @@ Every programmer must have a vscode translation plugin artifact, it allows you t
 
 ## 🛠️ Usage
 
-Download：[translate-ide](https://marketplace.visualstudio.com/items?itemName=yxw007.translate-ide)
+Download：[vscode-translate-next](https://marketplace.visualstudio.com/items?itemName=yxw007.vscode-translate-next)
 
 - Select translated text
   ![translateText](assets/images/usage.gif)
@@ -103,4 +103,4 @@ Thank you to everyone who has supported and helped me, your support is my greate
 
 ## 📄 License
 
-translate-ide is released under the MIT license. for more information, see the [LICENSE](./LICENSE) file.
+vscode-translate-next is released under the MIT license. for more information, see the [LICENSE](./LICENSE) file.
