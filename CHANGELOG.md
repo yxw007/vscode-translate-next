@@ -1,6 +1,5 @@
 # Changelog
 
-
 ## v0.2.0
 
 [compare changes](https://github.com/yxw007/translate-ide/compare/v0.1.10...v0.2.0)
