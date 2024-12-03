@@ -1,6 +1,30 @@
 # Changelog
 
 
+## v0.2.2
+
+
+
+### 🩹 Fixes
+
+- Pick changelog content mistake 
+- Invalid Access Limit 
+
+### 🏡 Chore
+
+- **ci:** Enable replacing contents in CI workflow 
+- **ci:** Add tag and push to origin if release doesn't exist 
+- **ci:** Add concurrency group and prepare tag for deployment 
+- **ci:** Update CI workflow to enable creating and pushing tags if they don't exist 
+
+### 🤖 CI
+
+- Refactor CI workflow to extract latest tag and use it for release creation 
+
+### ❤️ Contributors
+
+- FreeCoderX <aa4790139@gmail.com>
+
 ## v0.2.1
 
 
