@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.2.3
+
+
+
+### 🚀 Enhancements
+
+- Add concurrency and request gap delay options for translation requests 
+
+### ❤️ Contributors
+
+- FreeCoderX <aa4790139@gmail.com>
+
 ## v0.2.2
 
 

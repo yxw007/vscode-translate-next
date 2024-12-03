@@ -1,6 +1,6 @@
 {
   "name": "vscode-translate-next",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "displayName": "vscode-translate-next",
   "publisher": "yxw007",
   "author": {
@@ -386,6 +386,16 @@
           "type": "number",
           "default": 600000,
           "description": "translate cache time in milliseconds"
+        },
+        "Translate-next.optimize.concurrencyNum": {
+          "type": "number",
+          "default": 4,
+          "description": "Number of concurrent translation requests, Be careful not to set too large, or you will report that the access exceeds the limit"
+        },
+        "Translate-next.optimize.requestGapDelay": {
+          "type": "number",
+          "default": 20,
+          "description": "Translation request interval delay in milliseconds"
         }
       }
     },
