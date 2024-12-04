@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.2.4
+
+
+
+### 🔥 Performance
+
+- Optimize error prompt 
+
+### 🩹 Fixes
+
+- Unable to output logs 
+
+### ❤️ Contributors
+
+- FreeCoderX <aa4790139@gmail.com>
+
 ## v0.2.3
 
 
