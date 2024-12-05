@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.2.6
+
+
+
+### 🔥 Performance
+
+- Temporarily close annoying 54003 error prompt 
+
+### 📖 Documentation
+
+- Add video tutorials link to readme 
+
+### ❤️ Contributors
+
+- FreeCoderX <aa4790139@gmail.com>
+
 ## v0.2.5
 
 
