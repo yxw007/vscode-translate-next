@@ -108,23 +108,6 @@
     "vscode-textmate": "^4.3.0"
   },
   "contributes": {
-    "viewsContainers": {
-      "activitybar": [
-        {
-          "id": "translateNext",
-          "title": "TranslateNext",
-          "icon": "icon.png"
-        }
-      ]
-    },
-    "views": {
-      "translateNext": [
-        {
-          "id": "logView",
-          "name": "log View"
-        }
-      ]
-    },
     "commands": [
       {
         "command": "extension.translateText",
@@ -145,10 +128,6 @@
       {
         "command": "extension.setDefaultLLM",
         "title": "Set default LLM"
-      },
-      {
-        "command": "extension.showLogPanel",
-        "title": "Show Log Panel"
       }
     ],
     "configuration": {
