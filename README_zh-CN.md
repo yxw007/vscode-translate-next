@@ -51,6 +51,10 @@
 - 如何使用openai 
   ![alt text](assets/images/open_ai_usage.gif)
 
+### 📹 视频教程
+- [VSCode必备插件神器，让你更沉浸式写代码](https://www.bilibili.com/video/BV1Y1zMYQEbi/?vd_source=eaea9ad794278c4e15f13efa6d046736)
+- [快速上手vscode翻译神器](https://www.bilibili.com/video/BV1eVzZYoEkf/?vd_source=eaea9ad794278c4e15f13efa6d046736)
+
 ### ⌨️ 快捷键
 
 | 描述             | 快捷键                |
