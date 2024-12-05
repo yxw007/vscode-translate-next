@@ -1,6 +1,27 @@
 # Changelog
 
 
+## v0.2.5
+
+
+
+### 🚀 Enhancements
+
+- Add log panel 
+- Add log panel" 
+
+### 🩹 Fixes
+
+- Avoid error reporting 
+
+### 🏡 Chore
+
+- Collect plugin use information 
+
+### ❤️ Contributors
+
+- FreeCoderX <aa4790139@gmail.com>
+
 ## v0.2.4
 
 
