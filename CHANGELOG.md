@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.2.7
+
+
+
+### 📖 Documentation
+
+- Add Japanese and Korean documents 
+
+### ❤️ Contributors
+
+- FreeCoderX <aa4790139@gmail.com>
+
 ## v0.2.6
 
 
