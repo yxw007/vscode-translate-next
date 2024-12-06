@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.2.8
+
+
+
+### 🚀 Enhancements
+
+- Add a log output panel 
+
+### ❤️ Contributors
+
+- FreeCoderX <aa4790139@gmail.com>
+
 ## v0.2.7
 
 
