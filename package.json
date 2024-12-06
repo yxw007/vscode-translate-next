@@ -108,6 +108,43 @@
     "vscode-textmate": "^4.3.0"
   },
   "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "translateLogs",
+          "title": "vscode-translate-next",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    "views": {
+      "translateLogs": [
+        {
+          "type": "webview",
+          "id": "logView",
+          "name": "logs"
+        }
+      ]
+    },
+    "menus": {
+      "view/title": [
+        {
+          "command": "extension.sortLogsAsc",
+          "when": "view == logView",
+          "group": "navigation"
+        },
+        {
+          "command": "extension.sortLogsDesc",
+          "when": "view == logView",
+          "group": "navigation"
+        },
+        {
+          "command": "extension.clearLogs",
+          "when": "view == logView",
+          "group": "navigation"
+        }
+      ]
+    },
     "commands": [
       {
         "command": "extension.translateText",
@@ -128,6 +165,21 @@
       {
         "command": "extension.setDefaultLLM",
         "title": "Set default LLM"
+      },
+      {
+        "command": "extension.sortLogsAsc",
+        "title": "Sort Logs Asc",
+        "icon": "$(arrow-up)"
+      },
+      {
+        "command": "extension.sortLogsDesc",
+        "title": "Sort Logs Desc",
+        "icon": "$(arrow-down)"
+      },
+      {
+        "command": "extension.clearLogs",
+        "title": "Clear Logs",
+        "icon": "$(trash)"
       }
     ],
     "configuration": {
