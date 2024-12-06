@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.2.9
+
+
+
+### 📖 Documentation
+
+- Updated Terminal Translation Demo 
+
+### ❤️ Contributors
+
+- FreeCoderX <aa4790139@gmail.com>
+
 ## v0.2.8
 
 
