@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.2.10
+
+
+
+### 🩹 Fixes
+
+- Failure of the request cause : translate fail ! Unexpected token 
+
+### ❤️ Contributors
+
+- FreeCoderX <aa4790139@gmail.com>
+
 ## v0.2.9
 
 
