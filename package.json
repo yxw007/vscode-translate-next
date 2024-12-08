@@ -102,8 +102,11 @@
     "deepl-node": "^1.14.0",
     "entities": "^5.0.0",
     "humanize-string": "^3.0.0",
-    "marked": "^5.0.2",
     "onigasm": "^2.2.5",
+    "remark-parse": "^9.0.0",
+    "remark-stringify": "^9.0.1",
+    "unified": "^9.2.2",
+    "unist-util-visit": "^2.0.3",
     "uuid": "^11.0.3",
     "vscode-textmate": "^4.3.0"
   },
