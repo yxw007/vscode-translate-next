@@ -98,7 +98,7 @@
   },
   "dependencies": {
     "@amplitude/analytics-node": "^1.3.6",
-    "@yxw007/translate": "^0.1.5",
+    "@yxw007/translate": "^0.1.6",
     "deepl-node": "^1.14.0",
     "entities": "^5.0.0",
     "humanize-string": "^3.0.0",
