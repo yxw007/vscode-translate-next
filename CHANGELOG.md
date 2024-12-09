@@ -1,6 +1,26 @@
 # Changelog
 
 
+## v0.2.11
+
+
+
+### 🩹 Fixes
+
+- **deepl:** Bad Request Parameter 'text' not specified 
+
+### 💅 Refactors
+
+- Re implement the code prompt mplementation method 
+
+### 🏡 Chore
+
+- Adjust the logView resource directory structure 
+
+### ❤️ Contributors
+
+- FreeCoderX <aa4790139@gmail.com>
+
 ## v0.2.10
 
 
