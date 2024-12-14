@@ -57,14 +57,16 @@ Download：[vscode-translate-next](https://marketplace.visualstudio.com/items?it
     
 ### ⌨️ Shortcut key
 
-| Description                                                         | Shortcut key          |
-| ------------------------------------------------------------------- | --------------------- |
-| The translation is selected from source language to Target language | Shift + Alt + T       |
-| Switch the target language                                          | Ctrl + Alt + Shit + L |
-| Switch the default translation engine                               | Alt + Shit + E        |
-| Viewing Plugin Output Logs                                          | Alt + Shit + O        |
-| Cleaning the plugin output log                                      | Alt + C               |
-| Translate the selected text in the terminal                         | Alt + `               |
+| Description                                                         | Shortcut key                                              |
+| ------------------------------------------------------------------- | --------------------------------------------------------- |
+| The translation is selected from source language to Target language | Shift + Alt + T                                           |
+| Switch the target language                                          | Ctrl + Alt + Shit + L (Mac os: Command + Alt + Shift + L) |
+| Switch the default translation engine                               | Alt + Shit + E                                            |
+| Viewing Plugin Output Logs                                          | Ctrl + Alt + Shit + O (Mac os: Command + Alt + Shift + O) |
+| Cleaning the plugin output log                                      | Ctrl + Alt + C   (Mac os: Command + Alt + C)              |
+| Translate the selected text in the terminal                         | Alt + `                                                   |
+| Clean the terminal translation log                                  | Alt + C                                                   |
+| Open the terminal translation panel                                 | Alt + Shift + O                                           |
 
 Tip: If your editor environment has conflicting shortcuts, you can modify and adjust them yourself. If you forget the shortcut keys, you can use the status bar button provided in the bottom status bar to switch between the target language and the default translation engine, as shown in the following figure:
 

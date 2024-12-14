@@ -1,6 +1,6 @@
 {
   "name": "vscode-translate-next",
-  "version": "0.2.11",
+  "version": "0.2.12",
   "displayName": "vscode-translate-next",
   "publisher": "yxw007",
   "author": {
@@ -114,17 +114,17 @@
     "viewsContainers": {
       "activitybar": [
         {
-          "id": "translateLogs",
+          "id": "translateTerminalLogs",
           "title": "vscode-translate-next",
           "icon": "icon.png"
         }
       ]
     },
     "views": {
-      "translateLogs": [
+      "translateTerminalLogs": [
         {
           "type": "webview",
-          "id": "logView",
+          "id": "translateTerminalLogView",
           "name": "logs"
         }
       ]
@@ -132,18 +132,18 @@
     "menus": {
       "view/title": [
         {
-          "command": "extension.sortLogsAsc",
-          "when": "view == logView",
+          "command": "extension.sortTerminalTranslateLogsAsc",
+          "when": "view == translateTerminalLogView",
           "group": "navigation"
         },
         {
-          "command": "extension.sortLogsDesc",
-          "when": "view == logView",
+          "command": "extension.sortTerminalTranslateLogsDesc",
+          "when": "view == translateTerminalLogView",
           "group": "navigation"
         },
         {
-          "command": "extension.clearLogs",
-          "when": "view == logView",
+          "command": "extension.clearTerminalTranslateLogs",
+          "when": "view == translateTerminalLogView",
           "group": "navigation"
         }
       ]
@@ -170,17 +170,17 @@
         "title": "Set default LLM"
       },
       {
-        "command": "extension.sortLogsAsc",
+        "command": "extension.sortTerminalTranslateLogsAsc",
         "title": "Sort Logs Asc",
         "icon": "$(arrow-up)"
       },
       {
-        "command": "extension.sortLogsDesc",
+        "command": "extension.sortTerminalTranslateLogsDesc",
         "title": "Sort Logs Desc",
         "icon": "$(arrow-down)"
       },
       {
-        "command": "extension.clearLogs",
+        "command": "extension.clearTerminalTranslateLogs",
         "title": "Clear Logs",
         "icon": "$(trash)"
       }
@@ -459,37 +459,57 @@
         "command": "extension.translateText",
         "key": "alt+shift+t",
         "mac": "alt+shift+t",
-        "when": "editorTextFocus"
+        "when": "editorTextFocus",
+        "description": "Translate selections"
       },
       {
         "command": "extension.setTargetLanguage",
         "key": "ctrl+alt+shift+l",
         "mac": "cmd+alt+shift+l",
-        "when": "editorTextFocus"
+        "when": "editorTextFocus",
+        "description": "Set target language"
       },
       {
         "command": "extension.setDefaultEngine",
         "key": "alt+shift+e",
         "mac": "alt+shift+e",
-        "when": "editorTextFocus"
+        "when": "editorTextFocus",
+        "description": "Set default translation engine"
       },
       {
         "command": "extension.openOutputPanel",
-        "key": "alt+shift+o",
-        "mac": "alt+shift+o",
-        "when": "editorTextFocus || terminalFocus"
+        "key": "ctrl+alt+shift+o",
+        "mac": "command+alt+shift+o",
+        "when": "editorTextFocus || terminalFocus",
+        "description": "open output logs panel"
       },
       {
         "command": "extension.clearOutputPanel",
-        "key": "alt+c",
-        "mac": "alt+c",
-        "when": "editorTextFocus"
+        "key": "ctrl+alt+c",
+        "mac": "command+alt+c",
+        "when": "editorTextFocus",
+        "description": "clear output logs panel"
+      },
+      {
+        "command": "extension.openTerminalTranslateView",
+        "key": "alt+shift+o",
+        "mac": "alt+shift+o",
+        "when": "editorTextFocus || terminalFocus",
+        "description": "open terminal translate logs view"
       },
       {
         "command": "extension.translateTerminalText",
         "key": "alt+`",
         "mac": "alt+`",
-        "when": "terminalFocus"
+        "when": "terminalFocus",
+        "description": "Translate terminal selections text"
+      },
+      {
+        "command": "extension.clearTerminalTranslateLogs",
+        "key": "alt+c",
+        "mac": "alt+c",
+        "when": "editorTextFocus || terminalFocus",
+        "description": "clear terminal translate logs view"
       }
     ],
     "icons": {

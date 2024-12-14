@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.2.12
+
+
+
+### 💅 Refactors
+
+- Plugin and terminal log are displayed separately to avoid reading terminal translation log 
+
+### ❤️ Contributors
+
+- FreeCoderX <aa4790139@gmail.com>
+
 ## v0.2.11
 
 
