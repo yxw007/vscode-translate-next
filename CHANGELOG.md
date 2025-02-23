@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.2.13
+
+
+
+### 🩹 Fixes
+
+- Too many requests, avoid non-stop pop-ups 
+
+### ❤️ Contributors
+
+- FreeCoderX <aa4790139@gmail.com>
+
 ## v0.2.12
 
 
