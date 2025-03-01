@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.2.14
+
+
+
+### 🩹 Fixes
+
+- Solve the problem of shortcuts not found and normalize shortcut naming descriptions 
+
+### ❤️ Contributors
+
+- FreeCoderX <aa4790139@gmail.com>
+
 ## v0.2.13
 
 
