@@ -170,6 +170,22 @@
         "title": "Set default LLM"
       },
       {
+        "command": "extension.translateTerminalText",
+        "title": "Translate terminal selections text"
+      },
+      {
+        "command": "extension.clearOutputPanel",
+        "title": "Clear output logs panel"
+      },
+      {
+        "command": "extension.openTerminalTranslateView",
+        "title": "Open terminal translate logs view"
+      },
+      {
+        "command": "extension.openOutputPanel",
+        "title": "Open output logs panel"
+      },
+      {
         "command": "extension.sortTerminalTranslateLogsAsc",
         "title": "Sort Logs Asc",
         "icon": "$(arrow-up)"
@@ -181,7 +197,8 @@
       },
       {
         "command": "extension.clearTerminalTranslateLogs",
-        "title": "Clear Logs",
+        "title": "Clear terminal translate logs view",
+        "shortTitle": "Clear Logs",
         "icon": "$(trash)"
       }
     ],
@@ -481,21 +498,21 @@
         "key": "ctrl+alt+shift+o",
         "mac": "command+alt+shift+o",
         "when": "editorTextFocus || terminalFocus",
-        "description": "open output logs panel"
+        "description": "Open output logs panel"
       },
       {
         "command": "extension.clearOutputPanel",
         "key": "ctrl+alt+c",
         "mac": "command+alt+c",
         "when": "editorTextFocus",
-        "description": "clear output logs panel"
+        "description": "Clear output logs panel"
       },
       {
         "command": "extension.openTerminalTranslateView",
         "key": "alt+shift+o",
         "mac": "alt+shift+o",
         "when": "editorTextFocus || terminalFocus",
-        "description": "open terminal translate logs view"
+        "description": "Open terminal translate logs view"
       },
       {
         "command": "extension.translateTerminalText",
@@ -509,7 +526,7 @@
         "key": "alt+c",
         "mac": "alt+c",
         "when": "editorTextFocus || terminalFocus",
-        "description": "clear terminal translate logs view"
+        "description": "Clear terminal translate logs view"
       }
     ],
     "icons": {
