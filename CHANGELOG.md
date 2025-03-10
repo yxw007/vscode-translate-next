@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.2.15
+
+
+
+### 🩹 Fixes
+
+- Prevent duplicate translations by adding a pending cache 
+
+### ❤️ Contributors
+
+- FreeCoderX <aa4790139@gmail.com>
+
 ## v0.2.14
 
 
