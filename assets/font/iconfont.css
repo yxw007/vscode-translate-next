@@ -1,9 +1,9 @@
 @font-face {
   font-family: "iconfont"; /* Project id 3956252 */
-  src: url('iconfont.woff2?t=1732892811247') format('woff2'),
-       url('iconfont.woff?t=1732892811247') format('woff'),
-       url('iconfont.ttf?t=1732892811247') format('truetype'),
-       url('iconfont.svg?t=1732892811247#iconfont') format('svg');
+  src: url('iconfont.woff2?t=1741873994372') format('woff2'),
+       url('iconfont.woff?t=1741873994372') format('woff'),
+       url('iconfont.ttf?t=1741873994372') format('truetype'),
+       url('iconfont.svg?t=1741873994372#iconfont') format('svg');
 }
 
 .iconfont {
@@ -12,6 +12,10 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-a-fanyi3x:before {
+  content: "\e67a";
 }
 
 .icon-model-lib:before {

@@ -146,12 +146,18 @@
           "when": "view == translateTerminalLogView",
           "group": "navigation"
         }
+      ],
+      "editor/context": [
+        {
+          "command": "extension.replaceTranslateSelectedText",
+          "when": "editorTextFocus && editorHasSelection"
+        }
       ]
     },
     "commands": [
       {
-        "command": "extension.translateText",
-        "title": "Translate selections"
+        "command": "extension.replaceTranslateSelectedText",
+        "title": "Replace Translate Selected Text"
       },
       {
         "command": "extension.setTargetLanguage",
@@ -454,6 +460,12 @@
           "order": 25,
           "description": "open output panel"
         },
+        "Translate-next.showTerminalSelectTranslateBar": {
+          "type": "boolean",
+          "default": false,
+          "order": 26,
+          "description": "show terminal selected text translate status bar"
+        },
         "Translate-next.cacheTime": {
           "type": "number",
           "default": 600000,
@@ -473,11 +485,11 @@
     },
     "keybindings": [
       {
-        "command": "extension.translateText",
+        "command": "extension.replaceTranslateSelectedText",
         "key": "alt+shift+t",
         "mac": "alt+shift+t",
         "when": "editorTextFocus",
-        "description": "Translate selections"
+        "description": "Replace Translate selected text"
       },
       {
         "command": "extension.setTargetLanguage",
@@ -556,6 +568,13 @@
         "default": {
           "fontPath": "assets/font/iconfont.woff",
           "fontCharacter": "\\e615"
+        }
+      },
+      "translate-selected": {
+        "description": "translate icon",
+        "default": {
+          "fontPath": "assets/font/iconfont.woff",
+          "fontCharacter": "\\e67a"
         }
       }
     }

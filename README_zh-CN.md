@@ -59,7 +59,7 @@
 
 | 描述             | 快捷键                                                     |
 | ---------------- | ---------------------------------------------------------- |
-| 翻译选中文本     | Shift + Alt + T                                            |
+| 替换翻译选中文本 | Shift + Alt + T                                            |
 | 切换目标语言     | Ctrl + Alt + Shift + L (Mac os: Command + Alt + Shift + L) |
 | 切换默认翻译引擎 | Alt + Shift + E                                            |
 | 查看插件输出日志 | Ctrl + Alt + Shift + O (Mac os: Command + Alt + Shift + O) |
