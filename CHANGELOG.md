@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.3.0
+
+
+
+### 🚀 Enhancements
+
+- Add terminal translation selected bar and Right click to select text replace translation 
+
+### 🩹 Fixes
+
+- Update shortcut descriptions for clarity and consistency across multiple languages 
+
+### ❤️ Contributors
+
+- FreeCoderX <aa4790139@gmail.com>
+
 ## v0.2.15
 
 
