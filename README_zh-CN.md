@@ -14,6 +14,7 @@
 - 支持多翻译引擎：Google,Azure,Amazon,Baidu,deepl等
 - 支持从一种语言翻译至各种语言
 - 支持悬停翻译
+- 替换选中文本翻译
 - 支持终端选中文本翻译
 
 ## 📋 要求
@@ -91,6 +92,22 @@
     | 54003  | 访问受限   | 开通的服务可能是通用文本翻译服务，需要改成领域翻译服务 |
     
   > 更多错误码，请查看 [错误码列表](https://api.fanyi.baidu.com/doc/22)
+
+4. 按快捷键无效，怎么解决？
+   - 可能情况1：vscode中的快捷键冲突，修改冲突的快捷键即可
+   - 可能情况2：快捷键与外部软件快捷键冲突，逐步退出外部软件，排查冲突软件，然后修改快捷键
+   - 隐藏功能：
+     - 编辑视图可以右键替换选中翻译
+        ![alt text](/assets/images/right-click-translate.gif)
+     - 终端选中文本翻译，可以在设置界面中将其打开在底部栏显示
+        ![alt text](/assets/images/click-bottom-translate-bar.gif)
+
+5. 如果避免大量翻译字符消耗?
+   - 加大缓存时间
+     ![alt text](/assets/images/add-cache-time.png)
+   - 自主控制要开启和关闭的翻译功能
+    ![alt text](/assets/images/custom-feature.png)
+   - 避免选中大量文本，然后hover到选中文本上，此时如果开启了hover翻译，就会快速消耗大量翻译字符，所以应该避免这种操作
 
 ## 📢 更多
 

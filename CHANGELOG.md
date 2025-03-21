@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.3.1
+
+
+
+### 📖 Documentation
+
+- Update README files to include selected text translation feature and troubleshooting tips 
+
+### ❤️ Contributors
+
+- FreeCoderX <aa4790139@gmail.com>
+
 ## v0.3.0
 
 

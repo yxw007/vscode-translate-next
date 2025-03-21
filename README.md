@@ -14,6 +14,7 @@ Every programmer must have a vscode translation plugin artifact, it allows you t
 - Support for multiple translation engines: Google, Azure, Amazon, Baidu, Deepl, etc
 - Support for translation from one language to any language
 - Support hover translate
+- Replace selected text translation
 - Supports translation of selected text in terminals
 
 ## 📋 Requirements
@@ -91,7 +92,23 @@ Tip: If your editor environment has conflicting shortcuts, you can modify and ad
     | 54003      | restricted access | The opened service may be a generic text translation service, which needs to be switched to a domain translation service. |
     
   > For more error codes, see [Error Code List](https://api.fanyi.baidu.com/doc/22).
-   
+
+4. Pressing a shortcut doesn't work, how can I fix it?
+    - Possible situation 1: The shortcuts in vscode conflict, just modify the conflicting shortcuts
+    - Possible situation 2: The shortcut conflicts with the external software shortcut, gradually exit the external software, troubleshoot the conflicting software, and then modify the shortcut
+    - Hidden features:
+      - In the edit view, you can right click to replace the selected translation
+        ![alt text](/assets/images/right-click-translate.gif)
+      - Select Text Translation on the terminal, and you can open it in the settings interface and display it in the bottom bar
+        ![alt text](/assets/images/click-bottom-translate-bar.gif)
+
+5. If you avoid the consumption of large numbers of translated characters?
+   - Increase cache time
+     ![alt text](/assets/images/add-cache-time.png)
+   - Control which translation features you want to turn on and off
+    ![alt text](/assets/images/custom-feature.png)
+   - Avoid selecting a large amount of text, then hover over the selected text. At this point, if hover translation is enabled, it will quickly consume a large number of translated characters, so you should avoid this operation
+
 
 ## 📢 More
 
