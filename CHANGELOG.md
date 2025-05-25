@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.3.2
+
+
+
+### 📖 Documentation
+
+- Update contact information 
+
+### ❤️ Contributors
+
+- FreeCoderX <aa4790139@gmail.com>
+
 ## v0.3.1
 
 

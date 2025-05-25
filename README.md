@@ -113,7 +113,7 @@ Tip: If your editor environment has conflicting shortcuts, you can modify and ad
 ## 📢 More
 
 - To configure other translation engines, you can read the documentation [translate README](https://github.com/yxw007/translate/blob/master/README_zh-CN.md)
-- If you encounter problems and don't know how to solve them, you can leave me a message, add my wechat, or submit the Issue.
+- If you encounter problems and don't know how to solve them, you can leave me a message, add my wechat(aa4790139), or submit the Issue.
 - This plugin if particularly helpful and greatly improves your efficiency. You can：
     - Follow me + one-click trifecta of my videos (bilibili: [向往自由的码](https://space.bilibili.com/3546754775517426?spm_id_from=333.788.0.0))
     - Points on github for helping my project star ⭐

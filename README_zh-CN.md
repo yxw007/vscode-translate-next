@@ -112,7 +112,7 @@
 ## 📢 更多
 
 - 配置其他翻译引擎，可以阅读文档[translate README](https://github.com/yxw007/translate/blob/master/README_zh-CN.md)
-- 碰到问题不知道怎么解决，可以给我留言、加我微信、提Issue 都可以
+- 碰到问题不知道怎么解决，可以给我留言、加我微信(aa4790139)、提Issue 都可以
 - 此插件如果对你帮助特别大，大大提升了你的效率。你可以：
     - 关注我 + 一键三连我的视频 (bilibili: [向往自由的码](https://space.bilibili.com/3546754775517426?spm_id_from=333.788.0.0))
     - github上帮我项目的点star ⭐
