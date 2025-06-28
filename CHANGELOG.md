@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.4.0
+
+
+
+### 💅 Refactors
+
+- Pop-up prompts to avoid the annoying experience of constantly popping up boxes 
+
+### ❤️ Contributors
+
+- FreeCoderX <aa4790139@gmail.com>
+
 ## v0.3.2
 
 
