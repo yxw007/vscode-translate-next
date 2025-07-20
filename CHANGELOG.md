@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.5.0
+
+
+
+### 🚀 Enhancements
+
+- Add tencent translate engine 
+
+### ❤️ Contributors
+
+- FreeCoderX <aa4790139@gmail.com>
+
 ## v0.4.0
 
 
