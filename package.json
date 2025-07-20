@@ -94,11 +94,11 @@
     "lint-staged": "^15.2.10",
     "npm-run-all": "^4.1.5",
     "typescript": "^5.6.2",
-    "vsce": "^2.15.0"
+    "vsce": "^1.97.0"
   },
   "dependencies": {
     "@amplitude/analytics-node": "^1.3.6",
-    "@yxw007/translate": "^0.1.6",
+    "@yxw007/translate": "^0.3.1",
     "deepl-node": "^1.14.0",
     "entities": "^5.0.0",
     "humanize-string": "^3.0.0",
@@ -214,7 +214,8 @@
         "Translate-next.targetLanguage": {
           "type": "string",
           "default": "English",
-          "description": "Change target language"
+          "description": "Change target language",
+          "order": 1
         },
         "Translate-next.defaultEngine": {
           "type": "string",
@@ -224,14 +225,95 @@
             "amazon",
             "baidu",
             "deepl",
-            "openai"
+            "openai",
+            "tencent"
           ],
           "default": "google",
-          "description": "The translation engine to use"
+          "description": "The translation engine to use",
+          "order": 2
+        },
+        "Translate-next.hover.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable hover translation",
+          "order": 3
+        },
+        "Translate-next.hover.string": {
+          "type": "boolean",
+          "default": false,
+          "order": 4,
+          "description": "string hover"
+        },
+        "Translate-next.hover.variable": {
+          "type": "boolean",
+          "default": false,
+          "order": 5,
+          "description": "variable hover"
+        },
+        "Translate-next.hover.prompt": {
+          "type": "boolean",
+          "default": true,
+          "order": 6,
+          "description": "prompt hover"
+        },
+        "Translate-next.hover.comment": {
+          "type": "boolean",
+          "default": true,
+          "order": 7,
+          "description": "comment hover"
+        },
+        "Translate-next.hover.diagnostics": {
+          "type": "boolean",
+          "default": true,
+          "order": 8,
+          "description": "diagnostics hover"
+        },
+        "Translate-next.parentLanguage": {
+          "type": "string",
+          "default": "Chinese",
+          "order": 9
+        },
+        "Translate-next.multiLineMerge": {
+          "type": "boolean",
+          "default": false,
+          "order": 10,
+          "description": "multiline merge"
+        },
+        "Translate-next.openOutputPanel": {
+          "type": "boolean",
+          "default": false,
+          "order": 11,
+          "description": "open output panel"
+        },
+        "Translate-next.showTerminalSelectTranslateBar": {
+          "type": "boolean",
+          "default": false,
+          "order": 12,
+          "description": "show terminal selected text translate status bar"
+        },
+        "Translate-next.cacheTime": {
+          "type": "number",
+          "default": 600000,
+          "description": "translate cache time in milliseconds",
+          "order": 13
+        },
+        "Translate-next.optimize.concurrencyNum": {
+          "type": "number",
+          "default": 4,
+          "description": "Number of concurrent translation requests, Be careful not to set too large, or you will report that the access exceeds the limit",
+          "order": 14
+        },
+        "Translate-next.optimize.requestGapDelay": {
+          "type": "number",
+          "default": 20,
+          "description": "Translation request interval delay in milliseconds",
+          "order": 15
         },
         "Translate-next.deepl.key": {
           "type": "string",
-          "default": null
+          "default": null,
+          "description": "DeepL API key",
+          "order": 100
         },
         "Translate-next.azure.region": {
           "type": "string",
@@ -325,11 +407,14 @@
             "brazilsoutheast"
           ],
           "default": "eastasia",
-          "markdownDescription": "Notice: select the region selected when you create the translate application on azure. Otherwise, 401001 is displayed"
+          "markdownDescription": "Notice: select the region selected when you create the translate application on azure. Otherwise, 401001 is displayed",
+          "order": 100
         },
         "Translate-next.azure.key": {
           "type": "string",
-          "default": null
+          "default": null,
+          "description": "Azure Translate API key",
+          "order": 100
         },
         "Translate-next.amazon.region": {
           "type": "string",
@@ -352,27 +437,68 @@
             "us-gov-west-1"
           ],
           "default": "ap-southeast-1",
-          "markdownDescription": "The region to use for Amazon Translate, [More](https://docs.aws.amazon.com/general/latest/gr/translate-service.html)"
+          "markdownDescription": "The region to use for Amazon Translate, [More](https://docs.aws.amazon.com/general/latest/gr/translate-service.html)",
+          "order": 100
         },
         "Translate-next.amazon.keyId": {
           "type": "string",
-          "default": null
+          "default": null,
+          "order": 100
         },
         "Translate-next.amazon.accessKey": {
           "type": "string",
-          "default": null
+          "default": null,
+          "order": 100
         },
         "Translate-next.baidu.appId": {
           "type": "string",
-          "default": null
+          "default": null,
+          "order": 100
         },
         "Translate-next.baidu.secretKey": {
           "type": "string",
-          "default": null
+          "default": null,
+          "order": 100
+        },
+        "Translate-next.tencent.secretId": {
+          "type": "string",
+          "default": null,
+          "description": "Tencent Cloud SecretId",
+          "order": 100
+        },
+        "Translate-next.tencent.secretKey": {
+          "type": "string",
+          "default": null,
+          "description": "Tencent Cloud SecretKey",
+          "order": 100
+        },
+        "Translate-next.tencent.region": {
+          "type": "string",
+          "enum": [
+            "ap-bangkok",
+            "ap-beijing",
+            "ap-chengdu",
+            "ap-chongqing",
+            "ap-guangzhou",
+            "ap-hongkong",
+            "ap-seoul",
+            "ap-shanghai",
+            "ap-shanghai-fsi",
+            "ap-shenzhen-fsi",
+            "ap-singapore",
+            "ap-tokyo",
+            "eu-frankfurt",
+            "na-ashburn",
+            "na-siliconvalley"
+          ],
+          "default": "ap-shenzhen-fsi",
+          "description": "Tencent Cloud SecretKey",
+          "order": 100
         },
         "Translate-next.openai.apiKey": {
           "type": "string",
-          "default": null
+          "default": null,
+          "order": 110
         },
         "Translate-next.openai.llm": {
           "type": "string",
@@ -402,84 +528,14 @@
             "tts-1-1106",
             "gpt-3.5-turbo-instruct-0914"
           ],
-          "default": "gpt-3.5-turbo"
+          "default": "gpt-3.5-turbo",
+          "order": 110
         },
         "Translate-next.openai.outputLog": {
           "type": "boolean",
           "default": false,
-          "description": "output openai log"
-        },
-        "Translate-next.hover.enable": {
-          "type": "boolean",
-          "default": true,
-          "description": "Enable hover translation"
-        },
-        "Translate-next.hover.string": {
-          "type": "boolean",
-          "default": false,
-          "order": 24,
-          "description": "string hover"
-        },
-        "Translate-next.hover.variable": {
-          "type": "boolean",
-          "default": false,
-          "order": 24,
-          "description": "variable hover"
-        },
-        "Translate-next.hover.prompt": {
-          "type": "boolean",
-          "default": true,
-          "order": 24,
-          "description": "prompt hover"
-        },
-        "Translate-next.hover.comment": {
-          "type": "boolean",
-          "default": true,
-          "order": 24,
-          "description": "comment hover"
-        },
-        "Translate-next.hover.diagnostics": {
-          "type": "boolean",
-          "default": true,
-          "order": 24,
-          "description": "diagnostics hover"
-        },
-        "Translate-next.parentLanguage": {
-          "type": "string",
-          "default": "Chinese"
-        },
-        "Translate-next.multiLineMerge": {
-          "type": "boolean",
-          "default": false,
-          "order": 25,
-          "description": "multiline merge"
-        },
-        "Translate-next.openOutputPanel": {
-          "type": "boolean",
-          "default": false,
-          "order": 25,
-          "description": "open output panel"
-        },
-        "Translate-next.showTerminalSelectTranslateBar": {
-          "type": "boolean",
-          "default": false,
-          "order": 26,
-          "description": "show terminal selected text translate status bar"
-        },
-        "Translate-next.cacheTime": {
-          "type": "number",
-          "default": 600000,
-          "description": "translate cache time in milliseconds"
-        },
-        "Translate-next.optimize.concurrencyNum": {
-          "type": "number",
-          "default": 4,
-          "description": "Number of concurrent translation requests, Be careful not to set too large, or you will report that the access exceeds the limit"
-        },
-        "Translate-next.optimize.requestGapDelay": {
-          "type": "number",
-          "default": 20,
-          "description": "Translation request interval delay in milliseconds"
+          "description": "output openai log",
+          "order": 110
         }
       }
     },
