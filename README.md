@@ -31,13 +31,13 @@ Every programmer must have a vscode translation plugin artifact, it allows you t
 
 | Name             | Support | Description                                                                                                                                               |
 | ---------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| google           | √       | Commissioned and ready for use                                                                                                                            |
-| azure translate  | √       | Commissioned and ready for use                                                                                                                            |
-| amazon translate | √       | Commissioned and ready for use                                                                                                                            |
-| baidu            | √       | Commissioned and ready for use                                                                                                                            |
-| deepl            | √       | Commissioned and ready for use                                                                                                                            |
-| openai           | √       | Commissioned and ready for use     (Poor results, cue words are hard to tune in)                                                                          |
-| tencent          | √       | Commissioned and ready for use                                                                                                                            |
+| google           | ✔       | Commissioned and ready for use                                                                                                                            |
+| azure translate  | ✔       | Commissioned and ready for use                                                                                                                            |
+| amazon translate | ✔       | Commissioned and ready for use                                                                                                                            |
+| baidu            | ✔       | Commissioned and ready for use                                                                                                                            |
+| deepl            | ✔       | Commissioned and ready for use                                                                                                                            |
+| openai           | ✔       | Commissioned and ready for use     (Poor results, cue words are hard to tune in)                                                                          |
+| tencent          | ✔       | Commissioned and ready for use                                                                                                                            |
 | yandex           |         | I have not tuned in as I do not have a bank account supported by the platform (help from those who are in a position to do so is welcome and appreciated) |
 
 ## 🛠️ Usage

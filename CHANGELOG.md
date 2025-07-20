@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.5.1
+
+
+
+### 📖 Documentation
+
+- Fix minor detail issues 
+
+### ❤️ Contributors
+
+- FreeCoderX <aa4790139@gmail.com>
+
 ## v0.5.0
 
 

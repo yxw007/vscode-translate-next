@@ -1,6 +1,6 @@
 {
   "name": "vscode-translate-next",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "displayName": "vscode-translate-next",
   "publisher": "yxw007",
   "author": {
@@ -35,7 +35,9 @@
     "azure translator",
     "amazon translate",
     "baidu",
-    "deepl"
+    "deepl",
+    "openai",
+    "tencent"
   ],
   "license": "MIT",
   "activationEvents": [
