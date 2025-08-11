@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.6.0
+
+
+
+### 🚀 Enhancements
+
+- Add language detection to skip translation if the target language is native language 
+
+### ❤️ Contributors
+
+- FreeCoderX <aa4790139@gmail.com>
+
 ## v0.5.1
 
 
