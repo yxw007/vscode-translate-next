@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.6.1
+
+
+
+### 📖 Documentation
+
+- Update README files to include support options and gratitude for users 
+
+### ❤️ Contributors
+
+- FreeCoderX <aa4790139@gmail.com>
+
 ## v0.6.0
 
 

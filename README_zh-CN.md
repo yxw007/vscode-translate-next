@@ -8,6 +8,21 @@
 
 > 说明：由[translate](https://github.com/yxw007/translate)提供底层翻译支持
 
+## 💖 支持我
+
+如果此工具帮助你节省了时间、提升了工作效率，欢迎你用以下方式来支持我继续开发与维护：
+
+- 成为我的赞助人（GitHub Sponsors）：https://github.com/sponsors/yxw007
+
+- 请我喝杯咖啡☕（小额打赏）——每一份支持都能带来持续改进和更多新特性。
+
+  ![alt text](assets/images/give_a_reward.jpg)
+
+- 关注我 + 一键三连我的视频 (bilibili: [向往自由的码](https://space.bilibili.com/3546754775517426?spm_id_from=333.788.0.0))
+- 在 GitHub 点个 Star⭐、把插件推荐给身边的开发者，这些都是极大的鼓励。
+
+每一份支持我都非常感谢❤️，会优先用于功能迭代和测试。如果你有特别的建议或希望我做的功能，欢迎通过 Issue 或私信联系。
+
 ## ✨ 特性
 
 - 简单易用
@@ -114,15 +129,7 @@
 
 - 配置其他翻译引擎，可以阅读文档[translate README](https://github.com/yxw007/translate/blob/master/README_zh-CN.md)
 - 碰到问题不知道怎么解决，可以给我留言、加我微信(aa4790139)、提Issue 都可以
-- 此插件如果对你帮助特别大，大大提升了你的效率。你可以：
-    - 关注我 + 一键三连我的视频 (bilibili: [向往自由的码](https://space.bilibili.com/3546754775517426?spm_id_from=333.788.0.0))
-    - github上帮我项目的点star ⭐
-    - 对产品提升有更好的建议和想法，私信告诉我
-    - 成为我的赞助人： https://github.com/sponsors/yxw007
-    - 打赏我，请我喝杯咖啡☕
-        ![alt text](assets/images/give_a_reward.jpg)
 
-感谢每一位支持和帮助过我的人，您的支持是我最大的动力！❤️
 
 ## 📄 许可证
 

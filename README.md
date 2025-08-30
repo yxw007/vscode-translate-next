@@ -8,6 +8,21 @@ Every programmer must have a vscode translation plugin artifact, it allows you t
 
 > Note: Underlying translation support provided by [translate](https://github.com/yxw007/translate)
 
+## 💖 Support me
+
+If this tool helps you save time and improve work efficiency, please support me in the following ways to continue development and maintenance:
+
+- Become my sponsor（GitHub Sponsors）：https://github.com/sponsors/yxw007
+
+- Give me a cup of coffee☕ (small reward) – every support can bring continuous improvement and more new features.
+
+  ![alt text](assets/images/give_a_reward.jpg)
+
+- Follow me Three-click videos (bilibili: [向往自由的码](https://space.bilibili.com/3546754775517426?spm_id_from=333.788.0.0))
+- Clicking a Star⭐ on GitHub and recommending plugins to developers around you are all great encouragement.
+
+I am very grateful for every support ❤️, which will be given priority for feature iteration and testing. If you have any special suggestions or wish I made a feature, please contact me via Issue or a private message.
+
 ## ✨ Features
 
 - Simple and easy to use
@@ -115,15 +130,6 @@ Tip: If your editor environment has conflicting shortcuts, you can modify and ad
 
 - To configure other translation engines, you can read the documentation [translate README](https://github.com/yxw007/translate/blob/master/README_zh-CN.md)
 - If you encounter problems and don't know how to solve them, you can leave me a message, add my wechat(aa4790139), or submit the Issue.
-- This plugin if particularly helpful and greatly improves your efficiency. You can：
-    - Follow me + one-click trifecta of my videos (bilibili: [向往自由的码](https://space.bilibili.com/3546754775517426?spm_id_from=333.788.0.0))
-    - Points on github for helping my project star ⭐
-    - Have better suggestions and ideas for product enhancements, private message me!
-    - Become my sponsor： https://github.com/sponsors/yxw007
-    - Reward me and buy me a cup of coffee ☕
-        ![alt text](assets/images/give_a_reward.jpg)
-
-Thank you to everyone who has supported and helped me, your support is my greatest motivation!❤️
 
 ## 📄 License
 
