@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.7.0
+
+
+
+### 🚀 Enhancements
+
+- Cache engine relative parent language to avoid duplicate settings 
+
+### ❤️ Contributors
+
+- Yxw007 ([@yxw007](http://github.com/yxw007))
+
 ## v0.6.1
 
 
