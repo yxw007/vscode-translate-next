@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.8.1
+
+
+
+### 🩹 Fixes
+
+- Hover default language incorrectly defaults to target language 
+
+### ❤️ Contributors
+
+- Yxw007 ([@yxw007](http://github.com/yxw007))
+
 ## v0.8.0
 
 
