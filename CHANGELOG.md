@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.9.0
+
+
+
+### 🚀 Enhancements
+
+- Default display bottom terminal translation button and adjust terminal translation shortcuts 
+
+### 📖 Documentation
+
+- Add terminal translation button hint and update shortcut keys in documentation 
+
+### ❤️ Contributors
+
+- Yxw007 ([@yxw007](http://github.com/yxw007))
+
 ## v0.8.1
 
 

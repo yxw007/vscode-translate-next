@@ -65,6 +65,8 @@
   ![hover](assets/images/hover.gif)
 - 翻译终端选中文本
   ![translate-terminal-text](assets/images/translate-terminal-text.gif)
+  (提示：如果快捷键失效，可以点底部栏终端文本翻译按钮)
+  ![translate-terminal-shortcut-bnt](assets/images/terminalShortcutBtn.jpg)
 - 如何使用openai 
   ![alt text](assets/images/open_ai_usage.gif)
 
@@ -81,7 +83,7 @@
 | 切换默认翻译引擎 | Alt + Shift + E                                            |
 | 查看插件输出日志 | Ctrl + Alt + Shift + O (Mac os: Command + Alt + Shift + O) |
 | 清理插件输出日志 | Ctrl + Alt + C (Mac os: Command + Alt + C)                 |
-| 翻译终端选中文本 | Alt + `                                                    |
+| 翻译终端选中文本 | Ctrl + Alt + ` (Mac os: Command + Alt + `)                 |
 | 清理终端翻译日志 | Alt + C                                                    |
 | 打开终端翻译面板 | Alt + Shift + O                                            |
 

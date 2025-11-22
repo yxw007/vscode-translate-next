@@ -1,6 +1,6 @@
 {
   "name": "vscode-translate-next",
-  "version": "0.8.1",
+  "version": "0.9.0",
   "displayName": "vscode-translate-next",
   "publisher": "yxw007",
   "author": {
@@ -289,7 +289,7 @@
         },
         "Translate-next.showTerminalSelectTranslateBar": {
           "type": "boolean",
-          "default": false,
+          "default": true,
           "order": 12,
           "description": "show terminal selected text translate status bar"
         },
@@ -598,8 +598,8 @@
       },
       {
         "command": "extension.translateTerminalText",
-        "key": "alt+`",
-        "mac": "alt+`",
+        "key": "ctrl+alt+`",
+        "mac": "command+alt+`",
         "when": "terminalFocus",
         "description": "Translate terminal selections text"
       },

@@ -65,6 +65,8 @@ Download：[vscode-translate-next](https://marketplace.visualstudio.com/items?it
   ![hover](assets/images/hover.gif)
 - Translation terminal selected text
   ![translate-terminal-text](assets/images/translate-terminal-text.gif)
+  (Hint: If the shortcut key doesn't work, you can tap the Terminal Text Translation button at the bottom bar)
+  ![translate-terminal-shortcut-bnt](assets/images/terminalShortcutBtn.jpg)
 - How to use openai 
   ![alt text](assets/images/open_ai_usage.gif)
 
@@ -81,7 +83,7 @@ Download：[vscode-translate-next](https://marketplace.visualstudio.com/items?it
 | Switch the default translation engine       | Alt + Shit + E                                            |
 | Viewing Plugin Output Logs                  | Ctrl + Alt + Shit + O (Mac os: Command + Alt + Shift + O) |
 | Cleaning the plugin output log              | Ctrl + Alt + C   (Mac os: Command + Alt + C)              |
-| Translate the selected text in the terminal | Alt + `                                                   |
+| Translate the selected text in the terminal | Ctrl + Alt + ` (Mac os: Command + Alt + `)                |
 | Clean the terminal translation log          | Alt + C                                                   |
 | Open the terminal translation panel         | Alt + Shift + O                                           |
 
