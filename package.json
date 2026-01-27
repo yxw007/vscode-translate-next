@@ -96,7 +96,7 @@
     "lint-staged": "^15.2.10",
     "npm-run-all": "^4.1.5",
     "typescript": "^5.6.2",
-    "vsce": "^1.97.0"
+    "@vscode/vsce": "^3.7.1"
   },
   "dependencies": {
     "@amplitude/analytics-node": "^1.3.6",

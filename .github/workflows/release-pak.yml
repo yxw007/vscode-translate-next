@@ -60,9 +60,19 @@ jobs:
           git tag "${{ env.LATEST_CHANGELOG }}"
           git push origin "${{ env.LATEST_CHANGELOG }}"
 
-      - name: Create GitHub Release
+      - name: Create GitHub Release (attach .vsix as assets)
         if: env.RELEASE_EXISTS == 'false'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh release create "${LATEST_CHANGELOG}" --title "${LATEST_CHANGELOG}" --notes "${CHANGELOG_CONTENT}"
+          shopt -s nullglob
+          files=( *.vsix )
+          if [ ${#files[@]} -eq 0 ]; then
+            echo "No .vsix files found in current directory."
+            exit 1
+          fi
+
+          gh release create "${LATEST_CHANGELOG}" \
+            --title "${LATEST_CHANGELOG}" \
+            --notes "${CHANGELOG_CONTENT}" \
+            "${files[@]}"
