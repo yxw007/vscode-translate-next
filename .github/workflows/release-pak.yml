@@ -61,16 +61,13 @@ jobs:
           git push origin "${{ env.LATEST_CHANGELOG }}"
 
       - name: Create GitHub Release (attach .vsix as assets)
-        # if: env.RELEASE_EXISTS == 'false'
+        if: env.RELEASE_EXISTS == 'false'
         shell: bash
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
           cd "$GITHUB_WORKSPACE"
-
-          echo "PWD=$(pwd)"
-          ls -la
 
           shopt -s nullglob
           files=( "$GITHUB_WORKSPACE"/*.vsix )
