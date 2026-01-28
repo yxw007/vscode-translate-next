@@ -61,7 +61,7 @@ jobs:
           git push origin "${{ env.LATEST_CHANGELOG }}"
 
       - name: Create GitHub Release (attach .vsix as assets)
-        if: env.RELEASE_EXISTS == 'false'
+        # if: env.RELEASE_EXISTS == 'false'
         shell: bash
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
