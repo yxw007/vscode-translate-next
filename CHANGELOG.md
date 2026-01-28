@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.9.3
+
+
+
+### 🩹 Fixes
+
+- **ci:** Unable to publish VSIX file issue 
+
+### ❤️ Contributors
+
+- Yxw007 ([@yxw007](http://github.com/yxw007))
+
 ## v0.9.2
 
 

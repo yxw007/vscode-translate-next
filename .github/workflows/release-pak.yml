@@ -5,63 +5,71 @@ on:
     branches:
       - master
 
-permissions:
-  id-token: write
-  contents: write
-  pull-requests: write
+# 同一分支只保留最新一次运行，避免“第一次还没结束，第二次又来”
+concurrency:
+  group: release-pak-${{ github.ref_name }}
+  cancel-in-progress: true
 
-env:
-  skip: false
+permissions:
+  contents: write
 
 jobs:
   Publish:
     name: CI
-    # prevents this action from running on forks
     if: github.repository == 'yxw007/vscode-translate-next'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Use Node.js 22.x
-        uses: actions/setup-node@v2
-        with:
-          node-version: "22"
+        uses: actions/checkout@v4
 
       - name: Extract latest changelog
-        id: changelog
         run: |
           LATEST_CHANGELOG=$(awk '/^## /{print; exit}' CHANGELOG.md | sed 's/^## v//' | awk '{print "v"$0}')
-          echo "LATEST_CHANGELOG=${LATEST_CHANGELOG}" >> $GITHUB_ENV
-          echo "LATEST_CHANGELOG:${LATEST_CHANGELOG}"
+          echo "LATEST_CHANGELOG=${LATEST_CHANGELOG}" >> "$GITHUB_ENV"
           CHANGELOG_CONTENT=$(awk '/^## '"${LATEST_CHANGELOG}"'/{flag=1; next} /^## /{flag=0} flag' CHANGELOG.md)
-          echo "CHANGELOG_CONTENT:${CHANGELOG_CONTENT}"
-          echo "CHANGELOG_CONTENT<<EOF" >> $GITHUB_ENV
-          echo "${CHANGELOG_CONTENT}" >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
+          echo "CHANGELOG_CONTENT<<EOF" >> "$GITHUB_ENV"
+          echo "${CHANGELOG_CONTENT}" >> "$GITHUB_ENV"
+          echo "EOF" >> "$GITHUB_ENV"
+
+      - name: Detect .vsix in repo root
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "$GITHUB_WORKSPACE"
+          if compgen -G "*.vsix" > /dev/null; then
+            echo "HAS_VSIX=true" >> "$GITHUB_ENV"
+            ls -la *.vsix
+          else
+            echo "HAS_VSIX=false" >> "$GITHUB_ENV"
+            echo "No .vsix in this commit; skip tagging/release."
+          fi
 
       - name: Check if release exists
-        id: check_release
+        if: env.HAS_VSIX == 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           if gh release view "${{ env.LATEST_CHANGELOG }}" > /dev/null 2>&1; then
-            echo "Release already exists."
-            echo "RELEASE_EXISTS=true" >> $GITHUB_ENV
+            echo "RELEASE_EXISTS=true" >> "$GITHUB_ENV"
           else
-            echo "RELEASE_EXISTS=false" >> $GITHUB_ENV
+            echo "RELEASE_EXISTS=false" >> "$GITHUB_ENV"
           fi
 
-      - name: Create tag if not exists
-        if: env.RELEASE_EXISTS == 'false'
+      - name: Create tag if not exists (idempotent)
+        if: env.HAS_VSIX == 'true' && env.RELEASE_EXISTS == 'false'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git tag "${{ env.LATEST_CHANGELOG }}"
-          git push origin "${{ env.LATEST_CHANGELOG }}"
+          set -euo pipefail
+          if git rev-parse -q --verify "refs/tags/${{ env.LATEST_CHANGELOG }}" >/dev/null; then
+            echo "Tag already exists: ${{ env.LATEST_CHANGELOG }}"
+          else
+            git tag "${{ env.LATEST_CHANGELOG }}"
+            git push origin "${{ env.LATEST_CHANGELOG }}"
+          fi
 
       - name: Create GitHub Release (attach .vsix as assets)
-        if: env.RELEASE_EXISTS == 'false'
+        if: env.HAS_VSIX == 'true' && env.RELEASE_EXISTS == 'false'
         shell: bash
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -71,9 +79,6 @@ jobs:
 
           shopt -s nullglob
           files=( "$GITHUB_WORKSPACE"/*.vsix )
-
-          echo "Matched vsix files:"
-          printf '%s\n' "${files[@]:-<none>}"
 
           if [ ${#files[@]} -eq 0 ]; then
             echo "No .vsix files found in $GITHUB_WORKSPACE"
