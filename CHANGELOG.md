@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.9.1
+
+
+
+### 🚀 Enhancements
+
+- Publish VISX files to the release assets directory 
+
+### ❤️ Contributors
+
+- Yxw007 ([@yxw007](http://github.com/yxw007))
+
 ## v0.9.0
 
 
