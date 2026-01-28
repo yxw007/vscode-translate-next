@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.9.2
+
+
+
+### 🩹 Fixes
+
+- **ci:** Resolve vsix not found 
+
+### ❤️ Contributors
+
+- Yxw007 ([@yxw007](http://github.com/yxw007))
+
 ## v0.9.1
 
 
