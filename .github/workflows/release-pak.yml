@@ -76,3 +76,12 @@ jobs:
             --title "${LATEST_CHANGELOG}" \
             --notes "${CHANGELOG_CONTENT}" \
             "${files[@]}"
+
+      - name: Debug list root and check vsix tracking
+        run: |
+          echo "PWD=$(pwd)"
+          ls -la
+          echo "---- git tracked vsix ----"
+          git ls-files | grep -Ei '\.vsix$' || true
+          echo "---- find vsix in workspace ----"
+          find . -maxdepth 3 -type f -iname "*.vsix" -print || true
