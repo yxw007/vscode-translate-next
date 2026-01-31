@@ -42,6 +42,14 @@ I am very grateful for every support ❤️, which will be given priority for fe
 
   Tips: In addition to the Google Translate engine, if you set other translation engines as the default translation engine, you need to configure the corresponding translation engine configuration, if other translation engines do not use it, you can do without configuration
 
+### Hover extensions (custom)
+
+- `Translate-next.hover.enable.extensions`
+  - Default: A preset list of common programming language file extensions (comma-separated). Default value: `js,jsx,ts,tsx,java,py,c,h,cpp,cc,cxx,hpp,hh,hxx,rs,go,cs,php,rb,swift,kt,kts,scala,dart,lua`.
+  - Usage: Comma-separated extension allowlist. Dot is optional, e.g. `ts,js,py` or `.ts,.js,.py`.
+  - Special: Set to `*` to enable hover translation for all files (not recommended; may consume tokens unnecessarily).
+  - Note: If the default list doesn't include what you need, just append extensions.
+
 ## 💻Supported Translation Engines  
 
 | Name             | Support | Description                                                                                                                                               |
