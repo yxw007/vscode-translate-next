@@ -86,6 +86,7 @@ Download：[vscode-translate-next](https://marketplace.visualstudio.com/items?it
 | Translate the selected text in the terminal | Ctrl + Alt + ` (Mac os: Command + Alt + `)                |
 | Clean the terminal translation log          | Alt + C                                                   |
 | Open the terminal translation panel         | Alt + Shift + O                                           |
+| Hover Translation: Enable/Disable           | Ctrl + Alt + E                                            |
 
 Tip: If your editor environment has conflicting shortcuts, you can modify and adjust them yourself. If you forget the shortcut keys, you can use the status bar button provided in the bottom status bar to switch between the target language and the default translation engine, as shown in the following figure:
 

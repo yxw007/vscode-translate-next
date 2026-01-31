@@ -613,9 +613,16 @@
       {
         "command": "extension.languageDetectToggle",
         "key": "ctrl+alt+t",
-        "mac": "command+alt+c",
+        "mac": "command+alt+t",
         "when": "editorTextFocus || terminalFocus",
         "description": "Language detection switch"
+      },
+      {
+        "command": "extension.hover.enable",
+        "key": "ctrl+alt+e",
+        "mac": "cmd+alt+e",
+        "when": "editorTextFocus",
+        "description": "Hover translation: Enable/Disable"
       }
     ],
     "icons": {

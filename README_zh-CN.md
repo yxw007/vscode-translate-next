@@ -76,16 +76,17 @@
 
 ### ⌨️ 快捷键
 
-| 描述             | 快捷键                                                     |
-| ---------------- | ---------------------------------------------------------- |
-| 替换翻译选中文本 | Shift + Alt + T                                            |
-| 切换目标语言     | Ctrl + Alt + Shift + L (Mac os: Command + Alt + Shift + L) |
-| 切换默认翻译引擎 | Alt + Shift + E                                            |
-| 查看插件输出日志 | Ctrl + Alt + Shift + O (Mac os: Command + Alt + Shift + O) |
-| 清理插件输出日志 | Ctrl + Alt + C (Mac os: Command + Alt + C)                 |
-| 翻译终端选中文本 | Ctrl + Alt + ` (Mac os: Command + Alt + `)                 |
-| 清理终端翻译日志 | Alt + C                                                    |
-| 打开终端翻译面板 | Alt + Shift + O                                            |
+| 描述                | 快捷键                                                     |
+| ------------------- | ---------------------------------------------------------- |
+| 替换翻译选中文本    | Shift + Alt + T                                            |
+| 切换目标语言        | Ctrl + Alt + Shift + L (Mac os: Command + Alt + Shift + L) |
+| 切换默认翻译引擎    | Alt + Shift + E                                            |
+| 查看插件输出日志    | Ctrl + Alt + Shift + O (Mac os: Command + Alt + Shift + O) |
+| 清理插件输出日志    | Ctrl + Alt + C (Mac os: Command + Alt + C)                 |
+| 翻译终端选中文本    | Ctrl + Alt + ` (Mac os: Command + Alt + `)                 |
+| 清理终端翻译日志    | Alt + C                                                    |
+| 打开终端翻译面板    | Alt + Shift + O                                            |
+| 悬停翻译：启用/禁用 | Ctrl + Alt + E                                             |
 
 提示：如果你的编辑器环境，快捷键有冲突，可以自己修改调整。如果忘记快捷键，可以使用底部状态栏提供的状态栏按钮，进行目标语言和默认翻译引擎切换，如下图所示：
 
