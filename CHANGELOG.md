@@ -1,6 +1,25 @@
 # Changelog
 
 
+## v0.10.0
+
+
+
+### 🚀 Enhancements
+
+- Add hover enable command and refactor config functions 
+- Custom configuration support hover file types 
+- Rename hover enable extensions configuration and add validation 
+- Update release script to push changes and tags automatically 
+
+### 🩹 Fixes
+
+- The default languageDetectToggle shortcut key on macOS is incorrect 
+
+### ❤️ Contributors
+
+- Yxw007 ([@yxw007](http://github.com/yxw007))
+
 ## v0.9.3
 
 
