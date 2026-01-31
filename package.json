@@ -1,6 +1,6 @@
 {
   "name": "vscode-translate-next",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "displayName": "vscode-translate-next",
   "publisher": "yxw007",
   "author": {
@@ -245,6 +245,8 @@
           "type": "string",
           "default": "js,jsx,ts,tsx,java,py,c,h,cpp,cc,cxx,hpp,hh,hxx,rs,go,cs,php,rb,swift,kt,kts,scala,dart,lua",
           "description": "Limit hover translation to specific file extensions (without dot). Use '*' for all; comma-separated values, e.g. ts,js,cs,py",
+          "pattern": "^\\s*\\*\\s*$|^\\s*\\.?[A-Za-z0-9][A-Za-z0-9+_-]*\\s*(,\\s*\\.?[A-Za-z0-9][A-Za-z0-9+_-]*\\s*)*$",
+          "patternErrorMessage": "Invalid value. Use '*' or a comma-separated extension allowlist like: js,ts,py or .js,.ts,.py (no empty items).",
           "order": 3.1
         },
         "Translate-next.hover.string": {

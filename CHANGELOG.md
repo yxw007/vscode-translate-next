@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.10.1
+
+
+
+### 🚀 Enhancements
+
+- Enhance hover extensions validation with regex pattern and error message 
+
+### ❤️ Contributors
+
+- Yxw007 ([@yxw007](http://github.com/yxw007))
+
 ## v0.10.0
 
 
