@@ -44,7 +44,7 @@ I am very grateful for every support ❤️, which will be given priority for fe
 
 ### Hover extensions (custom)
 
-- `Translate-next.hover.enable.extensions`
+- `Translate-next.hover.extensions`
   - Default: A preset list of common programming language file extensions (comma-separated). Default value: `js,jsx,ts,tsx,java,py,c,h,cpp,cc,cxx,hpp,hh,hxx,rs,go,cs,php,rb,swift,kt,kts,scala,dart,lua`.
   - Usage: Comma-separated extension allowlist. Dot is optional, e.g. `ts,js,py` or `.ts,.js,.py`.
   - Special: Set to `*` to enable hover translation for all files (not recommended; may consume tokens unnecessarily).
