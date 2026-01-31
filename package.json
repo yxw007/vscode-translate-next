@@ -62,7 +62,7 @@
     "build": "npx vsce package",
     "replace-contents": "node scripts/replace-contents.js",
     "pick-docs": "node scripts/pick-docs.js",
-    "release": "npx changelogen --release -i",
+    "release": "npx changelogen --release -i && git push & git push --tags",
     "prepare": "husky"
   },
   "husky": {
