@@ -44,7 +44,7 @@
 
 ### Hover 支持的语言/文件类型（自定义）
 
-- `Translate-next.hover.enable.extensions`
+- `Translate-next.hover.extensions`
   - 默认：已内置一组主流编程语言文件扩展名（英文逗号分隔），默认值：`js,jsx,ts,tsx,java,py,c,h,cpp,cc,cxx,hpp,hh,hxx,rs,go,cs,php,rb,swift,kt,kts,scala,dart,lua`。
   - 用法：用英文逗号分割填写扩展名白名单，带不带点都可以，例如：`ts,js,py` 或 `.ts,.js,.py`。
   - 特殊：配置为 `*` 表示对所有文件启用 hover 翻译（不推荐，可能导致不必要的 token 消耗）。

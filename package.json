@@ -241,7 +241,7 @@
           "description": "Enable hover translation",
           "order": 3
         },
-        "Translate-next.hover.enable.extensions": {
+        "Translate-next.hover.extensions": {
           "type": "string",
           "default": "js,jsx,ts,tsx,java,py,c,h,cpp,cc,cxx,hpp,hh,hxx,rs,go,cs,php,rb,swift,kt,kts,scala,dart,lua",
           "description": "Limit hover translation to specific file extensions (without dot). Use '*' for all; comma-separated values, e.g. ts,js,cs,py",
