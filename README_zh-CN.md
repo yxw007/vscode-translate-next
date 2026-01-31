@@ -42,6 +42,15 @@
 
   提示：除了google翻译引擎不用配置，如果设置成其他翻译引擎为默认翻译engine，就需要配好对应的翻译引擎配置，如果其他翻译引擎不用，可以不用配置
 
+### Hover 支持的语言/文件类型（自定义）
+
+- `Translate-next.hover.enable.extensions`
+  - 默认：已内置一组主流编程语言文件扩展名（英文逗号分隔），默认值：`js,jsx,ts,tsx,java,py,c,h,cpp,cc,cxx,hpp,hh,hxx,rs,go,cs,php,rb,swift,kt,kts,scala,dart,lua`。
+  - 用法：用英文逗号分割填写扩展名白名单，带不带点都可以，例如：`ts,js,py` 或 `.ts,.js,.py`。
+  - 特殊：配置为 `*` 表示对所有文件启用 hover 翻译（不推荐，可能导致不必要的 token 消耗）。
+  - 补充：如果默认列表不包含你需要的扩展名，直接追加即可。
+  
+
 ## 💻支持的翻译引擎  
 
 | name             | 支持 | 描述                                                                       |
@@ -76,16 +85,17 @@
 
 ### ⌨️ 快捷键
 
-| 描述             | 快捷键                                                     |
-| ---------------- | ---------------------------------------------------------- |
-| 替换翻译选中文本 | Shift + Alt + T                                            |
-| 切换目标语言     | Ctrl + Alt + Shift + L (Mac os: Command + Alt + Shift + L) |
-| 切换默认翻译引擎 | Alt + Shift + E                                            |
-| 查看插件输出日志 | Ctrl + Alt + Shift + O (Mac os: Command + Alt + Shift + O) |
-| 清理插件输出日志 | Ctrl + Alt + C (Mac os: Command + Alt + C)                 |
-| 翻译终端选中文本 | Ctrl + Alt + ` (Mac os: Command + Alt + `)                 |
-| 清理终端翻译日志 | Alt + C                                                    |
-| 打开终端翻译面板 | Alt + Shift + O                                            |
+| 描述                | 快捷键                                                     |
+| ------------------- | ---------------------------------------------------------- |
+| 替换翻译选中文本    | Shift + Alt + T                                            |
+| 切换目标语言        | Ctrl + Alt + Shift + L (Mac os: Command + Alt + Shift + L) |
+| 切换默认翻译引擎    | Alt + Shift + E                                            |
+| 查看插件输出日志    | Ctrl + Alt + Shift + O (Mac os: Command + Alt + Shift + O) |
+| 清理插件输出日志    | Ctrl + Alt + C (Mac os: Command + Alt + C)                 |
+| 翻译终端选中文本    | Ctrl + Alt + ` (Mac os: Command + Alt + `)                 |
+| 清理终端翻译日志    | Alt + C                                                    |
+| 打开终端翻译面板    | Alt + Shift + O                                            |
+| 悬停翻译：启用/禁用 | Ctrl + Alt + E                                             |
 
 提示：如果你的编辑器环境，快捷键有冲突，可以自己修改调整。如果忘记快捷键，可以使用底部状态栏提供的状态栏按钮，进行目标语言和默认翻译引擎切换，如下图所示：
 

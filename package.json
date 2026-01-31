@@ -1,6 +1,6 @@
 {
   "name": "vscode-translate-next",
-  "version": "0.9.2",
+  "version": "0.9.3",
   "displayName": "vscode-translate-next",
   "publisher": "yxw007",
   "author": {
@@ -127,7 +127,8 @@
         {
           "type": "webview",
           "id": "translateTerminalLogView",
-          "name": "logs"
+          "name": "logs",
+          "icon": "icon.png"
         }
       ]
     },
@@ -239,6 +240,12 @@
           "default": true,
           "description": "Enable hover translation",
           "order": 3
+        },
+        "Translate-next.hover.enable.extensions": {
+          "type": "string",
+          "default": "js,jsx,ts,tsx,java,py,c,h,cpp,cc,cxx,hpp,hh,hxx,rs,go,cs,php,rb,swift,kt,kts,scala,dart,lua",
+          "description": "Limit hover translation to specific file extensions (without dot). Use '*' for all; comma-separated values, e.g. ts,js,cs,py",
+          "order": 3.1
         },
         "Translate-next.hover.string": {
           "type": "boolean",
@@ -613,9 +620,16 @@
       {
         "command": "extension.languageDetectToggle",
         "key": "ctrl+alt+t",
-        "mac": "command+alt+c",
+        "mac": "command+alt+t",
         "when": "editorTextFocus || terminalFocus",
         "description": "Language detection switch"
+      },
+      {
+        "command": "extension.hover.enable",
+        "key": "ctrl+alt+e",
+        "mac": "cmd+alt+e",
+        "when": "editorTextFocus",
+        "description": "Hover translation: Enable/Disable"
       }
     ],
     "icons": {
