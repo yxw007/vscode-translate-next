@@ -311,7 +311,7 @@
         "Translate-next.optimize.concurrencyNum": {
           "type": "number",
           "default": 4,
-          "description": "Number of concurrent translation requests, Be careful not to set too large, or you will report that the access exceeds the limit",
+          "description": "Translation concurrency per second, Be careful not to set too large, or you will report that the access exceeds the limit",
           "order": 14
         },
         "Translate-next.optimize.requestGapDelay": {
