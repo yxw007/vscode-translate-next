@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.10.2
+
+
+
+### 🚀 Enhancements
+
+- Implement concurrency scheduler for managing translation tasks 
+
+### ❤️ Contributors
+
+- Yxw007 ([@yxw007](http://github.com/yxw007))
+
 ## v0.10.1
 
 
