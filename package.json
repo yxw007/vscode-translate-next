@@ -104,6 +104,7 @@
     "deepl-node": "^1.14.0",
     "entities": "^5.0.0",
     "humanize-string": "^3.0.0",
+    "markdown-it": "^14.1.0",
     "onigasm": "^2.2.5",
     "remark-parse": "^9.0.0",
     "remark-stringify": "^9.0.1",
@@ -154,6 +155,12 @@
         {
           "command": "extension.replaceTranslateSelectedText",
           "when": "editorTextFocus && editorHasSelection"
+        }
+      ],
+      "extension/context": [
+        {
+          "command": "extension.translateExtensionDetails",
+          "group": "2_configure@50"
         }
       ]
     },
@@ -209,6 +216,10 @@
         "title": "Clear terminal translate logs view",
         "shortTitle": "Clear Logs",
         "icon": "$(trash)"
+      },
+      {
+        "command": "extension.translateExtensionDetails",
+        "title": "Translate-next: Immersive Translate"
       }
     ],
     "configuration": {
