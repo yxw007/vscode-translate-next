@@ -52,8 +52,8 @@
     "watch:esbuild": "node esbuild.js --watch",
     "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
     "package": "npm run check-types && npm run lint && node esbuild.js --production",
-    "compile-tests": "node -e \"require('fs').rmSync('out', { recursive: true, force: true })\" && tsc -p . --outDir out",
-    "watch-tests": "node -e \"require('fs').rmSync('out', { recursive: true, force: true })\" && tsc -p . -w --outDir out",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
     "pretest": "npm run compile-tests && npm run compile && npm run lint",
     "check-types": "tsc --noEmit",
     "lint": "eslint src",
@@ -104,7 +104,6 @@
     "deepl-node": "^1.14.0",
     "entities": "^5.0.0",
     "humanize-string": "^3.0.0",
-    "markdown-it": "^14.1.0",
     "onigasm": "^2.2.5",
     "remark-parse": "^9.0.0",
     "remark-stringify": "^9.0.1",
@@ -155,12 +154,6 @@
         {
           "command": "extension.replaceTranslateSelectedText",
           "when": "editorTextFocus && editorHasSelection"
-        }
-      ],
-      "extension/context": [
-        {
-          "command": "extension.translateExtensionDetails",
-          "group": "2_configure@50"
         }
       ]
     },
@@ -216,10 +209,6 @@
         "title": "Clear terminal translate logs view",
         "shortTitle": "Clear Logs",
         "icon": "$(trash)"
-      },
-      {
-        "command": "extension.translateExtensionDetails",
-        "title": "Translate-next: Immersive Translate"
       }
     ],
     "configuration": {
