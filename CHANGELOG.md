@@ -1,6 +1,26 @@
 # Changelog
 
 
+## v0.11.0
+
+
+
+### 🚀 Enhancements
+
+- Enhance timestamp formatting to include milliseconds in logs 
+
+### 🔥 Performance
+
+- ConcurrencyMax and Request gap delay are stored in association with the engine 
+
+### 📖 Documentation
+
+- Compress the image size for quick readme loading 
+
+### ❤️ Contributors
+
+- Yxw007 ([@yxw007](http://github.com/yxw007))
+
 ## v0.10.2
 
 

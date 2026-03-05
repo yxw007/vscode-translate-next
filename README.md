@@ -16,7 +16,7 @@ If this tool helps you save time and improve work efficiency, please support me 
 
 - Give me a cup of coffee☕ (small reward) – every support can bring continuous improvement and more new features.
 
-  ![alt text](assets/images/give_a_reward.jpg)
+  ![alt text](./assets/images/give_a_reward.jpg)
 
 - Follow me Three-click videos (bilibili: [向往自由的码](https://space.bilibili.com/3546754775517426?spm_id_from=333.788.0.0))
 - Clicking a Star⭐ on GitHub and recommending plugins to developers around you are all great encouragement.
@@ -38,7 +38,7 @@ I am very grateful for every support ❤️, which will be given priority for fe
 
 ## ⚙️ Config
 
-  ![alt text](assets/images/config.jpg)
+  ![alt text](./assets/images/config.jpg)
 
   Tips: In addition to the Google Translate engine, if you set other translation engines as the default translation engine, you need to configure the corresponding translation engine configuration, if other translation engines do not use it, you can do without configuration
 
@@ -68,15 +68,15 @@ I am very grateful for every support ❤️, which will be given priority for fe
 Download：[vscode-translate-next](https://marketplace.visualstudio.com/items?itemName=yxw007.vscode-translate-next)
 
 - Select translated text
-  ![translateText](assets/images/usage.gif)
+  ![translateText](./assets/images/usage.gif)
 - Hover translation
-  ![hover](assets/images/hover.gif)
+  ![hover](./assets/images/hover.gif)
 - Translation terminal selected text
-  ![translate-terminal-text](assets/images/translate-terminal-text.gif)
+  ![translate-terminal-text](./assets/images/translate-terminal-text.gif)
   (Hint: If the shortcut key doesn't work, you can tap the Terminal Text Translation button at the bottom bar)
-  ![translate-terminal-shortcut-bnt](assets/images/terminalShortcutBtn.jpg)
+  ![translate-terminal-shortcut-bnt](./assets/images/terminalShortcutBtn.jpg)
 - How to use openai 
-  ![alt text](assets/images/open_ai_usage.gif)
+  ![alt text](./assets/images/open_ai_usage.gif)
 
 ### 📹 Video Tutorials
 - [VSCode必备插件神器，让你更沉浸式写代码](https://www.bilibili.com/video/BV1Y1zMYQEbi/?vd_source=eaea9ad794278c4e15f13efa6d046736)
@@ -98,12 +98,12 @@ Download：[vscode-translate-next](https://marketplace.visualstudio.com/items?it
 
 Tip: If your editor environment has conflicting shortcuts, you can modify and adjust them yourself. If you forget the shortcut keys, you can use the status bar button provided in the bottom status bar to switch between the target language and the default translation engine, as shown in the following figure:
 
-![alt text](assets/images/image.png)
+![alt text](./assets/images/image.png)
 
 ## ❓ FAQ
 
 1. Report: fetch failed error popup
-    ![alt text](assets/images/error-1.png)
+    ![alt text](./assets/images/error-1.png)
 
   > A: If you have not switched the default engine then you are using Google, and at this time your computer can not access Google will report this error!
 
@@ -125,15 +125,15 @@ Tip: If your editor environment has conflicting shortcuts, you can modify and ad
     - Possible situation 2: The shortcut conflicts with the external software shortcut, gradually exit the external software, troubleshoot the conflicting software, and then modify the shortcut
     - Hidden features:
       - In the edit view, you can right click to replace the selected translation
-        ![alt text](/assets/images/right-click-translate.gif)
+        ![alt text](./assets/images/right-click-translate.gif)
       - Select Text Translation on the terminal, and you can open it in the settings interface and display it in the bottom bar
-        ![alt text](/assets/images/click-bottom-translate-bar.gif)
+        ![alt text](./assets/images/click-bottom-translate-bar.gif)
 
 5. If you avoid the consumption of large numbers of translated characters?
    - Increase cache time
-     ![alt text](/assets/images/add-cache-time.png)
+     ![alt text](./assets/images/add-cache-time.png)
    - Control which translation features you want to turn on and off
-    ![alt text](/assets/images/custom-feature.png)
+    ![alt text](./assets/images/custom-feature.png)
    - Avoid selecting a large amount of text, then hover over the selected text. At this point, if hover translation is enabled, it will quickly consume a large number of translated characters, so you should avoid this operation
 
 

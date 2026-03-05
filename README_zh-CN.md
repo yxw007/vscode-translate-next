@@ -16,7 +16,7 @@
 
 - 请我喝杯咖啡☕（小额打赏）——每一份支持都能带来持续改进和更多新特性。
 
-  ![alt text](assets/images/give_a_reward.jpg)
+  ![alt text](./assets/images/give_a_reward.jpg)
 
 - 关注我 + 一键三连我的视频 (bilibili: [向往自由的码](https://space.bilibili.com/3546754775517426?spm_id_from=333.788.0.0))
 - 在 GitHub 点个 Star⭐、把插件推荐给身边的开发者，这些都是极大的鼓励。
@@ -38,7 +38,7 @@
 
 ## ⚙️ 配置
 
-  ![alt text](assets/images/config.jpg)
+  ![alt text](./assets/images/config.jpg)
 
   提示：除了google翻译引擎不用配置，如果设置成其他翻译引擎为默认翻译engine，就需要配好对应的翻译引擎配置，如果其他翻译引擎不用，可以不用配置
 
@@ -69,15 +69,15 @@
 下载：[vscode-translate-next](https://marketplace.visualstudio.com/items?itemName=yxw007.vscode-translate-next)
 
 - 选中翻译文本
-  ![translateText](assets/images/usage.gif)
+  ![translateText](./assets/images/usage.gif)
 - hover 翻译
-  ![hover](assets/images/hover.gif)
+  ![hover](./assets/images/hover.gif)
 - 翻译终端选中文本
-  ![translate-terminal-text](assets/images/translate-terminal-text.gif)
+  ![translate-terminal-text](./assets/images/translate-terminal-text.gif)
   (提示：如果快捷键失效，可以点底部栏终端文本翻译按钮)
-  ![translate-terminal-shortcut-bnt](assets/images/terminalShortcutBtn.jpg)
+  ![translate-terminal-shortcut-bnt](./assets/images/terminalShortcutBtn.jpg)
 - 如何使用openai 
-  ![alt text](assets/images/open_ai_usage.gif)
+  ![alt text](./assets/images/open_ai_usage.gif)
 
 ### 📹 视频教程
 - [VSCode必备插件神器，让你更沉浸式写代码](https://www.bilibili.com/video/BV1Y1zMYQEbi/?vd_source=eaea9ad794278c4e15f13efa6d046736)
@@ -99,12 +99,12 @@
 
 提示：如果你的编辑器环境，快捷键有冲突，可以自己修改调整。如果忘记快捷键，可以使用底部状态栏提供的状态栏按钮，进行目标语言和默认翻译引擎切换，如下图所示：
 
-![alt text](assets/images/image.png)
+![alt text](./assets/images/image.png)
 
 ## ❓ FAQ
 
 1. 报：fetch failed 错误弹框
-    ![alt text](assets/images/error-1.png)
+    ![alt text](./assets/images/error-1.png)
 
   > 答：如果你没有切换过default engine 那么你就是使用的google，而此时你电脑无法访问google就会报此错误
 
@@ -126,15 +126,15 @@
    - 可能情况2：快捷键与外部软件快捷键冲突，逐步退出外部软件，排查冲突软件，然后修改快捷键
    - 隐藏功能：
      - 编辑视图可以右键替换选中翻译
-        ![alt text](/assets/images/right-click-translate.gif)
+        ![alt text](./assets/images/right-click-translate.gif)
      - 终端选中文本翻译，可以在设置界面中将其打开在底部栏显示
-        ![alt text](/assets/images/click-bottom-translate-bar.gif)
+        ![alt text](./assets/images/click-bottom-translate-bar.gif)
 
 5. 如果避免大量翻译字符消耗?
    - 加大缓存时间
-     ![alt text](/assets/images/add-cache-time.png)
+     ![alt text](./assets/images/add-cache-time.png)
    - 自主控制要开启和关闭的翻译功能
-    ![alt text](/assets/images/custom-feature.png)
+    ![alt text](./assets/images/custom-feature.png)
    - 避免选中大量文本，然后hover到选中文本上，此时如果开启了hover翻译，就会快速消耗大量翻译字符，所以应该避免这种操作
 
 ## 📢 更多
