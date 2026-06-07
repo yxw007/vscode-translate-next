@@ -50,6 +50,109 @@ I am very grateful for every support ❤️, which will be given priority for fe
   - Special: Set to `*` to enable hover translation for all files (not recommended; may consume tokens unnecessarily).
   - Note: If the default list doesn't include what you need, just append extensions.
 
+### Custom engine configuration
+
+- `Translate-next.customEngines`
+  - Purpose: Configure one or more custom translation engines in settings.
+  - Language codes: For ISO 639 values such as `en`, `ja`, or `zh`, see [Wikipedia: List of ISO 639 language codes](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes).
+  - Note: If you need a regional tag such as `zh-CN`, use the base language code together with the region suffix.
+
+Setup steps:
+
+1. Open VS Code Settings and search for `Translate-next.customEngines`.
+2. Add an object with `name`, `apiUrl`, `method`, and `toLanguages`.
+3. If your API needs a request body, use `body`; if it needs query params, use `query`; if it needs headers, use `headers`.
+4. You can use `{{from}}`, `{{to}}`, and `{{text}}` placeholders in `headers`, `query`, and `body`.
+5. If the translated text is nested in the JSON response, set `responsePath`, for example `response`, `data.translation`, or `choices[0].message.content`.
+6. After saving the config, switch `defaultEngine` to your custom engine name.
+
+Common fields:
+
+- `name`: Unique custom engine name.
+- `apiUrl`: Request URL.
+- `method`: `GET` or `POST`.
+- `headers`: Request headers.
+- `query`: URL query parameters.
+- `body`: Request body.
+- `responsePath`: Path used to read the translated text from the response JSON. Bracket syntax such as `choices[0].message.content` is supported.
+- `fromLanguages`: Source language map. Key is the language name, value is the language code.
+- `toLanguages`: Target language map. Key is the language name, value is the language code.
+- `batchStrategy`: Multi-line request mode. Supports `none`, `join`, and `array`.
+- `joinDelimiter`: Delimiter used when `batchStrategy=join`.
+- `timeout`: Request timeout in milliseconds.
+
+Example:
+
+```json
+"Translate-next.customEngines": [
+  {
+    "enabled": true,
+    "name": "my-ollama",
+    "apiUrl": "http://localhost:11434/api/generate",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "model": "translategemma:4b",
+      "prompt": "Translate {{text}} from {{from}} to {{to}}",
+      "stream": false
+    },
+    "responsePath": "response",
+    "fromLanguages": {
+      "Chinese": "zh",
+      "English": "en",
+      "Japanese": "ja",
+      "Korean": "ko"
+    },
+    "toLanguages": {
+      "Chinese": "zh",
+      "English": "en",
+      "Japanese": "ja",
+      "Korean": "ko"
+    },
+    "timeout": 30000
+  }
+]
+```
+
+Response example:
+
+```json
+{
+  "response": "Hello, world!"
+}
+```
+
+For an API like this, set `responsePath` to `response`.
+
+For a Chat Completions style API, you can also configure it like this:
+
+```json
+{
+  "name": "siliconflow-chat",
+  "apiUrl": "https://api.siliconflow.cn/v1/chat/completions",
+  "method": "POST",
+  "headers": {
+    "Authorization": "Bearer sk-xxxx",
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Translate the following text into English: {{text}}"
+      }
+    ]
+  },
+  "responsePath": "choices[0].message.content",
+  "toLanguages": {
+    "English": "en"
+  }
+}
+```
+
 ## 💻Supported Translation Engines  
 
 | Name             | Support | Description                                                                                                                                               |
