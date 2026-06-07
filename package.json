@@ -52,8 +52,8 @@
     "watch:esbuild": "node esbuild.js --watch",
     "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
     "package": "npm run check-types && npm run lint && node esbuild.js --production",
-    "compile-tests": "tsc -p . --outDir out",
-    "watch-tests": "tsc -p . -w --outDir out",
+    "compile-tests": "node -e \"require('fs').rmSync('out', { recursive: true, force: true })\" && tsc -p . --outDir out",
+    "watch-tests": "node -e \"require('fs').rmSync('out', { recursive: true, force: true })\" && tsc -p . -w --outDir out",
     "pretest": "npm run compile-tests && npm run compile && npm run lint",
     "check-types": "tsc --noEmit",
     "lint": "eslint src",
@@ -85,6 +85,7 @@
     "@typescript-eslint/parser": "^8.6.0",
     "@vscode/test-cli": "^0.0.10",
     "@vscode/test-electron": "^2.4.1",
+    "@vscode/vsce": "^3.7.1",
     "changelogen": "^0.5.7",
     "commitlint": "^19.5.0",
     "esbuild": "^0.23.1",
@@ -95,15 +96,15 @@
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
     "npm-run-all": "^4.1.5",
-    "typescript": "^5.6.2",
-    "@vscode/vsce": "^3.7.1"
+    "typescript": "^5.6.2"
   },
   "dependencies": {
     "@amplitude/analytics-node": "^1.3.6",
-    "@yxw007/translate": "^0.4.1",
+    "@yxw007/translate": "^1.0.1",
     "deepl-node": "^1.14.0",
     "entities": "^5.0.0",
     "humanize-string": "^3.0.0",
+    "markdown-it": "^14.1.0",
     "onigasm": "^2.2.5",
     "remark-parse": "^9.0.0",
     "remark-stringify": "^9.0.1",
@@ -154,6 +155,12 @@
         {
           "command": "extension.replaceTranslateSelectedText",
           "when": "editorTextFocus && editorHasSelection"
+        }
+      ],
+      "extension/context": [
+        {
+          "command": "extension.translateExtensionDetails",
+          "group": "2_configure@50"
         }
       ]
     },
@@ -209,6 +216,22 @@
         "title": "Clear terminal translate logs view",
         "shortTitle": "Clear Logs",
         "icon": "$(trash)"
+      },
+      {
+        "command": "extension.translateExtensionDetails",
+        "title": "Translate-next: Immersive Translate"
+      },
+      {
+        "command": "extension.login",
+        "title": "Translate-next: Login"
+      },
+      {
+        "command": "extension.logout",
+        "title": "Translate-next: Logout"
+      },
+      {
+        "command": "extension.refreshLoginState",
+        "title": "Translate-next: Refresh Login State"
       }
     ],
     "configuration": {
@@ -222,18 +245,161 @@
         },
         "Translate-next.defaultEngine": {
           "type": "string",
-          "enum": [
-            "google",
-            "azure",
-            "amazon",
-            "baidu",
-            "deepl",
-            "openai",
-            "tencent"
-          ],
           "default": "google",
-          "description": "The translation engine to use",
+          "description": "The translation engine to use. Built-in engines: google, azure, amazon, baidu, deepl, openai, tencent. Custom engines can also be set by name.",
           "order": 2
+        },
+        "Translate-next.authBaseUrl": {
+          "type": "string",
+          "default": "https://translate.yanxuewen.cn",
+          "description": "Web server base URL used for plugin login, token refresh, and subscription validation.",
+          "order": 2.05
+        },
+        "Translate-next.customEngines": {
+          "type": "array",
+          "default": [],
+          "markdownDescription": "Configure multiple custom translation engines. Edit this in settings.json for the best experience. Each field below provides hover help, type validation, and examples. Tutorial: [CustomTranslator.md](https://github.com/yxw007/vscode-translate-next/blob/main/vscode-extension/docs/CustomTranslator.md)",
+          "order": 2.1,
+          "defaultSnippets": [
+            {
+              "label": "Chat Completions custom engine",
+              "body": [
+                {
+                  "enabled": true,
+                  "name": "siliconflow-chat",
+                  "apiUrl": "https://api.siliconflow.cn/v1/chat/completions",
+                  "method": "POST",
+                  "headers": {
+                    "Authorization": "Bearer sk-xxxx",
+                    "Content-Type": "application/json"
+                  },
+                  "body": {
+                    "model": "Qwen/Qwen2.5-7B-Instruct",
+                    "messages": [
+                      {
+                        "role": "user",
+                        "content": "Translate the following text into English: {{text}}"
+                      }
+                    ]
+                  },
+                  "responsePath": "choices[0].message.content",
+                  "fromLanguages": {
+                    "Auto": "auto",
+                    "English": "en",
+                    "简体中文": "zh-CN"
+                  },
+                  "toLanguages": {
+                    "English": "en",
+                    "简体中文": "zh-CN",
+                    "日本語": "ja"
+                  },
+                  "timeout": 30000
+                }
+              ]
+            }
+          ],
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "name",
+              "apiUrl",
+              "toLanguages"
+            ],
+            "properties": {
+              "enabled": {
+                "type": "boolean",
+                "default": true,
+                "markdownDescription": "Enable or disable this custom engine. Disabled engines will not appear in the engine selector."
+              },
+              "name": {
+                "type": "string",
+                "minLength": 1,
+                "markdownDescription": "Unique engine name shown in the engine selector. Must not duplicate built-in engines such as `google`, `azure`, `amazon`, `baidu`, `deepl`, `openai`, or `tencent`."
+              },
+              "apiUrl": {
+                "type": "string",
+                "minLength": 1,
+                "markdownDescription": "Request URL for the custom engine. Example: `https://api.siliconflow.cn/v1/chat/completions`."
+              },
+              "method": {
+                "type": "string",
+                "enum": [
+                  "GET",
+                  "POST"
+                ],
+                "default": "POST",
+                "markdownDescription": "HTTP method. Use `GET` for query-based APIs and `POST` for JSON/body-based APIs."
+              },
+              "headers": {
+                "type": "object",
+                "default": {},
+                "markdownDescription": "Request headers. Supports placeholders like `{{from}}`, `{{to}}`, and `{{text}}`. Example: `{ \"Authorization\": \"Bearer sk-xxxx\" }`."
+              },
+              "query": {
+                "type": "object",
+                "default": {},
+                "markdownDescription": "URL query parameters for GET-style APIs. Supports placeholders like `{{from}}`, `{{to}}`, and `{{text}}`."
+              },
+              "body": {
+                "default": {},
+                "markdownDescription": "Request body for POST APIs. Nested JSON objects and arrays are supported. Use placeholders like `{{from}}`, `{{to}}`, and `{{text}}` anywhere inside the body."
+              },
+              "responsePath": {
+                "type": "string",
+                "default": "",
+                "markdownDescription": "Path used to extract the translated content from the response JSON. Examples: `response`, `data.translation`, `choices[0].message.content`. Leave empty for plain text responses."
+              },
+              "batchStrategy": {
+                "type": "string",
+                "enum": [
+                  "none",
+                  "join",
+                  "array"
+                ],
+                "default": "none",
+                "markdownDescription": "How `string[]` input is sent. `none`: send one request per item. `join`: concatenate texts with `joinDelimiter`. `array`: send the string array directly."
+              },
+              "joinDelimiter": {
+                "type": "string",
+                "default": "\n$TRANSLATE_NEXT_SPLIT$\n",
+                "markdownDescription": "Delimiter used when `batchStrategy=join`. The same delimiter must be preserved by the remote API if you want to split the translated result back into multiple items."
+              },
+              "timeout": {
+                "type": "number",
+                "default": 30000,
+                "minimum": 1,
+                "markdownDescription": "Request timeout in milliseconds. Must be greater than `0`."
+              },
+              "fromLanguages": {
+                "type": "object",
+                "default": {
+                  "Chinese": "zh",
+                  "English": "en",
+                  "Japanese": "ja",
+                  "Korean": "ko"
+                },
+                "markdownDescription": "Supported source languages. Use the display name as the key and the language code as the value. You can include `auto` for automatic source-language detection. For ISO 639 language codes, see [Wikipedia: List of ISO 639 language codes](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes).",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              },
+              "toLanguages": {
+                "type": "object",
+                "minProperties": 1,
+                "default": {
+                  "Chinese": "zh",
+                  "English": "en",
+                  "Japanese": "ja",
+                  "Korean": "ko"
+                },
+                "markdownDescription": "Supported target languages. Use the display name as the key and the language code as the value. At least one target language is required. For ISO 639 language codes, see [Wikipedia: List of ISO 639 language codes](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes).",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              }
+            }
+          }
         },
         "Translate-next.hover.enable": {
           "type": "boolean",

@@ -49,6 +49,109 @@
   - 用法：用英文逗号分割填写扩展名白名单，带不带点都可以，例如：`ts,js,py` 或 `.ts,.js,.py`。
   - 特殊：配置为 `*` 表示对所有文件启用 hover 翻译（不推荐，可能导致不必要的 token 消耗）。
   - 补充：如果默认列表不包含你需要的扩展名，直接追加即可。
+
+### 自定义引擎配置
+
+- `Translate-next.customEngines`
+  - 用途：在设置中配置一个或多个自定义翻译引擎。
+  - 语言 code 查询：像 `en`、`ja`、`zh` 这类 ISO 639 值，可参考 [Wikipedia: List of ISO 639 language codes](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes)。
+  - 说明：如果你需要 `zh-CN` 这种值，可以在基础语言 code 后面再拼接地区后缀。
+
+配置步骤：
+
+1. 打开 VS Code 设置，搜索 `Translate-next.customEngines`。
+2. 新增一个对象，填写 `name`、`apiUrl`、`method`、`toLanguages`。
+3. 如果接口需要请求体，就配置 `body`；如果需要 query 参数，就配置 `query`；如果需要请求头，就配置 `headers`。
+4. 在 `body`、`query`、`headers` 中可以使用 `{{from}}`、`{{to}}`、`{{text}}` 占位符。
+5. 如果返回结果在 JSON 的某个字段里，配置 `responsePath`，例如 `response`、`data.translation` 或 `choices[0].message.content`。
+6. 配置完成后，把 `defaultEngine` 切换成你填写的自定义引擎名称即可使用。
+
+常用字段：
+
+- `name`：自定义引擎名称，必须唯一。
+- `apiUrl`：接口地址。
+- `method`：`GET` 或 `POST`。
+- `headers`：请求头。
+- `query`：URL 查询参数。
+- `body`：请求体。
+- `responsePath`：从响应 JSON 中取翻译结果的路径，支持 `choices[0].message.content` 这种数组路径写法。
+- `fromLanguages`：源语言映射，key 是语言名，value 是语言 code。
+- `toLanguages`：目标语言映射，key 是语言名，value 是语言 code。
+- `batchStrategy`：多段文本请求模式，支持 `none`、`join`、`array`。
+- `joinDelimiter`：`batchStrategy=join` 时的拼接分隔符。
+- `timeout`：请求超时时间，单位毫秒。
+
+示例：
+
+```json
+"Translate-next.customEngines": [
+  {
+    "enabled": true,
+    "name": "my-ollama",
+    "apiUrl": "http://localhost:11434/api/generate",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "model": "translategemma:4b",
+      "prompt": "将 {{text}} 从 {{from}} 翻译到 {{to}}",
+      "stream": false
+    },
+    "responsePath": "response",
+    "fromLanguages": {
+      "Chinese": "zh",
+      "English": "en",
+      "Japanese": "ja",
+      "Korean": "ko"
+    },
+    "toLanguages": {
+      "Chinese": "zh",
+      "English": "en",
+      "Japanese": "ja",
+      "Korean": "ko"
+    },
+    "timeout": 30000
+  }
+]
+```
+
+返回示例：
+
+```json
+{
+  "response": "你好，世界！"
+}
+```
+
+上面这种接口配置 `responsePath: "response"` 即可。
+
+如果是 Chat Completions 风格接口，也可以直接这样配：
+
+```json
+{
+  "name": "siliconflow-chat",
+  "apiUrl": "https://api.siliconflow.cn/v1/chat/completions",
+  "method": "POST",
+  "headers": {
+    "Authorization": "Bearer sk-xxxx",
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "messages": [
+      {
+        "role": "user",
+        "content": "请将以下文本翻译成英文：{{text}}"
+      }
+    ]
+  },
+  "responsePath": "choices[0].message.content",
+  "toLanguages": {
+    "English": "en"
+  }
+}
+```
   
 
 ## 💻支持的翻译引擎  
