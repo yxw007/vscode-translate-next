@@ -1,6 +1,48 @@
 # Changelog
 
 
+## v1.0.0
+
+
+
+### 🚀 Enhancements
+
+- Add immersive translation feature for extension details 
+- Implement loading state and marketplace extension query functionality 
+- Refactor command registration to ensure single instance and enhance markdown rendering func 
+- Enhance timestamp formatting to include milliseconds in logs 
+- Add Custom Engine 
+- Add custom engine configuration and update related documentation 
+- Enhance custom engine configuration with responseTemplate support and update responsePath 
+- Enhance custom engine configuration with detailed descriptions and validation 
+- Improve custom engine settings handling with enhanced array position revealing and validation 
+- Add project guidelines and instructions for building, testing, and architecture 
+- Add project guidelines and instructions for building, testing, and architecture 
+
+### 🔥 Performance
+
+- ConcurrencyMax and Request gap delay are stored in association with the engine 
+
+### 🩹 Fixes
+
+- Switch out from the plug-in translation details page and come back and keep loading 
+- Update language normalization to allow auto-detection 
+- Argument 'filename' must be a file URL object 
+- **build:** Solve the problem that the exported vsix cannot be used normally 
+- There is a file type but no file suffix. Unable to hover translation problem 
+- Update commandId for subscription warning to logout 
+
+### 💅 Refactors
+
+- Management approach for engine state to facilitate future expansion and maintenance 
+- Restructure the entire project structure to facilitate future expansion and maintenance 
+- Simplify import methods 
+- Remove responseTemplate support 
+
+### ❤️ Contributors
+
+- Yxw007 ([@yxw007](http://github.com/yxw007))
+
 ## v0.11.0
 
 
