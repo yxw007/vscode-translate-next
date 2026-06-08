@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.0.1
+
+
+
+### 🩹 Fixes
+
+- Incorrect login jump address 
+
+### ❤️ Contributors
+
+- Yxw007 ([@yxw007](http://github.com/yxw007))
+
 ## v1.0.0
 
 
