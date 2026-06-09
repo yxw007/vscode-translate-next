@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.0.2
+
+
+
+### 📖 Documentation
+
+- Synchronously update readme documents 
+
+### ❤️ Contributors
+
+- Yxw007 ([@yxw007](http://github.com/yxw007))
+
 ## v1.0.1
 
 
