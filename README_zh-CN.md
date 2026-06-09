@@ -8,29 +8,15 @@
 
 > 说明：由[translate](https://github.com/yxw007/translate)提供底层翻译支持
 
-## 💖 支持我
-
-如果此工具帮助你节省了时间、提升了工作效率，欢迎你用以下方式来支持我继续开发与维护：
-
-- 成为我的赞助人（GitHub Sponsors）：https://github.com/sponsors/yxw007
-
-- 请我喝杯咖啡☕（小额打赏）——每一份支持都能带来持续改进和更多新特性。
-
-  ![alt text](./assets/images/give_a_reward.jpg)
-
-- 关注我 + 一键三连我的视频 (bilibili: [向往自由的码](https://space.bilibili.com/3546754775517426?spm_id_from=333.788.0.0))
-- 在 GitHub 点个 Star⭐、把插件推荐给身边的开发者，这些都是极大的鼓励。
-
-每一份支持我都非常感谢❤️，会优先用于功能迭代和测试。如果你有特别的建议或希望我做的功能，欢迎通过 Issue 或私信联系。
-
 ## ✨ 特性
 
 - 简单易用
-- 支持多翻译引擎：Google,Azure,Amazon,Baidu,deepl等
+- 支持多翻译引擎：Google,Azure,Amazon,Baidu,deepl，CustomEngine(完全用户自定义)
 - 支持从一种语言翻译至各种语言
 - 支持悬停翻译
 - 替换选中文本翻译
 - 支持终端选中文本翻译
+- 支持插件详情沉侵式翻译
 
 ## 📋 要求
 
@@ -49,6 +35,64 @@
   - 用法：用英文逗号分割填写扩展名白名单，带不带点都可以，例如：`ts,js,py` 或 `.ts,.js,.py`。
   - 特殊：配置为 `*` 表示对所有文件启用 hover 翻译（不推荐，可能导致不必要的 token 消耗）。
   - 补充：如果默认列表不包含你需要的扩展名，直接追加即可。
+
+## 💻支持的翻译引擎  
+
+| name             | 支持 | 描述                                                                       |
+| ---------------- | ---- | -------------------------------------------------------------------------- |
+| google           | ✔    | 已投产，可以正常使用                                                       |
+| azure translate  | ✔    | 已投产，可以正常使用                                                       |
+| amazon translate | ✔    | 已投产，可以正常使用                                                       |
+| baidu            | ✔    | 已投产，可以正常使用                                                       |
+| deepl            | ✔    | 已投产，可以正常使用                                                       |
+| openai           | ✔    | 已投产，可以正常使用 (效果不佳，提示词很难调好)                            |
+| tencent          | ✔    | 已投产，可以正常使用                                                       |
+| yandex           |      | 由于我没有平台支持的银行账号，所以未调通（欢迎有条件的朋友帮忙调通，感谢） |
+| custom Engine    | ✔    | 已投产，可以正常使用                                                       |
+
+## 🛠️ 使用
+
+1. 下载：[vscode-translate-next](https://marketplace.visualstudio.com/items?itemName=yxw007.vscode-translate-next)
+2. 官网注册账号：[https://translate.yanxuewen.cn](https://translate.yanxuewen.cn)
+3. 登录
+   ![login](./assets/images/login.gif)
+
+### ✨ 功能效果
+
+- 选中翻译文本
+  ![translateText](./assets/images/usage.gif)
+- hover 翻译
+  ![hover](./assets/images/hover.gif)
+- 翻译终端选中文本
+  ![translate-terminal-text](./assets/images/translate-terminal-text.gif)
+  (提示：如果快捷键失效，可以点底部栏终端文本翻译按钮)
+  ![translate-terminal-shortcut-bnt](./assets/images/terminalShortcutBtn.jpg)
+- 如何使用openai 
+  ![alt text](./assets/images/open_ai_usage.gif)
+- 插件详情沉浸式翻译
+  ![detail_translation](./assets/images/detail_translation.gif)
+
+### 📹 视频教程
+- [VSCode必备插件神器，让你更沉浸式写代码](https://www.bilibili.com/video/BV1Y1zMYQEbi/?vd_source=eaea9ad794278c4e15f13efa6d046736)
+- [快速上手vscode翻译神器](https://www.bilibili.com/video/BV1eVzZYoEkf/?vd_source=eaea9ad794278c4e15f13efa6d046736)
+
+### ⌨️ 快捷键
+
+| 描述                | 快捷键                                                     |
+| ------------------- | ---------------------------------------------------------- |
+| 替换翻译选中文本    | Shift + Alt + T                                            |
+| 切换目标语言        | Ctrl + Alt + Shift + L (Mac os: Command + Alt + Shift + L) |
+| 切换默认翻译引擎    | Alt + Shift + E                                            |
+| 查看插件输出日志    | Ctrl + Alt + Shift + O (Mac os: Command + Alt + Shift + O) |
+| 清理插件输出日志    | Ctrl + Alt + C (Mac os: Command + Alt + C)                 |
+| 翻译终端选中文本    | Ctrl + Alt + ` (Mac os: Command + Alt + `)                 |
+| 清理终端翻译日志    | Alt + C                                                    |
+| 打开终端翻译面板    | Alt + Shift + O                                            |
+| 悬停翻译：启用/禁用 | Ctrl + Alt + E                                             |
+
+提示：如果你的编辑器环境，快捷键有冲突，可以自己修改调整。如果忘记快捷键，可以使用底部状态栏提供的状态栏按钮，进行目标语言和默认翻译引擎切换，如下图所示：
+
+![alt text](./assets/images/image.png)
 
 ### 自定义引擎配置
 
@@ -152,57 +196,6 @@
   }
 }
 ```
-  
-
-## 💻支持的翻译引擎  
-
-| name             | 支持 | 描述                                                                       |
-| ---------------- | ---- | -------------------------------------------------------------------------- |
-| google           | ✔    | 已投产，可以正常使用                                                       |
-| azure translate  | ✔    | 已投产，可以正常使用                                                       |
-| amazon translate | ✔    | 已投产，可以正常使用                                                       |
-| baidu            | ✔    | 已投产，可以正常使用                                                       |
-| deepl            | ✔    | 已投产，可以正常使用                                                       |
-| openai           | ✔    | 已投产，可以正常使用 (效果不佳，提示词很难调好)                            |
-| tencent          | ✔    | 已投产，可以正常使用                                                       |
-| yandex           |      | 由于我没有平台支持的银行账号，所以未调通（欢迎有条件的朋友帮忙调通，感谢） |
-
-## 🛠️ 使用
-
-下载：[vscode-translate-next](https://marketplace.visualstudio.com/items?itemName=yxw007.vscode-translate-next)
-
-- 选中翻译文本
-  ![translateText](./assets/images/usage.gif)
-- hover 翻译
-  ![hover](./assets/images/hover.gif)
-- 翻译终端选中文本
-  ![translate-terminal-text](./assets/images/translate-terminal-text.gif)
-  (提示：如果快捷键失效，可以点底部栏终端文本翻译按钮)
-  ![translate-terminal-shortcut-bnt](./assets/images/terminalShortcutBtn.jpg)
-- 如何使用openai 
-  ![alt text](./assets/images/open_ai_usage.gif)
-
-### 📹 视频教程
-- [VSCode必备插件神器，让你更沉浸式写代码](https://www.bilibili.com/video/BV1Y1zMYQEbi/?vd_source=eaea9ad794278c4e15f13efa6d046736)
-- [快速上手vscode翻译神器](https://www.bilibili.com/video/BV1eVzZYoEkf/?vd_source=eaea9ad794278c4e15f13efa6d046736)
-
-### ⌨️ 快捷键
-
-| 描述                | 快捷键                                                     |
-| ------------------- | ---------------------------------------------------------- |
-| 替换翻译选中文本    | Shift + Alt + T                                            |
-| 切换目标语言        | Ctrl + Alt + Shift + L (Mac os: Command + Alt + Shift + L) |
-| 切换默认翻译引擎    | Alt + Shift + E                                            |
-| 查看插件输出日志    | Ctrl + Alt + Shift + O (Mac os: Command + Alt + Shift + O) |
-| 清理插件输出日志    | Ctrl + Alt + C (Mac os: Command + Alt + C)                 |
-| 翻译终端选中文本    | Ctrl + Alt + ` (Mac os: Command + Alt + `)                 |
-| 清理终端翻译日志    | Alt + C                                                    |
-| 打开终端翻译面板    | Alt + Shift + O                                            |
-| 悬停翻译：启用/禁用 | Ctrl + Alt + E                                             |
-
-提示：如果你的编辑器环境，快捷键有冲突，可以自己修改调整。如果忘记快捷键，可以使用底部状态栏提供的状态栏按钮，进行目标语言和默认翻译引擎切换，如下图所示：
-
-![alt text](./assets/images/image.png)
 
 ## ❓ FAQ
 
@@ -239,6 +232,21 @@
    - 自主控制要开启和关闭的翻译功能
     ![alt text](./assets/images/custom-feature.png)
    - 避免选中大量文本，然后hover到选中文本上，此时如果开启了hover翻译，就会快速消耗大量翻译字符，所以应该避免这种操作
+
+## 💖 支持我
+
+如果此工具帮助你节省了时间、提升了工作效率，欢迎你用以下方式来支持我继续开发与维护：
+
+- 成为我的赞助人（GitHub Sponsors）：https://github.com/sponsors/yxw007
+
+- 请我喝杯咖啡☕（小额打赏）——每一份支持都能带来持续改进和更多新特性。
+
+  ![alt text](./assets/images/give_a_reward.jpg)
+
+- 关注我 + 一键三连我的视频 (bilibili: [向往自由的码](https://space.bilibili.com/3546754775517426?spm_id_from=333.788.0.0))
+- 在 GitHub 点个 Star⭐、把插件推荐给身边的开发者，这些都是极大的鼓励。
+
+每一份支持我都非常感谢❤️，会优先用于功能迭代和测试。如果你有特别的建议或希望我做的功能，欢迎通过 Issue 或私信联系。
 
 ## 📢 更多
 
