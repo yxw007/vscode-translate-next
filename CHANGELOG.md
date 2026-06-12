@@ -1,29 +1,6 @@
 # Changelog
 
 
-## v1.1.0
-
-
-
-### 🚀 Enhancements
-
-- **docs:** Add custom translation engine section 
-
-### 🔥 Performance
-
-- Improve login and check-out prompts 
-
-### 🩹 Fixes
-
-- **docs:** Readme in other languages was not released at release 
-- **docs:** Align table formatting and improve consistency in README files 
-- Terminal translation will not automatically open and focus terminal translation view 
-- **build:** Missing script for packaging and publishing replacement content 
-
-### ❤️ Contributors
-
-- Yxw007 ([@yxw007](http://github.com/yxw007))
-
 ## v1.0.3
 
 
