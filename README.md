@@ -38,17 +38,17 @@ Every programmer must have a vscode translation plugin artifact, it allows you t
 
 ## 💻 Supported Translation Engines
 
-| Name             | Supported | Description                                                                                                                                    |
-| ---------------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| google           | ✔         | Production-ready and available                                                                                                                 |
-| azure translate  | ✔         | Production-ready and available                                                                                                                 |
-| amazon translate | ✔         | Production-ready and available                                                                                                                 |
-| baidu            | ✔         | Production-ready and available                                                                                                                 |
-| deepl            | ✔         | Production-ready and available                                                                                                                 |
-| openai           | ✔         | Production-ready and available (results are not ideal and prompt tuning is difficult)                                                         |
-| tencent          | ✔         | Production-ready and available                                                                                                                 |
+| Name             | Supported | Description                                                                                                                                  |
+| ---------------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| google           | ✔         | Production-ready and available                                                                                                               |
+| azure translate  | ✔         | Production-ready and available                                                                                                               |
+| amazon translate | ✔         | Production-ready and available                                                                                                               |
+| baidu            | ✔         | Production-ready and available                                                                                                               |
+| deepl            | ✔         | Production-ready and available                                                                                                               |
+| openai           | ✔         | Production-ready and available (results are not ideal and prompt tuning is difficult)                                                        |
+| tencent          | ✔         | Production-ready and available                                                                                                               |
 | yandex           |           | Not fully configured because I do not have a bank account supported by the platform. Contributions are welcome if you can help make it work. |
-| custom Engine    | ✔         | Production-ready and available                                                                                                                 |
+| custom Engine    | ✔         | Production-ready and available                                                                                                               |
 
 ## 🛠️ Usage
 
@@ -58,19 +58,20 @@ Every programmer must have a vscode translation plugin artifact, it allows you t
    ![login](./assets/images/login.gif)
 
 ### ✨ Feature Preview
-
-- Translate selected text
-  ![translateText](./assets/images/usage.gif)
 - Hover translation
   ![hover](./assets/images/hover.gif)
 - Translate selected terminal text
   ![translate-terminal-text](./assets/images/translate-terminal-text.gif)
   (Tip: If the shortcut does not work, click the terminal text translation button in the bottom bar.)
   ![translate-terminal-shortcut-bnt](./assets/images/terminalShortcutBtn.jpg)
-- How to use OpenAI
-  ![alt text](./assets/images/open_ai_usage.gif)
 - Immersive translation for extension details
   ![detail_translation](./assets/images/detail_translation.gif)
+- Translate selected text
+  ![translateText](./assets/images/usage.gif)
+- Add a custom translation engine
+  ![addCustomEngine](./assets/images/addCustomEngine.gif)
+- How to use OpenAI
+  ![alt text](./assets/images/open_ai_usage.gif)
 
 ### 📹 Video Tutorials
 
@@ -79,17 +80,17 @@ Every programmer must have a vscode translation plugin artifact, it allows you t
 
 ### ⌨️ Shortcuts
 
-| Description | Shortcut |
-| ----------- | -------- |
-| Replace selected text with translation | Shift + Alt + T |
-| Switch target language | Ctrl + Alt + Shift + L (Mac os: Command + Alt + Shift + L) |
-| Switch default translation engine | Alt + Shift + E |
-| View extension output logs | Ctrl + Alt + Shift + O (Mac os: Command + Alt + Shift + O) |
-| Clear extension output logs | Ctrl + Alt + C (Mac os: Command + Alt + C) |
-| Translate selected text in terminal | Ctrl + Alt + ` (Mac os: Command + Alt + `) |
-| Clear terminal translation logs | Alt + C |
-| Open terminal translation panel | Alt + Shift + O |
-| Hover translation: enable / disable | Ctrl + Alt + E |
+| Description                            | Shortcut                                                   |
+| -------------------------------------- | ---------------------------------------------------------- |
+| Replace selected text with translation | Shift + Alt + T                                            |
+| Switch target language                 | Ctrl + Alt + Shift + L (Mac os: Command + Alt + Shift + L) |
+| Switch default translation engine      | Alt + Shift + E                                            |
+| View extension output logs             | Ctrl + Alt + Shift + O (Mac os: Command + Alt + Shift + O) |
+| Clear extension output logs            | Ctrl + Alt + C (Mac os: Command + Alt + C)                 |
+| Translate selected text in terminal    | Ctrl + Alt + ` (Mac os: Command + Alt + `)                 |
+| Clear terminal translation logs        | Alt + C                                                    |
+| Open terminal translation panel        | Alt + Shift + O                                            |
+| Hover translation: enable / disable    | Ctrl + Alt + E                                             |
 
 Tip: If these shortcuts conflict with your environment, adjust them in VS Code. If you forget them, you can also use the status bar buttons at the bottom to switch the target language and the default translation engine, as shown below:
 
@@ -211,10 +212,10 @@ For a Chat Completions style API, you can also configure it like this:
 
 3. Common Baidu Translate errors
 
-   | Error code | Meaning | Solution |
-   | ---------- | ------- | -------- |
-   | 52003 | Unauthorized user | Check whether the `appid` is correct and whether the service is enabled. |
-   | 54003 | Access restricted | You may have enabled general text translation instead of domain translation. |
+   | Error code | Meaning           | Solution                                                                     |
+   | ---------- | ----------------- | ---------------------------------------------------------------------------- |
+   | 52003      | Unauthorized user | Check whether the `appid` is correct and whether the service is enabled.     |
+   | 54003      | Access restricted | You may have enabled general text translation instead of domain translation. |
 
    > For more error codes, see the [error code list](https://api.fanyi.baidu.com/doc/22).
 

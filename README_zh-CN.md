@@ -59,18 +59,20 @@
 
 ### ✨ 功能效果
 
-- 选中翻译文本
-  ![translateText](./assets/images/usage.gif)
 - hover 翻译
   ![hover](./assets/images/hover.gif)
 - 翻译终端选中文本
   ![translate-terminal-text](./assets/images/translate-terminal-text.gif)
   (提示：如果快捷键失效，可以点底部栏终端文本翻译按钮)
   ![translate-terminal-shortcut-bnt](./assets/images/terminalShortcutBtn.jpg)
-- 如何使用openai 
-  ![alt text](./assets/images/open_ai_usage.gif)
 - 插件详情沉浸式翻译
   ![detail_translation](./assets/images/detail_translation.gif)
+- 选中翻译文本
+  ![translateText](./assets/images/usage.gif)
+- 添加自定义翻译engine
+  ![addCustomEngine](./assets/images/addCustomEngine.gif)
+- 如何使用openai 
+  ![alt text](./assets/images/open_ai_usage.gif)
 
 ### 📹 视频教程
 - [VSCode必备插件神器，让你更沉浸式写代码](https://www.bilibili.com/video/BV1Y1zMYQEbi/?vd_source=eaea9ad794278c4e15f13efa6d046736)
