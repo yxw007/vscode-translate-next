@@ -1,9 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 3956252 */
-  src: url('iconfont.woff2?t=1741873994372') format('woff2'),
-       url('iconfont.woff?t=1741873994372') format('woff'),
-       url('iconfont.ttf?t=1741873994372') format('truetype'),
-       url('iconfont.svg?t=1741873994372#iconfont') format('svg');
+  src: url('iconfont.woff2?t=1781440768507') format('woff2'),
+       url('iconfont.woff?t=1781440768507') format('woff'),
+       url('iconfont.ttf?t=1781440768507') format('truetype');
 }
 
 .iconfont {
@@ -12,6 +11,10 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-Subtract:before {
+  content: "\e604";
 }
 
 .icon-a-fanyi3x:before {

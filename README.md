@@ -14,9 +14,10 @@ Every programmer must have a vscode translation plugin artifact, it allows you t
 - Supports multiple translation engines: Google, Azure, Amazon, Baidu, DeepL, and CustomEngine (fully user-defined)
 - Supports translation from one language to many target languages
 - Supports hover translation
-- Supports replacing selected text with its translation
-- Supports translating selected text in the terminal
 - Supports immersive translation for extension details pages
+- Supports markdown preview immersive translation
+- Supports translating selected text in the terminal
+- Supports replacing selected text with its translation
 
 ## 📋 Requirements
 
@@ -66,6 +67,8 @@ Every programmer must have a vscode translation plugin artifact, it allows you t
   ![translate-terminal-shortcut-bnt](./assets/images/terminalShortcutBtn.jpg)
 - Immersive translation for extension details
   ![detail_translation](./assets/images/detail_translation.gif)
+- Markdown preview immersive translation
+  ![markdown-preview-translate](./assets/images/markdown-preview-translate.gif)
 - Translate selected text
   ![translateText](./assets/images/usage.gif)
 - Add a custom translation engine
