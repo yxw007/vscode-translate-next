@@ -14,9 +14,10 @@
 - 複数の翻訳エンジンに対応: Google、Azure、Amazon、Baidu、DeepL、CustomEngine（完全ユーザー定義）
 - 1 つの言語からさまざまな言語への翻訳に対応
 - ホバー翻訳に対応
-- 選択テキストを翻訳結果で置き換え可能
-- ターミナルで選択したテキストの翻訳に対応
 - 拡張機能詳細ページの没入型翻訳に対応
+- Markdown プレビューの没入型翻訳に対応
+- ターミナルで選択したテキストの翻訳に対応
+- 選択テキストを翻訳結果で置き換え可能
 
 ## 📋 要件
 
@@ -66,6 +67,8 @@
   ![translate-terminal-shortcut-bnt](./assets/images/terminalShortcutBtn.jpg)
 - 拡張機能詳細ページの没入型翻訳
   ![detail_translation](./assets/images/detail_translation.gif)
+- Markdown プレビューの没入型翻訳
+  ![markdown-preview-translate](./assets/images/markdown-preview-translate.gif)
 - 選択テキストの翻訳
   ![translateText](./assets/images/usage.gif)
 - カスタム翻訳エンジンを追加する

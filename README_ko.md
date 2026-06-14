@@ -14,9 +14,10 @@
 - 다양한 번역 엔진을 지원합니다: Google, Azure, Amazon, Baidu, DeepL, CustomEngine(완전 사용자 정의)
 - 하나의 언어에서 다양한 언어로 번역할 수 있습니다
 - hover 번역을 지원합니다
-- 선택한 텍스트를 번역 결과로 바꿀 수 있습니다
-- 터미널에서 선택한 텍스트 번역을 지원합니다
 - 확장 상세 페이지 몰입형 번역을 지원합니다
+- markdown 미리보기 몰입형 번역을 지원합니다
+- 터미널에서 선택한 텍스트 번역을 지원합니다
+- 선택한 텍스트를 번역 결과로 바꿀 수 있습니다
 
 ## 📋 요구 사항
 
@@ -66,6 +67,8 @@
   ![translate-terminal-shortcut-bnt](./assets/images/terminalShortcutBtn.jpg)
 - 확장 상세 페이지 몰입형 번역
   ![detail_translation](./assets/images/detail_translation.gif)
+- markdown 미리보기 몰입형 번역
+  ![markdown-preview-translate](./assets/images/markdown-preview-translate.gif)
 - 선택한 텍스트 번역
   ![translateText](./assets/images/usage.gif)
 - 사용자 정의 번역 엔진을 추가합니다.

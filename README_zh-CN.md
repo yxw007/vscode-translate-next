@@ -11,12 +11,13 @@
 ## ✨ 特性
 
 - 简单易用
-- 支持多翻译引擎：Google,Azure,Amazon,Baidu,deepl，CustomEngine(完全用户自定义)
-- 支持从一种语言翻译至各种语言
-- 支持悬停翻译
-- 替换选中文本翻译
-- 支持终端选中文本翻译
-- 支持插件详情沉侵式翻译
+- 支持：多翻译引擎：Google,Azure,Amazon,Baidu,deepl，CustomEngine(完全用户自定义)
+- 支持：从一种语言翻译至各种语言
+- 支持：悬停翻译
+- 支持：插件详情沉侵式翻译
+- 支持：markdown 预览沉侵式翻译
+- 支持：终端选中文本翻译
+- 支持：替换选中文本翻译
 
 ## 📋 要求
 
@@ -67,6 +68,8 @@
   ![translate-terminal-shortcut-bnt](./assets/images/terminalShortcutBtn.jpg)
 - 插件详情沉浸式翻译
   ![detail_translation](./assets/images/detail_translation.gif)
+- markdown预览沉侵式翻译
+  ![markdown-preview-translate](./assets/images/markdown-preview-translate.gif)
 - 选中翻译文本
   ![translateText](./assets/images/usage.gif)
 - 添加自定义翻译engine

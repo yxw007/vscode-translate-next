@@ -157,6 +157,13 @@
           "when": "editorTextFocus && editorHasSelection"
         }
       ],
+      "editor/title": [
+        {
+          "command": "extension.mdPreviewTranslate",
+          "when": "resourceLangId == markdown",
+          "group": "navigation"
+        }
+      ],
       "extension/context": [
         {
           "command": "extension.translateExtensionDetails",
@@ -232,6 +239,11 @@
       {
         "command": "extension.refreshLoginState",
         "title": "Translate-next: Refresh Login State"
+      },
+      {
+        "command": "extension.mdPreviewTranslate",
+        "title": "Translate-next: Preview Markdown",
+        "icon": "$(markdown-preview-icon)"
       }
     ],
     "configuration": {
@@ -834,6 +846,13 @@
         "default": {
           "fontPath": "assets/font/iconfont.woff",
           "fontCharacter": "\\e67a"
+        }
+      },
+      "markdown-preview-icon": {
+        "description": "markdown preview icon",
+        "default": {
+          "fontPath": "assets/font/iconfont.woff",
+          "fontCharacter": "\\e604"
         }
       }
     }
