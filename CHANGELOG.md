@@ -1,6 +1,20 @@
 # Changelog
 
 
+## v1.2.0
+
+
+
+### 🚀 Enhancements
+
+- **mdPreview:** Add immersive Markdown translation preview feature 
+- **icon:** Update iconfont and add markdown preview icon 
+- **docs:** Add immersive translation support for markdown preview 
+
+### ❤️ Contributors
+
+- Yxw007 ([@yxw007](http://github.com/yxw007))
+
 ## v1.1.0
 
 
