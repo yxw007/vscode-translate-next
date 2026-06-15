@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v1.2.1
+
+
+
+### 🏡 Chore
+
+- Reduce packet size 
+- **assets:** Update markdown preview translation GIF 
+
+### ❤️ Contributors
+
+- Yxw007 ([@yxw007](http://github.com/yxw007))
+
 ## v1.2.0
 
 
