@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.2.3
+
+
+
+### 🩹 Fixes
+
+- **style:** Markdown preview translation button is too dark 
+
+### ❤️ Contributors
+
+- Yxw007 ([@yxw007](http://github.com/yxw007))
+
 ## v1.2.2
 
 
