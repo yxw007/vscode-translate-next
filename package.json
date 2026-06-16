@@ -1,6 +1,6 @@
 {
   "name": "vscode-translate-next",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "displayName": "vscode-translate-next",
   "publisher": "yxw007",
   "author": {
@@ -242,8 +242,8 @@
       },
       {
         "command": "extension.mdPreviewTranslate",
-        "title": "Translate-next: Preview Markdown",
-        "icon": "$(markdown-preview-icon)"
+        "title": "Markdown Preview Translation",
+        "icon": "assets/images/md-preview.svg"
       }
     ],
     "configuration": {
