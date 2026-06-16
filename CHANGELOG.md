@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.2.2
+
+
+
+### 🩹 Fixes
+
+- Markdown preview translate relative image address cannot be displayed 
+
+### ❤️ Contributors
+
+- Yxw007 ([@yxw007](http://github.com/yxw007))
+
 ## v1.2.1
 
 
