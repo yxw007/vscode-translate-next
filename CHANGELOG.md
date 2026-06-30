@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.2.5
+
+
+
+### 🩹 Fixes
+
+- **chore:** Invalid extension name 'Translate Next' 
+
+### ❤️ Contributors
+
+- Yxw007 ([@yxw007](http://github.com/yxw007))
+
 ## v1.2.4
 
 
