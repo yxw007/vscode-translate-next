@@ -1,6 +1,28 @@
 # Changelog
 
 
+## v1.2.4
+
+
+
+### 🩹 Fixes
+
+- **docs:** Change displayName 
+- Update package name and version in package-lock.json 
+- Update homepage and repository URLs in package.json 
+
+### 📖 Documentation
+
+- The default language has changed from English to Chinese 
+
+### 🏡 Chore
+
+- Change plugin name 
+
+### ❤️ Contributors
+
+- Yxw007 ([@yxw007](http://github.com/yxw007))
+
 ## v1.2.3
 
 
