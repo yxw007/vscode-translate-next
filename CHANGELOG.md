@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.2.5
+
+
+
+### 🩹 Fixes
+
+- **docs:** Incorrect resource reference URL in the README 
+
+### ❤️ Contributors
+
+- Yxw007 ([@yxw007](http://github.com/yxw007))
+
 ## v1.2.4
 
 
