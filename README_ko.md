@@ -1,6 +1,6 @@
-# translate-ide
+# vscode-translate-next
 
-한국어 | [日語](README_ja.md) | [简体中文](README_zh-CN.md) | [English](README.md)
+한국어 | [日語](README_ja.md) | [简体中文](README.md) | [English](README_en.md)
 
 ![GitHub License](https://img.shields.io/github/license/yxw007/vscode-translate-next)
 
@@ -53,7 +53,7 @@
 
 ## 🛠️ 사용 방법
 
-1. 다운로드: [translate-ide](https://marketplace.visualstudio.com/items?itemName=yxw007.translate-ide)
+1. 다운로드: [vscode-translate-next](https://marketplace.visualstudio.com/items?itemName=yxw007.vscode-translate-next)
 2. 공식 사이트에서 계정 등록: [https://translate.yanxuewen.cn](https://translate.yanxuewen.cn)
 3. 로그인
    ![login](./assets/images/login.gif)
@@ -262,4 +262,4 @@ Chat Completions 스타일 API 예시:
 
 ## 📄 라이선스
 
-translate-ide 는 MIT 라이선스로 배포됩니다. 자세한 내용은 [LICENSE](./LICENSE) 를 참고하세요.
+vscode-translate-next 는 MIT 라이선스로 배포됩니다. 자세한 내용은 [LICENSE](./LICENSE) 를 참고하세요.

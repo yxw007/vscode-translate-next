@@ -1,20 +1,20 @@
 {
-  "name": "vscode-translate-next",
+  "name": "translate",
   "version": "1.2.3",
-  "displayName": "vscode-translate-next",
+  "displayName": "translate",
   "publisher": "yxw007",
   "author": {
     "name": "Potter",
     "email": "aa4790139@gmail.com"
   },
   "description": "A translate vscode extension that supports multiple translation engines",
-  "homepage": "https://github.com/yxw007/vscode-translate-next",
+  "homepage": "https://github.com/yxw007/translate",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yxw007/vscode-translate-next.git"
+    "url": "https://github.com/yxw007/translate.git"
   },
   "bugs": {
-    "url": "https://github.com/yxw007/vscode-translate-next/issues"
+    "url": "https://github.com/yxw007/translate/issues"
   },
   "engines": {
     "vscode": "^1.93.0",
@@ -24,6 +24,7 @@
     "Other"
   ],
   "keywords": [
+    "vscode-translate-next",
     "vscode",
     "extension",
     "translate",
@@ -37,7 +38,24 @@
     "baidu",
     "deepl",
     "openai",
-    "tencent"
+    "tencent",
+    "GPT",
+    "Claude Opus",
+    "Gemini",
+    "GLM",
+    "Qwen",
+    "DeepSeek",
+    "Kimi",
+    "通义千问",
+    "文心一言",
+    "Grok",
+    "Llama",
+    "豆包",
+    "MiMo",
+    "MiniMax",
+    "SenseNova",
+    "混元",
+    "盘古"
   ],
   "license": "MIT",
   "activationEvents": [
@@ -270,7 +288,7 @@
         "Translate-next.customEngines": {
           "type": "array",
           "default": [],
-          "markdownDescription": "Configure multiple custom translation engines. Edit this in settings.json for the best experience. Each field below provides hover help, type validation, and examples. Tutorial: [CustomTranslator.md](https://github.com/yxw007/vscode-translate-next/blob/main/vscode-extension/docs/CustomTranslator.md)",
+          "markdownDescription": "Configure multiple custom translation engines. Edit this in settings.json for the best experience. Each field below provides hover help, type validation, and examples. Tutorial: [CustomTranslator.md](https://github.com/yxw007/translate/blob/main/vscode-extension/docs/CustomTranslator.md)",
           "order": 2.1,
           "defaultSnippets": [
             {
