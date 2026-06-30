@@ -1,136 +1,136 @@
 # vscode-translate-next
 
-English | [日語](README_ja.md) | [한국어](README_ko.md) | [简体中文](README_zh-CN.md)
+简体中文 | [日語](README_ja.md) | [한국어](README_ko.md) | [English](README_en.md)
 
 ![GitHub License](https://img.shields.io/github/license/yxw007/vscode-translate-next)
 
-Every programmer must have a vscode translation plugin artifact, it allows you to not be afraid of multi-language, but let you more focused immersive writing code! 🚀
+每个程序员都必备的一款vscode翻译插件神器，它让你不在惧怕多国语言，而是让你更专注的沉浸式写代码🚀
 
-> Note: Underlying translation support is provided by [translate](https://github.com/yxw007/translate)
+> 说明：由[translate](https://github.com/yxw007/translate)提供底层翻译支持
 
-## ✨ Features
+## ✨ 特性
 
-- Simple and easy to use
-- Supports multiple translation engines: Google, Azure, Amazon, Baidu, DeepL, and CustomEngine (fully user-defined)
-- Supports translation from one language to many target languages
-- Supports hover translation
-- Supports immersive translation for extension details pages
-- Supports markdown preview immersive translation
-- Supports translating selected text in the terminal
-- Supports replacing selected text with its translation
+- 简单易用
+- 支持：多翻译引擎：Google,Azure,Amazon,Baidu,deepl，CustomEngine(完全用户自定义)
+- 支持：从一种语言翻译至各种语言
+- 支持：悬停翻译
+- 支持：插件详情沉侵式翻译
+- 支持：markdown 预览沉侵式翻译
+- 支持：终端选中文本翻译
+- 支持：替换选中文本翻译
 
-## 📋 Requirements
+## 📋 要求
 
 - vscode >= 1.91.0
 
-## ⚙️ Configuration
+## ⚙️ 配置
 
   ![alt text](./assets/images/config.jpg)
 
-  Tip: Google Translate works without extra setup. If you set another engine as the default translation engine, configure that engine first. Engines you do not use do not need to be configured.
+  提示：除了google翻译引擎不用配置，如果设置成其他翻译引擎为默认翻译engine，就需要配好对应的翻译引擎配置，如果其他翻译引擎不用，可以不用配置
 
-### Hover-supported languages / file types (custom)
+### Hover 支持的语言/文件类型（自定义）
 
 - `Translate-next.hover.extensions`
-  - Default: Built-in list of common programming language file extensions (comma-separated). Default value: `js,jsx,ts,tsx,java,py,c,h,cpp,cc,cxx,hpp,hh,hxx,rs,go,cs,php,rb,swift,kt,kts,scala,dart,lua`.
-  - Usage: Enter a comma-separated allowlist of extensions. With or without dots both work, for example: `ts,js,py` or `.ts,.js,.py`.
-  - Special: Set it to `*` to enable hover translation for all files. This is not recommended because it may cause unnecessary token usage.
-  - Note: If the default list does not include an extension you need, just append it.
+  - 默认：已内置一组主流编程语言文件扩展名（英文逗号分隔），默认值：`js,jsx,ts,tsx,java,py,c,h,cpp,cc,cxx,hpp,hh,hxx,rs,go,cs,php,rb,swift,kt,kts,scala,dart,lua`。
+  - 用法：用英文逗号分割填写扩展名白名单，带不带点都可以，例如：`ts,js,py` 或 `.ts,.js,.py`。
+  - 特殊：配置为 `*` 表示对所有文件启用 hover 翻译（不推荐，可能导致不必要的 token 消耗）。
+  - 补充：如果默认列表不包含你需要的扩展名，直接追加即可。
 
-## 💻 Supported Translation Engines
+## 💻支持的翻译引擎  
 
-| Name             | Supported | Description                                                                                                                                  |
-| ---------------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| google           | ✔         | Production-ready and available                                                                                                               |
-| azure translate  | ✔         | Production-ready and available                                                                                                               |
-| amazon translate | ✔         | Production-ready and available                                                                                                               |
-| baidu            | ✔         | Production-ready and available                                                                                                               |
-| deepl            | ✔         | Production-ready and available                                                                                                               |
-| openai           | ✔         | Production-ready and available (results are not ideal and prompt tuning is difficult)                                                        |
-| tencent          | ✔         | Production-ready and available                                                                                                               |
-| yandex           |           | Not fully configured because I do not have a bank account supported by the platform. Contributions are welcome if you can help make it work. |
-| custom Engine    | ✔         | Production-ready and available                                                                                                               |
+| name             | 支持 | 描述                                                                       |
+| ---------------- | ---- | -------------------------------------------------------------------------- |
+| google           | ✔    | 已投产，可以正常使用                                                       |
+| azure translate  | ✔    | 已投产，可以正常使用                                                       |
+| amazon translate | ✔    | 已投产，可以正常使用                                                       |
+| baidu            | ✔    | 已投产，可以正常使用                                                       |
+| deepl            | ✔    | 已投产，可以正常使用                                                       |
+| openai           | ✔    | 已投产，可以正常使用 (效果不佳，提示词很难调好)                            |
+| tencent          | ✔    | 已投产，可以正常使用                                                       |
+| yandex           |      | 由于我没有平台支持的银行账号，所以未调通（欢迎有条件的朋友帮忙调通，感谢） |
+| custom Engine    | ✔    | 已投产，可以正常使用                                                       |
 
-## 🛠️ Usage
+## 🛠️ 使用
 
-1. Download: [vscode-translate-next](https://marketplace.visualstudio.com/items?itemName=yxw007.vscode-translate-next)
-2. Register an account: [https://translate.yanxuewen.cn](https://translate.yanxuewen.cn)
-3. Sign in
+1. 下载：[vscode-translate-next](https://marketplace.visualstudio.com/items?itemName=yxw007.vscode-translate-next)
+2. 官网注册账号：[https://translate.yanxuewen.cn](https://translate.yanxuewen.cn)
+3. 登录
    ![login](./assets/images/login.gif)
 
-### ✨ Feature Preview
-- Hover translation
+### ✨ 功能效果
+
+- hover 翻译
   ![hover](./assets/images/hover.gif)
-- Translate selected terminal text
+- 翻译终端选中文本
   ![translate-terminal-text](./assets/images/translate-terminal-text.gif)
-  (Tip: If the shortcut does not work, click the terminal text translation button in the bottom bar.)
+  (提示：如果快捷键失效，可以点底部栏终端文本翻译按钮)
   ![translate-terminal-shortcut-bnt](./assets/images/terminalShortcutBtn.jpg)
-- Immersive translation for extension details
+- 插件详情沉浸式翻译
   ![detail_translation](./assets/images/detail_translation.gif)
-- Markdown preview immersive translation
+- markdown预览沉侵式翻译
   ![markdown-preview-translate](./assets/images/markdown-preview-translate.gif)
-- Translate selected text
+- 选中翻译文本
   ![translateText](./assets/images/usage.gif)
-- Add a custom translation engine
+- 添加自定义翻译engine
   ![addCustomEngine](./assets/images/addCustomEngine.gif)
-- How to use OpenAI
+- 如何使用openai 
   ![alt text](./assets/images/open_ai_usage.gif)
 
-### 📹 Video Tutorials
+### 📹 视频教程
+- [VSCode必备插件神器，让你更沉浸式写代码](https://www.bilibili.com/video/BV1Y1zMYQEbi/?vd_source=eaea9ad794278c4e15f13efa6d046736)
+- [快速上手vscode翻译神器](https://www.bilibili.com/video/BV1eVzZYoEkf/?vd_source=eaea9ad794278c4e15f13efa6d046736)
 
-- [A must-have VS Code extension that helps you code more immersively](https://www.bilibili.com/video/BV1Y1zMYQEbi/?vd_source=eaea9ad794278c4e15f13efa6d046736)
-- [Quick start guide for the VS Code translation extension](https://www.bilibili.com/video/BV1eVzZYoEkf/?vd_source=eaea9ad794278c4e15f13efa6d046736)
+### ⌨️ 快捷键
 
-### ⌨️ Shortcuts
+| 描述                | 快捷键                                                     |
+| ------------------- | ---------------------------------------------------------- |
+| 替换翻译选中文本    | Shift + Alt + T                                            |
+| 切换目标语言        | Ctrl + Alt + Shift + L (Mac os: Command + Alt + Shift + L) |
+| 切换默认翻译引擎    | Alt + Shift + E                                            |
+| 查看插件输出日志    | Ctrl + Alt + Shift + O (Mac os: Command + Alt + Shift + O) |
+| 清理插件输出日志    | Ctrl + Alt + C (Mac os: Command + Alt + C)                 |
+| 翻译终端选中文本    | Ctrl + Alt + ` (Mac os: Command + Alt + `)                 |
+| 清理终端翻译日志    | Alt + C                                                    |
+| 打开终端翻译面板    | Alt + Shift + O                                            |
+| 悬停翻译：启用/禁用 | Ctrl + Alt + E                                             |
 
-| Description                            | Shortcut                                                   |
-| -------------------------------------- | ---------------------------------------------------------- |
-| Replace selected text with translation | Shift + Alt + T                                            |
-| Switch target language                 | Ctrl + Alt + Shift + L (Mac os: Command + Alt + Shift + L) |
-| Switch default translation engine      | Alt + Shift + E                                            |
-| View extension output logs             | Ctrl + Alt + Shift + O (Mac os: Command + Alt + Shift + O) |
-| Clear extension output logs            | Ctrl + Alt + C (Mac os: Command + Alt + C)                 |
-| Translate selected text in terminal    | Ctrl + Alt + ` (Mac os: Command + Alt + `)                 |
-| Clear terminal translation logs        | Alt + C                                                    |
-| Open terminal translation panel        | Alt + Shift + O                                            |
-| Hover translation: enable / disable    | Ctrl + Alt + E                                             |
-
-Tip: If these shortcuts conflict with your environment, adjust them in VS Code. If you forget them, you can also use the status bar buttons at the bottom to switch the target language and the default translation engine, as shown below:
+提示：如果你的编辑器环境，快捷键有冲突，可以自己修改调整。如果忘记快捷键，可以使用底部状态栏提供的状态栏按钮，进行目标语言和默认翻译引擎切换，如下图所示：
 
 ![alt text](./assets/images/image.png)
 
-### Custom Engine Configuration
+### 自定义引擎配置
 
 - `Translate-next.customEngines`
-  - Purpose: Configure one or more custom translation engines in settings.
-  - Language codes: ISO 639 values such as `en`, `ja`, and `zh` can be found in [Wikipedia: List of ISO 639 language codes](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes).
-  - Note: If you need values such as `zh-CN`, append a region suffix to the base language code.
+  - 用途：在设置中配置一个或多个自定义翻译引擎。
+  - 语言 code 查询：像 `en`、`ja`、`zh` 这类 ISO 639 值，可参考 [Wikipedia: List of ISO 639 language codes](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes)。
+  - 说明：如果你需要 `zh-CN` 这种值，可以在基础语言 code 后面再拼接地区后缀。
 
-Configuration steps:
+配置步骤：
 
-1. Open VS Code Settings and search for `Translate-next.customEngines`.
-2. Add an object and fill in `name`, `apiUrl`, `method`, and `toLanguages`.
-3. If the API requires a request body, configure `body`; if it requires query parameters, configure `query`; if it requires headers, configure `headers`.
-4. You can use `{{from}}`, `{{to}}`, and `{{text}}` placeholders in `body`, `query`, and `headers`.
-5. If the response stores the translated text in a nested JSON field, set `responsePath`, for example `response`, `data.translation`, or `choices[0].message.content`.
-6. After saving the configuration, switch `defaultEngine` to the custom engine name you configured.
+1. 打开 VS Code 设置，搜索 `Translate-next.customEngines`。
+2. 新增一个对象，填写 `name`、`apiUrl`、`method`、`toLanguages`。
+3. 如果接口需要请求体，就配置 `body`；如果需要 query 参数，就配置 `query`；如果需要请求头，就配置 `headers`。
+4. 在 `body`、`query`、`headers` 中可以使用 `{{from}}`、`{{to}}`、`{{text}}` 占位符。
+5. 如果返回结果在 JSON 的某个字段里，配置 `responsePath`，例如 `response`、`data.translation` 或 `choices[0].message.content`。
+6. 配置完成后，把 `defaultEngine` 切换成你填写的自定义引擎名称即可使用。
 
-Common fields:
+常用字段：
 
-- `name`: Custom engine name. Must be unique.
-- `apiUrl`: API endpoint.
-- `method`: `GET` or `POST`.
-- `headers`: Request headers.
-- `query`: URL query parameters.
-- `body`: Request body.
-- `responsePath`: Path used to read the translated text from the response JSON. Array syntax such as `choices[0].message.content` is supported.
-- `fromLanguages`: Source language mapping where the key is the language name and the value is the language code.
-- `toLanguages`: Target language mapping where the key is the language name and the value is the language code.
-- `batchStrategy`: Multi-segment request mode. Supports `none`, `join`, and `array`.
-- `joinDelimiter`: Delimiter used when `batchStrategy=join`.
-- `timeout`: Request timeout in milliseconds.
+- `name`：自定义引擎名称，必须唯一。
+- `apiUrl`：接口地址。
+- `method`：`GET` 或 `POST`。
+- `headers`：请求头。
+- `query`：URL 查询参数。
+- `body`：请求体。
+- `responsePath`：从响应 JSON 中取翻译结果的路径，支持 `choices[0].message.content` 这种数组路径写法。
+- `fromLanguages`：源语言映射，key 是语言名，value 是语言 code。
+- `toLanguages`：目标语言映射，key 是语言名，value 是语言 code。
+- `batchStrategy`：多段文本请求模式，支持 `none`、`join`、`array`。
+- `joinDelimiter`：`batchStrategy=join` 时的拼接分隔符。
+- `timeout`：请求超时时间，单位毫秒。
 
-Example:
+示例：
 
 ```json
 "Translate-next.customEngines": [
@@ -144,7 +144,7 @@ Example:
     },
     "body": {
       "model": "translategemma:4b",
-      "prompt": "Translate {{text}} from {{from}} to {{to}}",
+      "prompt": "将 {{text}} 从 {{from}} 翻译到 {{to}}",
       "stream": false
     },
     "responsePath": "response",
@@ -165,17 +165,17 @@ Example:
 ]
 ```
 
-Response example:
+返回示例：
 
 ```json
 {
-  "response": "Hello, world!"
+  "response": "你好，世界！"
 }
 ```
 
-For this kind of API, set `responsePath: "response"`.
+上面这种接口配置 `responsePath: "response"` 即可。
 
-For a Chat Completions style API, you can also configure it like this:
+如果是 Chat Completions 风格接口，也可以直接这样配：
 
 ```json
 {
@@ -191,7 +191,7 @@ For a Chat Completions style API, you can also configure it like this:
     "messages": [
       {
         "role": "user",
-        "content": "Please translate the following text into English: {{text}}"
+        "content": "请将以下文本翻译成英文：{{text}}"
       }
     ]
   },
@@ -204,62 +204,61 @@ For a Chat Completions style API, you can also configure it like this:
 
 ## ❓ FAQ
 
-1. Error popup: `fetch failed`
-   ![alt text](./assets/images/error-1.png)
+1. 报：fetch failed 错误弹框
+    ![alt text](./assets/images/error-1.png)
 
-   > Answer: If you have not changed the default engine, you are using Google. If your computer cannot access Google, this error will appear.
+  > 答：如果你没有切换过default engine 那么你就是使用的google，而此时你电脑无法访问google就会报此错误
 
-2. How do I get keys for other translation engines?
+2. 我如何获取其他翻译引擎的key呢?
 
-   > Answer: See the engine configuration section in the [translate documentation](https://github.com/yxw007/translate).
+   > 答：查看文档[https://github.com/yxw007/translate](https://github.com/yxw007/translate) 引擎选项配置内容
 
-3. Common Baidu Translate errors
+3. 百度翻译相关，常见报错
 
-   | Error code | Meaning           | Solution                                                                     |
-   | ---------- | ----------------- | ---------------------------------------------------------------------------- |
-   | 52003      | Unauthorized user | Check whether the `appid` is correct and whether the service is enabled.     |
-   | 54003      | Access restricted | You may have enabled general text translation instead of domain translation. |
+    | 错误码 | 含义       | 解决方案                                               |
+    | ------ | ---------- | ------------------------------------------------------ |
+    | 52003  | 未授权用户 | 请检查appid是否正确或者服务是否开通                    |
+    | 54003  | 访问受限   | 开通的服务可能是通用文本翻译服务，需要改成领域翻译服务 |
+    
+  > 更多错误码，请查看 [错误码列表](https://api.fanyi.baidu.com/doc/22)
 
-   > For more error codes, see the [error code list](https://api.fanyi.baidu.com/doc/22).
+4. 按快捷键无效，怎么解决？
+   - 可能情况1：vscode中的快捷键冲突，修改冲突的快捷键即可
+   - 可能情况2：快捷键与外部软件快捷键冲突，逐步退出外部软件，排查冲突软件，然后修改快捷键
+   - 隐藏功能：
+     - 编辑视图可以右键替换选中翻译
+        ![alt text](./assets/images/right-click-translate.gif)
+     - 终端选中文本翻译，可以在设置界面中将其打开在底部栏显示
+        ![alt text](./assets/images/click-bottom-translate-bar.gif)
 
-4. What should I do if shortcuts do not work?
-
-   - Possible cause 1: They conflict with other VS Code shortcuts. Change the conflicting shortcut.
-   - Possible cause 2: They conflict with shortcuts from another application. Close external apps one by one, find the conflict, then rebind the shortcut.
-   - Hidden features:
-     - In the editor view, you can right-click to replace the selected text with its translation.
-       ![alt text](./assets/images/right-click-translate.gif)
-     - For terminal selected-text translation, you can enable it in settings and show it in the bottom bar.
-       ![alt text](./assets/images/click-bottom-translate-bar.gif)
-
-5. How can I avoid consuming too many translated characters?
-
-   - Increase the cache duration.
+5. 如果避免大量翻译字符消耗?
+   - 加大缓存时间
      ![alt text](./assets/images/add-cache-time.png)
-   - Only enable the translation features you actually need.
-     ![alt text](./assets/images/custom-feature.png)
-   - Avoid selecting a large block of text and then hovering over it. If hover translation is enabled, that can quickly consume a large number of characters.
+   - 自主控制要开启和关闭的翻译功能
+    ![alt text](./assets/images/custom-feature.png)
+   - 避免选中大量文本，然后hover到选中文本上，此时如果开启了hover翻译，就会快速消耗大量翻译字符，所以应该避免这种操作
 
-## 💖 Support Me
+## 💖 支持我
 
-If this tool helps you save time and improve your workflow, you can support continued development and maintenance in the following ways:
+如果此工具帮助你节省了时间、提升了工作效率，欢迎你用以下方式来支持我继续开发与维护：
 
-- Become a sponsor on GitHub Sponsors: https://github.com/sponsors/yxw007
+- 成为我的赞助人（GitHub Sponsors）：https://github.com/sponsors/yxw007
 
-- Buy me a coffee ☕. Every bit of support helps fund ongoing improvements and new features.
+- 请我喝杯咖啡☕（小额打赏）——每一份支持都能带来持续改进和更多新特性。
 
   ![alt text](./assets/images/give_a_reward.jpg)
 
-- Follow me and support my videos on Bilibili: [向往自由的码](https://space.bilibili.com/3546754775517426?spm_id_from=333.788.0.0)
-- Give the project a Star on GitHub and recommend the extension to other developers.
+- 关注我 + 一键三连我的视频 (bilibili: [向往自由的码](https://space.bilibili.com/3546754775517426?spm_id_from=333.788.0.0))
+- 在 GitHub 点个 Star⭐、把插件推荐给身边的开发者，这些都是极大的鼓励。
 
-I appreciate every bit of support and will prioritize it toward new features and testing. If you have feature requests or suggestions, feel free to open an issue or contact me directly.
+每一份支持我都非常感谢❤️，会优先用于功能迭代和测试。如果你有特别的建议或希望我做的功能，欢迎通过 Issue 或私信联系。
 
-## 📢 More
+## 📢 更多
 
-- For configuring other translation engines, see the [translate README](https://github.com/yxw007/translate/blob/master/README_zh-CN.md)
-- If you run into problems and are not sure how to solve them, you can leave a message, add me on WeChat (`aa4790139`), or open an issue
+- 配置其他翻译引擎，可以阅读文档[translate README](https://github.com/yxw007/translate/blob/master/README_zh-CN.md)
+- 碰到问题不知道怎么解决，可以给我留言、加我微信(aa4790139)、提Issue 都可以
 
-## 📄 License
 
-vscode-translate-next is released under the MIT License. See [LICENSE](./LICENSE) for details.
+## 📄 许可证
+
+Translate 是在 MIT 许可证下发布的。详情请见 [LICENSE](./LICENSE) 文件。
