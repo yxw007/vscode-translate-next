@@ -1,7 +1,7 @@
 {
-  "name": "Translate Next",
+  "name": "vscode-translate-next",
   "version": "1.2.3",
-  "displayName": "Translate Next",
+  "displayName": "translate",
   "publisher": "yxw007",
   "author": {
     "name": "Potter",
