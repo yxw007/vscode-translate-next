@@ -1,7 +1,7 @@
 {
-  "name": "translate",
-  "version": "1.2.4",
-  "displayName": "translate",
+  "name": "Translate Next",
+  "version": "1.2.3",
+  "displayName": "Translate Next",
   "publisher": "yxw007",
   "author": {
     "name": "Potter",
@@ -28,6 +28,7 @@
     "vscode",
     "extension",
     "translate",
+    "next",
     "i18n",
     "localization",
     "internationalization",
@@ -55,7 +56,14 @@
     "MiniMax",
     "SenseNova",
     "混元",
-    "盘古"
+    "盘古",
+    "selection",
+    "inline",
+    "hover",
+    "terminal",
+    "productivity",
+    "markdown",
+    "detail"
   ],
   "license": "MIT",
   "activationEvents": [

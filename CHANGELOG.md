@@ -1,22 +1,6 @@
 # Changelog
 
 
-## v1.2.4
-
-
-
-### 📖 Documentation
-
-- The default language has changed from English to Chinese 
-
-### 🏡 Chore
-
-- Change plugin name 
-
-### ❤️ Contributors
-
-- Yxw007 ([@yxw007](http://github.com/yxw007))
-
 ## v1.2.3
 
 
