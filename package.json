@@ -1,6 +1,6 @@
 {
-  "name": "translate pro",
-  "version": "1.2.5",
+  "name": "Translate Next",
+  "version": "1.2.3",
   "displayName": "Translate Next",
   "publisher": "yxw007",
   "author": {
@@ -8,13 +8,13 @@
     "email": "aa4790139@gmail.com"
   },
   "description": "A translate vscode extension that supports multiple translation engines",
-  "homepage": "https://github.com/yxw007/vscode-translate-next",
+  "homepage": "https://github.com/yxw007/translate",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yxw007/vscode-translate-next.git"
+    "url": "https://github.com/yxw007/translate.git"
   },
   "bugs": {
-    "url": "https://github.com/yxw007/vscode-translate-next/issues"
+    "url": "https://github.com/yxw007/translate/issues"
   },
   "engines": {
     "vscode": "^1.93.0",
