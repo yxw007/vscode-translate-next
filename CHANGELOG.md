@@ -1,6 +1,24 @@
 # Changelog
 
 
+## v1.3.0
+
+
+
+### 🚀 Enhancements
+
+- **commands:** Add openPricing command to access subscription page 
+- Enhanced tooltips for the accountBar hover 
+
+### 🩹 Fixes
+
+- **docs:** Update description in package.json for clarity and localization 
+- Debugging error reported 
+
+### ❤️ Contributors
+
+- Yxw007 ([@yxw007](http://github.com/yxw007))
+
 ## v1.2.5
 
 
