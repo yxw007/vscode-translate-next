@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v1.3.1
+
+
+
+### 🔥 Performance
+
+- Optimize the login experience 
+
+### 🏡 Chore
+
+- **docs:** Add categories 
+
+### ❤️ Contributors
+
+- Yxw007 ([@yxw007](http://github.com/yxw007))
+
 ## v1.3.0
 
 
