@@ -21,6 +21,9 @@
     "node": ">=22.3.0"
   },
   "categories": [
+    "AI",
+    "Programming Languages",
+    "Machine Learning",
     "Other"
   ],
   "keywords": [
