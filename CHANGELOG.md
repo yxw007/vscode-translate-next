@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.4.1
+
+
+
+### 📖 Documentation
+
+- Add tencent and qwen configuration tutorial 
+
+### ❤️ Contributors
+
+- Yxw007 ([@yxw007](http://github.com/yxw007))
+
 ## v1.4.0
 
 
