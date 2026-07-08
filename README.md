@@ -101,6 +101,8 @@
 - [配置腾讯翻译engine](./course/zh/config-engine/tencent.md)
 - [配置自定义翻译engine](./course/zh/config-engine/custom.md)(内含：DeepSeek、智谱、千问、Xiaomi MiMo)
 
+> 提示：教程暴露的key仅供演示使用，请勿担心都已失效。
+
 #### 🎬 视频教程
 - [VSCode必备插件神器，让你更沉浸式写代码](https://www.bilibili.com/video/BV1Y1zMYQEbi/?vd_source=eaea9ad794278c4e15f13efa6d046736)
 - [快速上手vscode翻译神器](https://www.bilibili.com/video/BV1eVzZYoEkf/?vd_source=eaea9ad794278c4e15f13efa6d046736)

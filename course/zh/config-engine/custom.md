@@ -126,7 +126,62 @@ Custom Engine 的目的就是完全让用户自定义配置什么作为翻译Eng
 			"timeout": 30000
 		}
   ```
+## 配置Qwen
+1. 打开官网：[https://www.aliyun.com/product/qwen?utm_content=se_1023450589](https://www.aliyun.com/product/qwen?utm_content=se_1023450589), 注册账号
+2. 创建Api key
+  快捷跳转地址：[https://bailian.console.aliyun.com/cn-beijing?spm=5176.29597918.J_F4r-7Zs_PtjrjEY48APSA.d_primary.68a5133cchGM2U&tab=model#/api-key](https://bailian.console.aliyun.com/cn-beijing?spm=5176.29597918.J_F4r-7Zs_PtjrjEY48APSA.d_primary.68a5133cchGM2U&tab=model#/api-key)
+3. 插件配置Qwen-plus Engine
+  ![](../../assets/config-engine/custom/addCustomEngine.jpg)
+  ![](../../assets/config-engine/custom/qwen/1.jpg)
+  ![](../../assets/config-engine/custom/qwen/2.jpg)
 
+具体配置内容
+```json
+...
+  "Translate-next.customEngines": [
+    ...
+    {
+			"name": "qwen-plus",
+			"enabled": true,
+			"apiUrl": "https://ws-ytln9wz91b6f0f1c.cn-beijing.maas.aliyuncs.com/compatible-mode/v1/chat/completions",
+			"method": "POST",
+			"headers": {
+				"Content-Type": "application/json",
+				"Authorization": "Bearer sk-ws-H.EMRMERE.9Nfu.MEYCIQCt6lb4AwyKu1QsBWQkejFZwrYA6qTndUvPYHhxfHZ3LgIhANeKXtOgMaIFGonqpo3bVeYkhcuR4DvTGkOU8iONnZNJ"
+			},
+			"body": {
+				"model": "qwen-plus",
+				"messages": [
+					{
+						"role": "system",
+						"content": "You are a helpful and precise assistant for translation, only return the translated result without any extra explanation or comment"
+					},
+					{
+						"role": "user",
+						"content": "Translate {{text}} from {{from}} to {{to}}"
+					}
+				],
+				"type": "json_object"
+			},
+			"responsePath": "choices.0.message.content",
+			"fromLanguages": {
+				"Chinese": "Chinese",
+				"English": "English",
+				"Japanese": "Japanese",
+				"Korean": "Korean"
+			},
+			"toLanguages": {
+				"Chinese": "Chinese",
+				"English": "English",
+				"Japanese": "Japanese",
+				"Korean": "Korean"
+			},
+			"timeout": 30000
+		}
+  ]
+
+...
+```
 
 ## 延展说明
 
