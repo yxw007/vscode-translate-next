@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v1.4.0
+
+
+
+### 🚀 Enhancements
+
+- Add data statistics 
+
+### 📖 Documentation
+
+- Improve documentation and supplementary tutorials 
+
+### ❤️ Contributors
+
+- Yxw007 ([@yxw007](http://github.com/yxw007))
+
 ## v1.3.1
 
 
