@@ -23,33 +23,18 @@
 
 - vscode >= 1.91.0
 
-## ⚙️ 配置
-
-  ![alt text](./assets/images/config.jpg)
-
-  提示：除了google翻译引擎不用配置，如果设置成其他翻译引擎为默认翻译engine，就需要配好对应的翻译引擎配置，如果其他翻译引擎不用，可以不用配置
-
-### Hover 支持的语言/文件类型（自定义）
-
-- `Translate-next.hover.extensions`
-  - 默认：已内置一组主流编程语言文件扩展名（英文逗号分隔），默认值：`js,jsx,ts,tsx,java,py,c,h,cpp,cc,cxx,hpp,hh,hxx,rs,go,cs,php,rb,swift,kt,kts,scala,dart,lua`。
-  - 用法：用英文逗号分割填写扩展名白名单，带不带点都可以，例如：`ts,js,py` 或 `.ts,.js,.py`。
-  - 特殊：配置为 `*` 表示对所有文件启用 hover 翻译（不推荐，可能导致不必要的 token 消耗）。
-  - 补充：如果默认列表不包含你需要的扩展名，直接追加即可。
-
 ## 💻支持的翻译引擎  
 
-| name             | 支持 | 描述                                                                       |
-| ---------------- | ---- | -------------------------------------------------------------------------- |
-| google           | ✔    | 已投产，可以正常使用                                                       |
-| azure translate  | ✔    | 已投产，可以正常使用                                                       |
-| amazon translate | ✔    | 已投产，可以正常使用                                                       |
-| baidu            | ✔    | 已投产，可以正常使用                                                       |
-| deepl            | ✔    | 已投产，可以正常使用                                                       |
-| openai           | ✔    | 已投产，可以正常使用 (效果不佳，提示词很难调好)                            |
-| tencent          | ✔    | 已投产，可以正常使用                                                       |
-| yandex           |      | 由于我没有平台支持的银行账号，所以未调通（欢迎有条件的朋友帮忙调通，感谢） |
-| custom Engine    | ✔    | 已投产，可以正常使用                                                       |
+| name             | 支持 | 描述                                            |
+| ---------------- | ---- | ----------------------------------------------- |
+| google           | ✔    | 已投产，可以正常使用                            |
+| azure translate  | ✔    | 已投产，可以正常使用                            |
+| amazon translate | ✔    | 已投产，可以正常使用                            |
+| baidu            | ✔    | 已投产，可以正常使用                            |
+| deepl            | ✔    | 已投产，可以正常使用                            |
+| openai           | ✔    | 已投产，可以正常使用 (效果不佳，提示词很难调好) |
+| tencent          | ✔    | 已投产，可以正常使用                            |
+| custom Engine    | ✔    | 已投产，可以正常使用（完全用户自定义）          |
 
 ## 🛠️ 使用
 
@@ -58,7 +43,7 @@
 3. 登录
    ![login](./assets/images/login.gif)
 
-### ✨ 功能效果
+## ✨ 功能效果
 
 - hover 翻译
   ![hover](./assets/images/hover.gif)
@@ -77,10 +62,20 @@
 - 如何使用openai 
   ![alt text](./assets/images/open_ai_usage.gif)
 
-### 📹 视频教程
-- [VSCode必备插件神器，让你更沉浸式写代码](https://www.bilibili.com/video/BV1Y1zMYQEbi/?vd_source=eaea9ad794278c4e15f13efa6d046736)
-- [快速上手vscode翻译神器](https://www.bilibili.com/video/BV1eVzZYoEkf/?vd_source=eaea9ad794278c4e15f13efa6d046736)
+## ⚙️ 配置
 
+  ![alt text](./assets/images/config.jpg)
+
+  提示：除了google翻译引擎不用配置，如果设置成其他翻译引擎为默认翻译engine，就需要配好对应的翻译引擎配置，如果其他翻译引擎不用，可以不用配置
+
+### 🖱️ Hover 支持的语言/文件类型（自定义）
+
+- `Translate-next.hover.extensions`
+  - 默认：已内置一组主流编程语言文件扩展名（英文逗号分隔），默认值：`js,jsx,ts,tsx,java,py,c,h,cpp,cc,cxx,hpp,hh,hxx,rs,go,cs,php,rb,swift,kt,kts,scala,dart,lua`。
+  - 用法：用英文逗号分割填写扩展名白名单，带不带点都可以，例如：`ts,js,py` 或 `.ts,.js,.py`。
+  - 特殊：配置为 `*` 表示对所有文件启用 hover 翻译（不推荐，可能导致不必要的 token 消耗）。
+  - 补充：如果默认列表不包含你需要的扩展名，直接追加即可。
+  
 ### ⌨️ 快捷键
 
 | 描述                | 快捷键                                                     |
@@ -99,108 +94,16 @@
 
 ![alt text](./assets/images/image.png)
 
-### 自定义引擎配置
+### 📚 教程专区
 
-- `Translate-next.customEngines`
-  - 用途：在设置中配置一个或多个自定义翻译引擎。
-  - 语言 code 查询：像 `en`、`ja`、`zh` 这类 ISO 639 值，可参考 [Wikipedia: List of ISO 639 language codes](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes)。
-  - 说明：如果你需要 `zh-CN` 这种值，可以在基础语言 code 后面再拼接地区后缀。
+#### 📝 图文教程
+- [配置百度翻译engine](./course/zh/config-engine/baidu.md)
+- [配置腾讯翻译engine](./course/zh/config-engine/tencent.md)
+- [配置自定义翻译engine](./course/zh/config-engine/custom.md)(内含：DeepSeek、智谱、千问、Xiaomi MiMo)
 
-配置步骤：
-
-1. 打开 VS Code 设置，搜索 `Translate-next.customEngines`。
-2. 新增一个对象，填写 `name`、`apiUrl`、`method`、`toLanguages`。
-3. 如果接口需要请求体，就配置 `body`；如果需要 query 参数，就配置 `query`；如果需要请求头，就配置 `headers`。
-4. 在 `body`、`query`、`headers` 中可以使用 `{{from}}`、`{{to}}`、`{{text}}` 占位符。
-5. 如果返回结果在 JSON 的某个字段里，配置 `responsePath`，例如 `response`、`data.translation` 或 `choices[0].message.content`。
-6. 配置完成后，把 `defaultEngine` 切换成你填写的自定义引擎名称即可使用。
-
-常用字段：
-
-- `name`：自定义引擎名称，必须唯一。
-- `apiUrl`：接口地址。
-- `method`：`GET` 或 `POST`。
-- `headers`：请求头。
-- `query`：URL 查询参数。
-- `body`：请求体。
-- `responsePath`：从响应 JSON 中取翻译结果的路径，支持 `choices[0].message.content` 这种数组路径写法。
-- `fromLanguages`：源语言映射，key 是语言名，value 是语言 code。
-- `toLanguages`：目标语言映射，key 是语言名，value 是语言 code。
-- `batchStrategy`：多段文本请求模式，支持 `none`、`join`、`array`。
-- `joinDelimiter`：`batchStrategy=join` 时的拼接分隔符。
-- `timeout`：请求超时时间，单位毫秒。
-
-示例：
-
-```json
-"Translate-next.customEngines": [
-  {
-    "enabled": true,
-    "name": "my-ollama",
-    "apiUrl": "http://localhost:11434/api/generate",
-    "method": "POST",
-    "headers": {
-      "Content-Type": "application/json"
-    },
-    "body": {
-      "model": "translategemma:4b",
-      "prompt": "将 {{text}} 从 {{from}} 翻译到 {{to}}",
-      "stream": false
-    },
-    "responsePath": "response",
-    "fromLanguages": {
-      "Chinese": "zh",
-      "English": "en",
-      "Japanese": "ja",
-      "Korean": "ko"
-    },
-    "toLanguages": {
-      "Chinese": "zh",
-      "English": "en",
-      "Japanese": "ja",
-      "Korean": "ko"
-    },
-    "timeout": 30000
-  }
-]
-```
-
-返回示例：
-
-```json
-{
-  "response": "你好，世界！"
-}
-```
-
-上面这种接口配置 `responsePath: "response"` 即可。
-
-如果是 Chat Completions 风格接口，也可以直接这样配：
-
-```json
-{
-  "name": "siliconflow-chat",
-  "apiUrl": "https://api.siliconflow.cn/v1/chat/completions",
-  "method": "POST",
-  "headers": {
-    "Authorization": "Bearer sk-xxxx",
-    "Content-Type": "application/json"
-  },
-  "body": {
-    "model": "Qwen/Qwen2.5-7B-Instruct",
-    "messages": [
-      {
-        "role": "user",
-        "content": "请将以下文本翻译成英文：{{text}}"
-      }
-    ]
-  },
-  "responsePath": "choices[0].message.content",
-  "toLanguages": {
-    "English": "en"
-  }
-}
-```
+#### 🎬 视频教程
+- [VSCode必备插件神器，让你更沉浸式写代码](https://www.bilibili.com/video/BV1Y1zMYQEbi/?vd_source=eaea9ad794278c4e15f13efa6d046736)
+- [快速上手vscode翻译神器](https://www.bilibili.com/video/BV1eVzZYoEkf/?vd_source=eaea9ad794278c4e15f13efa6d046736)
 
 ## ❓ FAQ
 
@@ -213,16 +116,7 @@
 
    > 答：查看文档[https://github.com/yxw007/translate](https://github.com/yxw007/translate) 引擎选项配置内容
 
-3. 百度翻译相关，常见报错
-
-    | 错误码 | 含义       | 解决方案                                               |
-    | ------ | ---------- | ------------------------------------------------------ |
-    | 52003  | 未授权用户 | 请检查appid是否正确或者服务是否开通                    |
-    | 54003  | 访问受限   | 开通的服务可能是通用文本翻译服务，需要改成领域翻译服务 |
-    
-  > 更多错误码，请查看 [错误码列表](https://api.fanyi.baidu.com/doc/22)
-
-4. 按快捷键无效，怎么解决？
+3. 按快捷键无效，怎么解决？
    - 可能情况1：vscode中的快捷键冲突，修改冲突的快捷键即可
    - 可能情况2：快捷键与外部软件快捷键冲突，逐步退出外部软件，排查冲突软件，然后修改快捷键
    - 隐藏功能：
@@ -231,7 +125,7 @@
      - 终端选中文本翻译，可以在设置界面中将其打开在底部栏显示
         ![alt text](./assets/images/click-bottom-translate-bar.gif)
 
-5. 如果避免大量翻译字符消耗?
+4. 如果避免大量翻译字符消耗?
    - 加大缓存时间
      ![alt text](./assets/images/add-cache-time.png)
    - 自主控制要开启和关闭的翻译功能
