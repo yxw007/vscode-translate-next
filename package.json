@@ -544,6 +544,12 @@
           "description": "The first 200 characters are intercepted for language detection, Language detection must be turned on, otherwise this setting is invalid",
           "order": 17
         },
+        "Translate-next.optimize.translateBatchSize": {
+          "type": "number",
+          "default": 500,
+          "description": "Maximum total characters per batch when concatenating multiple blocks for translation. Larger batches reduce HTTP requests but may increase per-request latency. Set to 1 to disable batching (send one request per block).",
+          "order": 18
+        },
         "Translate-next.deepl.key": {
           "type": "string",
           "default": null,
