@@ -8,41 +8,6 @@
 
 > 说明：由[translate](https://github.com/yxw007/translate)提供底层翻译支持
 
-## ✨ 特性
-
-- 简单易用
-- 支持：多翻译引擎：Google,Azure,Amazon,Baidu,deepl，CustomEngine(完全用户自定义)
-- 支持：从一种语言翻译至各种语言
-- 支持：悬停翻译
-- 支持：插件详情沉侵式翻译
-- 支持：markdown 预览沉侵式翻译
-- 支持：终端选中文本翻译
-- 支持：替换选中文本翻译
-
-## 📋 要求
-
-- vscode >= 1.91.0
-
-## 💻支持的翻译引擎  
-
-| name             | 支持 | 描述                                            |
-| ---------------- | ---- | ----------------------------------------------- |
-| google           | ✔    | 已投产，可以正常使用                            |
-| azure translate  | ✔    | 已投产，可以正常使用                            |
-| amazon translate | ✔    | 已投产，可以正常使用                            |
-| baidu            | ✔    | 已投产，可以正常使用                            |
-| deepl            | ✔    | 已投产，可以正常使用                            |
-| openai           | ✔    | 已投产，可以正常使用 (效果不佳，提示词很难调好) |
-| tencent          | ✔    | 已投产，可以正常使用                            |
-| custom Engine    | ✔    | 已投产，可以正常使用（完全用户自定义）          |
-
-## 🛠️ 使用
-
-1. 下载：[vscode-translate-next](https://marketplace.visualstudio.com/items?itemName=yxw007.vscode-translate-next)
-2. 官网注册账号：[https://translate.yanxuewen.cn](https://translate.yanxuewen.cn)
-3. 登录
-   ![login](./assets/images/login.gif)
-
 ## ✨ 功能效果
 
 - hover 翻译
@@ -62,11 +27,46 @@
 - 如何使用openai 
   ![alt text](./assets/images/open_ai_usage.gif)
 
-## ⚙️ 配置
+## 📋 要求
+
+- vscode >= 1.91.0
+
+## 💻支持的翻译引擎  
+
+| name             | 支持 | 描述                                            |
+| ---------------- | ---- | ----------------------------------------------- |
+| google           | ✔    | 已投产，可以正常使用                            |
+| azure translate  | ✔    | 已投产，可以正常使用                            |
+| amazon translate | ✔    | 已投产，可以正常使用                            |
+| baidu            | ✔    | 已投产，可以正常使用                            |
+| deepl            | ✔    | 已投产，可以正常使用                            |
+| openai           | ✔    | 已投产，可以正常使用 (效果不佳，提示词很难调好) |
+| tencent          | ✔    | 已投产，可以正常使用                            |
+| custom Engine    | ✔    | 已投产，可以正常使用（完全用户自定义）          |
+
+## 🛠️ 快速上手使用
+
+1. 下载：[vscode-translate-next](https://marketplace.visualstudio.com/items?itemName=yxw007.vscode-translate-next)
+2. 官网注册账号：[https://translate.yanxuewen.cn](https://translate.yanxuewen.cn)
+3. 登录
+   ![login](./assets/images/login.gif)
+
+### ⚙️ 配置
 
   ![alt text](./assets/images/config.jpg)
 
-  提示：除了google翻译引擎不用配置，如果设置成其他翻译引擎为默认翻译engine，就需要配好对应的翻译引擎配置，如果其他翻译引擎不用，可以不用配置
+> 提示：google翻译引擎无需配置，可以直接使用。其他翻译Engine需要进行配置才可使用。
+
+### 📝 图文配置教程
+- [配置百度翻译engine](./course/zh/config-engine/baidu.md)
+- [配置腾讯翻译engine](./course/zh/config-engine/tencent.md)
+- [配置自定义翻译engine](./course/zh/config-engine/custom.md)(内含：DeepSeek、智谱、千问、Xiaomi MiMo)
+
+> 提示：教程暴露的key仅供演示使用，请勿担心都已失效。
+
+### 🎬 视频教程
+- [VSCode必备插件神器，让你更沉浸式写代码](https://www.bilibili.com/video/BV1Y1zMYQEbi/?vd_source=eaea9ad794278c4e15f13efa6d046736)
+- [快速上手vscode翻译神器](https://www.bilibili.com/video/BV1eVzZYoEkf/?vd_source=eaea9ad794278c4e15f13efa6d046736)
 
 ### 🖱️ Hover 支持的语言/文件类型（自定义）
 
@@ -93,19 +93,6 @@
 提示：如果你的编辑器环境，快捷键有冲突，可以自己修改调整。如果忘记快捷键，可以使用底部状态栏提供的状态栏按钮，进行目标语言和默认翻译引擎切换，如下图所示：
 
 ![alt text](./assets/images/image.png)
-
-### 📚 教程专区
-
-#### 📝 图文教程
-- [配置百度翻译engine](./course/zh/config-engine/baidu.md)
-- [配置腾讯翻译engine](./course/zh/config-engine/tencent.md)
-- [配置自定义翻译engine](./course/zh/config-engine/custom.md)(内含：DeepSeek、智谱、千问、Xiaomi MiMo)
-
-> 提示：教程暴露的key仅供演示使用，请勿担心都已失效。
-
-#### 🎬 视频教程
-- [VSCode必备插件神器，让你更沉浸式写代码](https://www.bilibili.com/video/BV1Y1zMYQEbi/?vd_source=eaea9ad794278c4e15f13efa6d046736)
-- [快速上手vscode翻译神器](https://www.bilibili.com/video/BV1eVzZYoEkf/?vd_source=eaea9ad794278c4e15f13efa6d046736)
 
 ## ❓ FAQ
 
