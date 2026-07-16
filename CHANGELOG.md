@@ -1,6 +1,39 @@
 # Changelog
 
 
+## v1.5.0
+
+
+
+### 🚀 Enhancements
+
+- Markdown preview translation, complete translation functions at the top tools 
+- Sync markdown preview and translate top tools to plug-in details translation page 
+- Not logged in or session expired—display an interactive prompt 
+
+### 🔥 Performance
+
+- Speed up translation of improvement details and markdown preview to avoid too many requests 
+
+### 🩹 Fixes
+
+- Plugin details and markdown preview translation, no transparency of concurrency and engine 
+- Non-default engine translation report Engine not found 
+- Plugin details translation, retry failure, block will remain loading 
+
+### 📖 Documentation
+
+- Add tencent and qwen configuration tutorial 
+- Improve the README documentation 
+
+### 🏡 Chore
+
+- **release:** V1.4.1 
+
+### ❤️ Contributors
+
+- Yxw007 ([@yxw007](http://github.com/yxw007))
+
 ## v1.4.1
 
 
