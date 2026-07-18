@@ -1,13 +1,13 @@
 {
   "name": "vscode-translate-next",
   "version": "1.5.0",
-  "displayName": "Translate Pro",
+  "displayName": "%app.displayName%",
   "publisher": "yxw007",
   "author": {
     "name": "Potter",
     "email": "aa4790139@gmail.com"
   },
-  "description": "翻译神器 — 打破语言障碍，让读写代码更轻松 | Break language barriers. Read and write code with ease",
+  "description": "%app.description%",
   "homepage": "https://github.com/yxw007/vscode-translate-next",
   "repository": {
     "type": "git",
@@ -73,6 +73,7 @@
     "*"
   ],
   "main": "./dist/extension.js",
+  "l10n": "./l10n",
   "icon": "icon.png",
   "scripts": {
     "vscode:prepublish": "npm run package",
@@ -148,7 +149,7 @@
       "activitybar": [
         {
           "id": "translateTerminalLogs",
-          "title": "vscode-translate-next",
+          "title": "%view.container.translateTerminalLogs.title%",
           "icon": "icon.png"
         }
       ]
@@ -158,7 +159,7 @@
         {
           "type": "webview",
           "id": "translateTerminalLogView",
-          "name": "logs",
+          "name": "%view.translateTerminalLogView.name%",
           "icon": "icon.png"
         }
       ]
@@ -204,111 +205,111 @@
     "commands": [
       {
         "command": "extension.replaceTranslateSelectedText",
-        "title": "Replace Translate Selected Text"
+        "title": "%cmd.extension.replaceTranslateSelectedText.title%"
       },
       {
         "command": "extension.setTargetLanguage",
-        "title": "Set target language"
+        "title": "%cmd.extension.setTargetLanguage.title%"
       },
       {
         "command": "extension.setParentLanguage",
-        "title": "Set parent language"
+        "title": "%cmd.extension.setParentLanguage.title%"
       },
       {
         "command": "extension.setDefaultEngine",
-        "title": "Set default translation engine"
+        "title": "%cmd.extension.setDefaultEngine.title%"
       },
       {
         "command": "extension.setDefaultLLM",
-        "title": "Set default LLM"
+        "title": "%cmd.extension.setDefaultLLM.title%"
       },
       {
         "command": "extension.translateTerminalText",
-        "title": "Translate terminal selections text"
+        "title": "%cmd.extension.translateTerminalText.title%"
       },
       {
         "command": "extension.clearOutputPanel",
-        "title": "Clear output logs panel"
+        "title": "%cmd.extension.clearOutputPanel.title%"
       },
       {
         "command": "extension.openTerminalTranslateView",
-        "title": "Open terminal translate logs view"
+        "title": "%cmd.extension.openTerminalTranslateView.title%"
       },
       {
         "command": "extension.openOutputPanel",
-        "title": "Open output logs panel"
+        "title": "%cmd.extension.openOutputPanel.title%"
       },
       {
         "command": "extension.sortTerminalTranslateLogsAsc",
-        "title": "Sort Logs Asc",
+        "title": "%cmd.extension.sortTerminalTranslateLogsAsc.title%",
         "icon": "$(arrow-up)"
       },
       {
         "command": "extension.sortTerminalTranslateLogsDesc",
-        "title": "Sort Logs Desc",
+        "title": "%cmd.extension.sortTerminalTranslateLogsDesc.title%",
         "icon": "$(arrow-down)"
       },
       {
         "command": "extension.clearTerminalTranslateLogs",
-        "title": "Clear terminal translate logs view",
-        "shortTitle": "Clear Logs",
+        "title": "%cmd.extension.clearTerminalTranslateLogs.title%",
+        "shortTitle": "%cmd.extension.clearTerminalTranslateLogs.shortTitle%",
         "icon": "$(trash)"
       },
       {
         "command": "extension.translateExtensionDetails",
-        "title": "Translate-next: Immersive Translate"
+        "title": "%cmd.extension.translateExtensionDetails.title%"
       },
       {
         "command": "extension.login",
-        "title": "Translate-next: Login"
+        "title": "%cmd.extension.login.title%"
       },
       {
         "command": "extension.logout",
-        "title": "Translate-next: Logout"
+        "title": "%cmd.extension.logout.title%"
       },
       {
         "command": "extension.openPricing",
-        "title": "Translate-next: Open Subscription Page"
+        "title": "%cmd.extension.openPricing.title%"
       },
       {
         "command": "extension.refreshLoginState",
-        "title": "Translate-next: Refresh Login State"
+        "title": "%cmd.extension.refreshLoginState.title%"
       },
       {
         "command": "extension.mdPreviewTranslate",
-        "title": "Markdown Preview Translation",
+        "title": "%cmd.extension.mdPreviewTranslate.title%",
         "icon": "assets/images/md-preview.svg"
       }
     ],
     "configuration": {
-      "title": "Translate-next",
+      "title": "%config.title%",
       "properties": {
         "Translate-next.targetLanguage": {
           "type": "string",
           "default": "English",
-          "description": "Change target language",
+          "description": "%config.targetLanguage.description%",
           "order": 1
         },
         "Translate-next.defaultEngine": {
           "type": "string",
           "default": "google",
-          "description": "The translation engine to use. Built-in engines: google, azure, amazon, baidu, deepl, openai, tencent. Custom engines can also be set by name.",
+          "description": "%config.defaultEngine.description%",
           "order": 2
         },
         "Translate-next.authBaseUrl": {
           "type": "string",
           "default": "https://translate.yanxuewen.cn",
-          "description": "Web server base URL used for plugin login, token refresh, and subscription validation.",
+          "description": "%config.authBaseUrl.description%",
           "order": 2.05
         },
         "Translate-next.customEngines": {
           "type": "array",
           "default": [],
-          "markdownDescription": "Configure multiple custom translation engines. Edit this in settings.json for the best experience. Each field below provides hover help, type validation, and examples. Tutorial: [CustomTranslator.md](https://github.com/yxw007/translate/blob/main/vscode-extension/docs/CustomTranslator.md)",
+          "markdownDescription": "%config.customEngines.markdownDescription%",
           "order": 2.1,
           "defaultSnippets": [
             {
-              "label": "Chat Completions custom engine",
+              "label": "%config.customEngines.defaultSnippets.label%",
               "body": [
                 {
                   "enabled": true,
@@ -356,17 +357,17 @@
               "enabled": {
                 "type": "boolean",
                 "default": true,
-                "markdownDescription": "Enable or disable this custom engine. Disabled engines will not appear in the engine selector."
+                "markdownDescription": "%config.customEngines.enabled.markdownDescription%"
               },
               "name": {
                 "type": "string",
                 "minLength": 1,
-                "markdownDescription": "Unique engine name shown in the engine selector. Must not duplicate built-in engines such as `google`, `azure`, `amazon`, `baidu`, `deepl`, `openai`, or `tencent`."
+                "markdownDescription": "%config.customEngines.name.markdownDescription%"
               },
               "apiUrl": {
                 "type": "string",
                 "minLength": 1,
-                "markdownDescription": "Request URL for the custom engine. Example: `https://api.siliconflow.cn/v1/chat/completions`."
+                "markdownDescription": "%config.customEngines.apiUrl.markdownDescription%"
               },
               "method": {
                 "type": "string",
@@ -375,26 +376,26 @@
                   "POST"
                 ],
                 "default": "POST",
-                "markdownDescription": "HTTP method. Use `GET` for query-based APIs and `POST` for JSON/body-based APIs."
+                "markdownDescription": "%config.customEngines.method.markdownDescription%"
               },
               "headers": {
                 "type": "object",
                 "default": {},
-                "markdownDescription": "Request headers. Supports placeholders like `{{from}}`, `{{to}}`, and `{{text}}`. Example: `{ \"Authorization\": \"Bearer sk-xxxx\" }`."
+                "markdownDescription": "%config.customEngines.headers.markdownDescription%"
               },
               "query": {
                 "type": "object",
                 "default": {},
-                "markdownDescription": "URL query parameters for GET-style APIs. Supports placeholders like `{{from}}`, `{{to}}`, and `{{text}}`."
+                "markdownDescription": "%config.customEngines.query.markdownDescription%"
               },
               "body": {
                 "default": {},
-                "markdownDescription": "Request body for POST APIs. Nested JSON objects and arrays are supported. Use placeholders like `{{from}}`, `{{to}}`, and `{{text}}` anywhere inside the body."
+                "markdownDescription": "%config.customEngines.body.markdownDescription%"
               },
               "responsePath": {
                 "type": "string",
                 "default": "",
-                "markdownDescription": "Path used to extract the translated content from the response JSON. Examples: `response`, `data.translation`, `choices[0].message.content`. Leave empty for plain text responses."
+                "markdownDescription": "%config.customEngines.responsePath.markdownDescription%"
               },
               "batchStrategy": {
                 "type": "string",
@@ -404,18 +405,18 @@
                   "array"
                 ],
                 "default": "none",
-                "markdownDescription": "How `string[]` input is sent. `none`: send one request per item. `join`: concatenate texts with `joinDelimiter`. `array`: send the string array directly."
+                "markdownDescription": "%config.customEngines.batchStrategy.markdownDescription%"
               },
               "joinDelimiter": {
                 "type": "string",
                 "default": "\n$TRANSLATE_NEXT_SPLIT$\n",
-                "markdownDescription": "Delimiter used when `batchStrategy=join`. The same delimiter must be preserved by the remote API if you want to split the translated result back into multiple items."
+                "markdownDescription": "%config.customEngines.joinDelimiter.markdownDescription%"
               },
               "timeout": {
                 "type": "number",
                 "default": 30000,
                 "minimum": 1,
-                "markdownDescription": "Request timeout in milliseconds. Must be greater than `0`."
+                "markdownDescription": "%config.customEngines.timeout.markdownDescription%"
               },
               "fromLanguages": {
                 "type": "object",
@@ -425,7 +426,7 @@
                   "Japanese": "ja",
                   "Korean": "ko"
                 },
-                "markdownDescription": "Supported source languages. Use the display name as the key and the language code as the value. You can include `auto` for automatic source-language detection. For ISO 639 language codes, see [Wikipedia: List of ISO 639 language codes](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes).",
+                "markdownDescription": "%config.customEngines.fromLanguages.markdownDescription%",
                 "additionalProperties": {
                   "type": "string"
                 }
@@ -439,7 +440,7 @@
                   "Japanese": "ja",
                   "Korean": "ko"
                 },
-                "markdownDescription": "Supported target languages. Use the display name as the key and the language code as the value. At least one target language is required. For ISO 639 language codes, see [Wikipedia: List of ISO 639 language codes](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes).",
+                "markdownDescription": "%config.customEngines.toLanguages.markdownDescription%",
                 "additionalProperties": {
                   "type": "string"
                 }
@@ -450,46 +451,46 @@
         "Translate-next.hover.enable": {
           "type": "boolean",
           "default": true,
-          "description": "Enable hover translation",
+          "description": "%config.hover.enable.description%",
           "order": 3
         },
         "Translate-next.hover.extensions": {
           "type": "string",
           "default": "js,jsx,ts,tsx,java,py,c,h,cpp,cc,cxx,hpp,hh,hxx,rs,go,cs,php,rb,swift,kt,kts,scala,dart,lua",
-          "description": "Limit hover translation to specific file extensions (without dot). Use '*' for all; comma-separated values, e.g. ts,js,cs,py",
+          "description": "%config.hover.extensions.description%",
           "pattern": "^\\s*\\*\\s*$|^\\s*\\.?[A-Za-z0-9][A-Za-z0-9+_-]*\\s*(,\\s*\\.?[A-Za-z0-9][A-Za-z0-9+_-]*\\s*)*$",
-          "patternErrorMessage": "Invalid value. Use '*' or a comma-separated extension allowlist like: js,ts,py or .js,.ts,.py (no empty items).",
+          "patternErrorMessage": "%config.hover.extensions.patternErrorMessage%",
           "order": 3.1
         },
         "Translate-next.hover.string": {
           "type": "boolean",
           "default": false,
           "order": 4,
-          "description": "string hover"
+          "description": "%config.hover.string.description%"
         },
         "Translate-next.hover.variable": {
           "type": "boolean",
           "default": false,
           "order": 5,
-          "description": "variable hover"
+          "description": "%config.hover.variable.description%"
         },
         "Translate-next.hover.prompt": {
           "type": "boolean",
           "default": true,
           "order": 6,
-          "description": "prompt hover"
+          "description": "%config.hover.prompt.description%"
         },
         "Translate-next.hover.comment": {
           "type": "boolean",
           "default": true,
           "order": 7,
-          "description": "comment hover"
+          "description": "%config.hover.comment.description%"
         },
         "Translate-next.hover.diagnostics": {
           "type": "boolean",
           "default": true,
           "order": 8,
-          "description": "diagnostics hover"
+          "description": "%config.hover.diagnostics.description%"
         },
         "Translate-next.parentLanguage": {
           "type": "string",
@@ -500,60 +501,60 @@
           "type": "boolean",
           "default": false,
           "order": 10,
-          "description": "multiline merge"
+          "description": "%config.multiLineMerge.description%"
         },
         "Translate-next.openOutputPanel": {
           "type": "boolean",
           "default": false,
           "order": 11,
-          "description": "open output panel"
+          "description": "%config.openOutputPanel.description%"
         },
         "Translate-next.showTerminalSelectTranslateBar": {
           "type": "boolean",
           "default": true,
           "order": 12,
-          "description": "show terminal selected text translate status bar"
+          "description": "%config.showTerminalSelectTranslateBar.description%"
         },
         "Translate-next.cacheTime": {
           "type": "number",
           "default": 600000,
-          "description": "translate cache time in milliseconds",
+          "description": "%config.cacheTime.description%",
           "order": 13
         },
         "Translate-next.optimize.concurrencyNum": {
           "type": "number",
           "default": 4,
-          "description": "Translation concurrency per second, Be careful not to set too large, or you will report that the access exceeds the limit",
+          "description": "%config.optimize.concurrencyNum.description%",
           "order": 14
         },
         "Translate-next.optimize.requestGapDelay": {
           "type": "number",
           "default": 20,
-          "description": "Translation request interval delay in milliseconds",
+          "description": "%config.optimize.requestGapDelay.description%",
           "order": 15
         },
         "Translate-next.optimize.enableLanguageDetect": {
           "type": "boolean",
           "default": false,
-          "description": "Enable language detection, If the target language and source language are the same, no translation will be performed",
+          "description": "%config.optimize.enableLanguageDetect.description%",
           "order": 16
         },
         "Translate-next.optimize.languageDetectSize": {
           "type": "number",
           "default": 200,
-          "description": "The first 200 characters are intercepted for language detection, Language detection must be turned on, otherwise this setting is invalid",
+          "description": "%config.optimize.languageDetectSize.description%",
           "order": 17
         },
         "Translate-next.optimize.translateBatchSize": {
           "type": "number",
           "default": 500,
-          "description": "Maximum total characters per batch when concatenating multiple blocks for translation. Larger batches reduce HTTP requests but may increase per-request latency. Set to 1 to disable batching (send one request per block).",
+          "description": "%config.optimize.translateBatchSize.description%",
           "order": 18
         },
         "Translate-next.deepl.key": {
           "type": "string",
           "default": null,
-          "description": "DeepL API key",
+          "description": "%config.deepl.key.description%",
           "order": 100
         },
         "Translate-next.azure.region": {
@@ -648,13 +649,13 @@
             "brazilsoutheast"
           ],
           "default": "eastasia",
-          "markdownDescription": "Notice: select the region selected when you create the translate application on azure. Otherwise, 401001 is displayed",
+          "markdownDescription": "%config.azure.region.markdownDescription%",
           "order": 100
         },
         "Translate-next.azure.key": {
           "type": "string",
           "default": null,
-          "description": "Azure Translate API key",
+          "description": "%config.azure.key.description%",
           "order": 100
         },
         "Translate-next.amazon.region": {
@@ -678,7 +679,7 @@
             "us-gov-west-1"
           ],
           "default": "ap-southeast-1",
-          "markdownDescription": "The region to use for Amazon Translate, [More](https://docs.aws.amazon.com/general/latest/gr/translate-service.html)",
+          "markdownDescription": "%config.amazon.region.markdownDescription%",
           "order": 100
         },
         "Translate-next.amazon.keyId": {
@@ -704,13 +705,13 @@
         "Translate-next.tencent.secretId": {
           "type": "string",
           "default": null,
-          "description": "Tencent Cloud SecretId",
+          "description": "%config.tencent.secretId.description%",
           "order": 100
         },
         "Translate-next.tencent.secretKey": {
           "type": "string",
           "default": null,
-          "description": "Tencent Cloud SecretKey",
+          "description": "%config.tencent.secretKey.description%",
           "order": 100
         },
         "Translate-next.tencent.region": {
@@ -733,7 +734,7 @@
             "na-siliconvalley"
           ],
           "default": "ap-shenzhen-fsi",
-          "description": "Tencent Cloud SecretKey",
+          "description": "%config.tencent.secretKey.description%",
           "order": 100
         },
         "Translate-next.openai.apiKey": {
@@ -775,7 +776,7 @@
         "Translate-next.openai.outputLog": {
           "type": "boolean",
           "default": false,
-          "description": "output openai log",
+          "description": "%config.openai.outputLog.description%",
           "order": 110
         }
       }
@@ -786,70 +787,70 @@
         "key": "alt+shift+t",
         "mac": "alt+shift+t",
         "when": "editorTextFocus",
-        "description": "Replace Translate selected text"
+        "description": "%keybinding.replaceTranslateSelectedText.description%"
       },
       {
         "command": "extension.setTargetLanguage",
         "key": "ctrl+alt+shift+l",
         "mac": "cmd+alt+shift+l",
         "when": "editorTextFocus",
-        "description": "Set target language"
+        "description": "%keybinding.setTargetLanguage.description%"
       },
       {
         "command": "extension.setDefaultEngine",
         "key": "alt+shift+e",
         "mac": "alt+shift+e",
         "when": "editorTextFocus",
-        "description": "Set default translation engine"
+        "description": "%keybinding.setDefaultEngine.description%"
       },
       {
         "command": "extension.openOutputPanel",
         "key": "ctrl+alt+shift+o",
         "mac": "command+alt+shift+o",
         "when": "editorTextFocus || terminalFocus",
-        "description": "Open output logs panel"
+        "description": "%keybinding.openOutputPanel.description%"
       },
       {
         "command": "extension.clearOutputPanel",
         "key": "ctrl+alt+c",
         "mac": "command+alt+c",
         "when": "editorTextFocus",
-        "description": "Clear output logs panel"
+        "description": "%keybinding.clearOutputPanel.description%"
       },
       {
         "command": "extension.openTerminalTranslateView",
         "key": "alt+shift+o",
         "mac": "alt+shift+o",
         "when": "editorTextFocus || terminalFocus",
-        "description": "Open terminal translate logs view"
+        "description": "%keybinding.openTerminalTranslateView.description%"
       },
       {
         "command": "extension.translateTerminalText",
         "key": "ctrl+alt+`",
         "mac": "command+alt+`",
         "when": "terminalFocus",
-        "description": "Translate terminal selections text"
+        "description": "%keybinding.translateTerminalText.description%"
       },
       {
         "command": "extension.clearTerminalTranslateLogs",
         "key": "alt+c",
         "mac": "alt+c",
         "when": "editorTextFocus || terminalFocus",
-        "description": "Clear terminal translate logs view"
+        "description": "%keybinding.clearTerminalTranslateLogs.description%"
       },
       {
         "command": "extension.languageDetectToggle",
         "key": "ctrl+alt+t",
         "mac": "command+alt+t",
         "when": "editorTextFocus || terminalFocus",
-        "description": "Language detection switch"
+        "description": "%keybinding.languageDetectToggle.description%"
       },
       {
         "command": "extension.hover.enable",
         "key": "ctrl+alt+e",
         "mac": "cmd+alt+e",
         "when": "editorTextFocus",
-        "description": "Hover translation: Enable/Disable"
+        "description": "%keybinding.hover.enable.description%"
       }
     ],
     "icons": {
