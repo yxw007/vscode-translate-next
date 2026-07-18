@@ -24,8 +24,6 @@
   ![translateText](./assets/images/usage.gif)
 - 添加自定义翻译engine
   ![addCustomEngine](./assets/images/addCustomEngine.gif)
-- 如何使用openai 
-  ![alt text](./assets/images/open_ai_usage.gif)
 
 ## 📋 要求
 
@@ -33,16 +31,15 @@
 
 ## 💻支持的翻译引擎  
 
-| name             | 支持 | 描述                                            |
-| ---------------- | ---- | ----------------------------------------------- |
-| google           | ✔    | 已投产，可以正常使用                            |
-| azure translate  | ✔    | 已投产，可以正常使用                            |
-| amazon translate | ✔    | 已投产，可以正常使用                            |
-| baidu            | ✔    | 已投产，可以正常使用                            |
-| deepl            | ✔    | 已投产，可以正常使用                            |
-| openai           | ✔    | 已投产，可以正常使用 (效果不佳，提示词很难调好) |
-| tencent          | ✔    | 已投产，可以正常使用                            |
-| custom Engine    | ✔    | 已投产，可以正常使用（完全用户自定义）          |
+| name             | 支持 | 描述                                   |
+| ---------------- | ---- | -------------------------------------- |
+| google           | ✔    | 已投产，可以正常使用                   |
+| azure translate  | ✔    | 已投产，可以正常使用                   |
+| amazon translate | ✔    | 已投产，可以正常使用                   |
+| baidu            | ✔    | 已投产，可以正常使用                   |
+| deepl            | ✔    | 已投产，可以正常使用                   |
+| tencent          | ✔    | 已投产，可以正常使用                   |
+| custom Engine    | ✔    | 已投产，可以正常使用（完全用户自定义） |
 
 ## 🛠️ 快速上手使用
 
@@ -120,6 +117,11 @@
    - 自主控制要开启和关闭的翻译功能
     ![alt text](./assets/images/custom-feature.png)
    - 避免选中大量文本，然后hover到选中文本上，此时如果开启了hover翻译，就会快速消耗大量翻译字符，所以应该避免这种操作
+ 
+ 5. 插件配置全是英文的看不懂，怎么解决？
+   - 安装：[vscode 中文语言包](https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-zh-hans)
+   - Translate Pro 升级至v1.6.0 以上版本即可
+    ![alt text](./assets/images/i18n.gif)
 
 ## 💖 支持我
 
