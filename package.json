@@ -186,6 +186,11 @@
         {
           "command": "extension.replaceTranslateSelectedText",
           "when": "editorTextFocus && editorHasSelection"
+        },
+        {
+          "command": "extension.translateAllComments",
+          "when": "editorTextFocus",
+          "group": "1_translate@1"
         }
       ],
       "editor/title": [
@@ -279,6 +284,10 @@
         "command": "extension.mdPreviewTranslate",
         "title": "%cmd.extension.mdPreviewTranslate.title%",
         "icon": "assets/images/md-preview.svg"
+      },
+      {
+        "command": "extension.translateAllComments",
+        "title": "%cmd.extension.translateAllComments.title%"
       }
     ],
     "configuration": {
