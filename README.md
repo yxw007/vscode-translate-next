@@ -1,6 +1,6 @@
 # vscode-translate-next
 
-简体中文 | [日語](README_ja.md) | [한국어](README_ko.md) | [English](README_en.md)
+简体中文 | [日語](README_ja.md) | [English](README_en.md)
 
 ![GitHub License](https://img.shields.io/github/license/yxw007/vscode-translate-next)
 
@@ -10,8 +10,12 @@
 
 ## ✨ 功能效果
 
-- hover 翻译
+- hover翻译
   ![hover](./assets/images/hover.gif)
+- hover注释翻译替换
+  ![hover-comment-replace](./assets/images/hover-comment-replace.gif)
+- 一键替换所有注释
+  ![comment-replace-all](./assets/images/comment-replace-all.gif)
 - 翻译终端选中文本
   ![translate-terminal-text](./assets/images/translate-terminal-text.gif)
   (提示：如果快捷键失效，可以点底部栏终端文本翻译按钮)
@@ -53,6 +57,13 @@
   ![alt text](./assets/images/config.jpg)
 
 > 提示：google翻译引擎无需配置，可以直接使用。其他翻译Engine需要进行配置才可使用。
+
+### 🌐 插件本地化显示(中文模式)
+
+1. 安装：[vscode 中文语言包](https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-zh-hans)
+  
+2. Translate Pro 升级至v1.6.0 以上版本即可
+    ![alt text](./assets/images/i18n.gif)
 
 ### 📝 图文配置教程
 - [配置百度翻译engine](./course/zh/config-engine/baidu.md)
@@ -118,11 +129,6 @@
     ![alt text](./assets/images/custom-feature.png)
    - 避免选中大量文本，然后hover到选中文本上，此时如果开启了hover翻译，就会快速消耗大量翻译字符，所以应该避免这种操作
  
- 5. 插件配置全是英文的看不懂，怎么解决？
-   - 安装：[vscode 中文语言包](https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-zh-hans)
-   - Translate Pro 升级至v1.6.0 以上版本即可
-    ![alt text](./assets/images/i18n.gif)
-
 ## 💖 支持我
 
 如果此工具帮助你节省了时间、提升了工作效率，欢迎你用以下方式来支持我继续开发与维护：
