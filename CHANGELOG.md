@@ -1,6 +1,34 @@
 # Changelog
 
 
+## v1.6.0
+
+
+
+### 🚀 Enhancements
+
+- Integrate l10n to realize Chinese and English mode display 
+- Hover annotation translation, add translation replacement function 
+- Add a right-click and one-click to replace all comments translated 
+
+### 🩹 Fixes
+
+- Hover comments incomplete translation or omission 
+- TranslateAllComment  missing translation or incomplete translation 
+- TranslateAllComment is incorrectly formatted after translation and replacement 
+
+### 💅 Refactors
+
+- Hover comment translation, retaining the original comment format 
+
+### 📖 Documentation
+
+- Synchronously update README documents 
+
+### ❤️ Contributors
+
+- Yxw007 ([@yxw007](http://github.com/yxw007))
+
 ## v1.5.0
 
 
