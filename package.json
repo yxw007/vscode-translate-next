@@ -301,7 +301,7 @@
         },
         "Translate-next.defaultEngine": {
           "type": "string",
-          "default": "google",
+          "default": "bing",
           "description": "%config.defaultEngine.description%",
           "order": 2
         },
