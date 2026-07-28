@@ -1,6 +1,26 @@
 # Changelog
 
 
+## v1.7.0
+
+
+
+### 🚀 Enhancements
+
+- Add a built-in, free, out-of-the-box Bing Translation Engine 
+
+### 🔥 Performance
+
+- Select replace text for translation, improve translation efficiency 
+
+### 📖 Documentation
+
+- Synchronize Updates to the README Document 
+
+### ❤️ Contributors
+
+- Yxw007 ([@yxw007](http://github.com/yxw007))
+
 ## v1.6.0
 
 
