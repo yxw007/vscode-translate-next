@@ -145,6 +145,12 @@
     "vscode-textmate": "^4.3.0"
   },
   "contributes": {
+    "authentication": [
+      {
+        "id": "translateNext",
+        "label": "Translate Pro"
+      }
+    ],
     "viewsContainers": {
       "activitybar": [
         {
