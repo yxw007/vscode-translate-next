@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.8.0
+
+
+
+### 🚀 Enhancements
+
+- Supports reusing login credentials across multiple VSCode windows 
+
+### ❤️ Contributors
+
+- Yxw007 ([@yxw007](http://github.com/yxw007))
+
 ## v1.7.0
 
 
