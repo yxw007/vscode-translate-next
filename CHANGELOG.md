@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.8.1
+
+
+
+### 🩹 Fixes
+
+- Plugin initialization failed because Tencent settings were not configured 
+
+### ❤️ Contributors
+
+- Yxw007 ([@yxw007](http://github.com/yxw007))
+
 ## v1.8.0
 
 
