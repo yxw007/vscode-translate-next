@@ -1,6 +1,6 @@
 # vscode-translate-next
 
-日語 | [한국어](README_ko.md) | [简体中文](README.md) | [English](README_en.md)
+日語 | [简体中文](README.md) | [English](README_en.md)
 
 ![GitHub License](https://img.shields.io/github/license/yxw007/vscode-translate-next)
 
