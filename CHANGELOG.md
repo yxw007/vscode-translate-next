@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.8.3
+
+
+
+### 🩹 Fixes
+
+- **build:** The English README file has not been deployed 
+
+### ❤️ Contributors
+
+- Yxw007 ([@yxw007](http://github.com/yxw007))
+
 ## v1.8.2
 
 
