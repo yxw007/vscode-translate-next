@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.9.0
+
+
+
+### 🚀 Enhancements
+
+- Supports the permanent version 
+
+### ❤️ Contributors
+
+- Yxw007 ([@yxw007](http://github.com/yxw007))
+
 ## v1.8.3
 
 
