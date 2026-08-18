@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.9.1
+
+
+
+### 🔥 Performance
+
+- Optimize the login experience to avoid requiring users to log in frequently 
+
+### ❤️ Contributors
+
+- Yxw007 ([@yxw007](http://github.com/yxw007))
+
 ## v1.9.0
 
 
