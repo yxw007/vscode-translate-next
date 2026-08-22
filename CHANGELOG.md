@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.9.2
+
+
+
+### 📖 Documentation
+
+- Solution for "Click to Log In" Not Responding doc 
+
+### ❤️ Contributors
+
+- Yxw007 ([@yxw007](http://github.com/yxw007))
+
 ## v1.9.1
 
 

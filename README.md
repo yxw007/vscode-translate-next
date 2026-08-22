@@ -25,7 +25,7 @@
 - **Markdown 预览沉浸式翻译**
   ![markdown-preview-translate](./assets/images/markdown-preview-translate.gif)
 - **选中文本翻译**
-  ![translateText](./assets/images/usage.gif)
+  ![translateText](./assets/images/text-replace-translate.gif)
 - **自定义翻译引擎** — 随心接入各种翻译服务
   ![addCustomEngine](./assets/images/addCustomEngine.gif)
 
@@ -131,6 +131,18 @@
 - **按需开启翻译功能**，关闭不需要的特性
   ![alt text](./assets/images/custom-feature.png)
 - **避免大量选中文本后悬停** — 选中大段文本再触发 Hover 翻译会快速消耗字符
+
+### 5. 怎么点击底部栏`登录`按钮无反应？
+- 可能原因：第1次点击`登录`时，弹出的授权提示框不小心点击不未授权or拒绝导致
+- 解决办法：
+  - 编辑器内按`F1` -> `Manage Trusted Domains`
+  - 在`Trusted Domains`配置文件中添加插件官网地址即可
+    ```json
+    [
+      ...
+      "https://translate.yanxuewen.cn",
+    ]
+    ```
  
 ## 💖 支持项目
 

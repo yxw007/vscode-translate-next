@@ -24,7 +24,7 @@ A powerful VSCode translation extension that breaks language barriers and lets y
 - **Markdown Preview Immersive Translation** — Translate documents while previewing
   ![markdown-preview-translate](./assets/images/markdown-preview-translate.gif)
 - **Selected Text Translation** — Select any text and translate on the fly
-  ![translateText](./assets/images/usage.gif)
+  ![translateText](./assets/images/text-replace-translate.gif)
 - **Custom Translation Engine** — Bring your own translation service
   ![addCustomEngine](./assets/images/addCustomEngine.gif)
 
@@ -128,6 +128,18 @@ Controlled by `Translate-next.hover.extensions`:
 - **Enable only the features you need**
   ![alt text](./assets/images/custom-feature.png)
 - **Avoid hovering over large selections** — selecting a large block and triggering hover translation consumes characters quickly
+
+### 5. Why doesn't the "Log In" button in the bottom bar respond when I click it?
+- Possible cause: When you clicked "Log In" for the first time, you accidentally clicked "Do Not Authorize" or "Reject" in the authorization prompt that appeared.
+- Solution:
+  - Press `F1` in the editor -> `Manage Trusted Domains`
+  - Add the plugin’s official website address to the `Trusted Domains` configuration file
+    ```json
+    [
+      ...
+      "https://translate.yanxuewen.cn",
+    ]
+    ```
 
 ## 💖 Support the Project
 
