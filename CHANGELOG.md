@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v1.9.5
+
+
+
+### 📖 Documentation
+
+- The plugin supports Japanese display 
+- Use a CDN URL to speed up the display of feature images 
+
+### ❤️ Contributors
+
+- Yxw007 ([@yxw007](http://github.com/yxw007))
+
 ## v1.9.3
 
 

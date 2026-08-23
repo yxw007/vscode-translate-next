@@ -11,23 +11,23 @@
 ## ✨ 功能一览
 
 - **Hover 翻译** — 鼠标悬停即译
-  ![hover](./assets/images/hover.gif)
+  ![hover](https://translate.yanxuewen.cn/images/features/hover.gif)
 - **Hover 注释替换** — 悬停并替换注释内容
-  ![hover-comment-replace](./assets/images/hover-comment-replace.gif)
+  ![hover-comment-replace](https://translate.yanxuewen.cn/images/features/hover-comment-replace.gif)
 - **一键替换所有注释** — 批量翻译项目注释
-  ![comment-replace-all](./assets/images/comment-replace-all.gif)
+  ![comment-replace-all](https://translate.yanxuewen.cn/images/features/comment-replace-all.gif)
 - **翻译终端文本** — 选中即译，快捷键失效时可点击底部栏按钮
-  ![translate-terminal-text](./assets/images/translate-terminal-text.gif)
+  ![translate-terminal-text](https://translate.yanxuewen.cn/images/features/translate-terminal-text.gif)
   (提示：如果快捷键失效，可以点底部栏终端文本翻译按钮)
   ![translate-terminal-shortcut-bnt](./assets/images/terminalShortcutBtn.jpg)
 - **插件详情沉浸式翻译** — 阅读外文插件不再困难
-  ![detail_translation](./assets/images/detail_translation.gif)
+  ![detail_translation](https://translate.yanxuewen.cn/images/features/detail_translation.gif)
 - **Markdown 预览沉浸式翻译**
-  ![markdown-preview-translate](./assets/images/markdown-preview-translate.gif)
+  ![markdown-preview-translate](https://translate.yanxuewen.cn/images/features/markdown-preview-translate.gif)
 - **选中文本翻译**
-  ![translateText](./assets/images/text-replace-translate.gif)
+  ![translateText](https://translate.yanxuewen.cn/images/features/text-replace-translate.gif)
 - **自定义翻译引擎** — 随心接入各种翻译服务
-  ![addCustomEngine](./assets/images/addCustomEngine.gif)
+  ![addCustomEngine](	https://translate.yanxuewen.cn/images/features/addCustomEngine.gif)
 
 ## 📋 环境要求
 

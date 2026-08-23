@@ -11,22 +11,22 @@ A powerful VSCode translation extension that breaks language barriers and lets y
 ## ✨ Features
 
 - **Hover Translation** — Translate on hover
-  ![hover](./assets/images/hover.gif)
+  ![hover](https://translate.yanxuewen.cn/images/features/hover.gif)
 - **Hover Comment Replace** — Hover and replace comments inline
-  ![hover-comment-replace](./assets/images/hover-comment-replace.gif)
+  ![hover-comment-replace](https://translate.yanxuewen.cn/images/features/hover-comment-replace.gif)
 - **Replace All Comments** — Batch translate all comments in your project
-  ![comment-replace-all](./assets/images/comment-replace-all.gif)
+  ![comment-replace-all](https://translate.yanxuewen.cn/images/features/comment-replace-all.gif)
 - **Translate Terminal Text** — Select text in the terminal and translate instantly
-  ![translate-terminal-text](./assets/images/translate-terminal-text.gif)
+  ![translate-terminal-text](https://translate.yanxuewen.cn/images/features/translate-terminal-text.gif)
   ![translate-terminal-shortcut-bnt](./assets/images/terminalShortcutBtn.jpg)
 - **Extension Details Immersive Translation** — Read foreign-language extensions with ease
-  ![detail_translation](./assets/images/detail_translation.gif)
+  ![detail_translation](https://translate.yanxuewen.cn/images/features/detail_translation.gif)
 - **Markdown Preview Immersive Translation** — Translate documents while previewing
-  ![markdown-preview-translate](./assets/images/markdown-preview-translate.gif)
+  ![markdown-preview-translate](https://translate.yanxuewen.cn/images/features/markdown-preview-translate.gif)
 - **Selected Text Translation** — Select any text and translate on the fly
-  ![translateText](./assets/images/text-replace-translate.gif)
+  ![translateText](https://translate.yanxuewen.cn/images/features/text-replace-translate.gif)
 - **Custom Translation Engine** — Bring your own translation service
-  ![addCustomEngine](./assets/images/addCustomEngine.gif)
+  ![addCustomEngine](	https://translate.yanxuewen.cn/images/features/addCustomEngine.gif)
 
 
 ## 📋 Requirements

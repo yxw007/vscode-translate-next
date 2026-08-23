@@ -11,22 +11,22 @@
 ## ✨ 機能一覧
 
 - **Hover 翻訳** — マウスオーバーで即翻訳
-  ![hover](./assets/images/hover.gif)
+  ![hover](https://translate.yanxuewen.cn/images/features/hover.gif)
 - **Hover コメント置換** — コメントをホバーして置換
-  ![hover-comment-replace](./assets/images/hover-comment-replace.gif)
+  ![hover-comment-replace](https://translate.yanxuewen.cn/images/features/hover-comment-replace.gif)
 - **全コメント一括置換** — プロジェクト内のコメントを一括翻訳
-  ![comment-replace-all](./assets/images/comment-replace-all.gif)
+  ![comment-replace-all](https://translate.yanxuewen.cn/images/features/comment-replace-all.gif)
 - **ターミナル翻訳** — ターミナルで選択したテキストを翻訳
-  ![translate-terminal-text](./assets/images/translate-terminal-text.gif)
+  ![translate-terminal-text](https://translate.yanxuewen.cn/images/features/translate-terminal-text.gif)
   ![translate-terminal-shortcut-bnt](./assets/images/terminalShortcutBtn.jpg)
 - **拡張機能の詳細没入型翻訳** — 外国語の拡張も楽々読解
-  ![detail_translation](./assets/images/detail_translation.gif)
+  ![detail_translation](https://translate.yanxuewen.cn/images/features/detail_translation.gif)
 - **Markdown プレビュー翻訳** — プレビュー画面で同期翻訳
-  ![markdown-preview-translate](./assets/images/markdown-preview-translate.gif)
+  ![markdown-preview-translate](https://translate.yanxuewen.cn/images/features/markdown-preview-translate.gif)
 - **選択テキスト翻訳** — テキストを選択してその場で翻訳
-  ![translateText](./assets/images/text-replace-translate.gif)
+  ![translateText](https://translate.yanxuewen.cn/images/features/text-replace-translate.gif)
 - **カスタム翻訳エンジン** — 自分好みの翻訳サービスを追加
-  ![addCustomEngine](./assets/images/addCustomEngine.gif)
+  ![addCustomEngine](	https://translate.yanxuewen.cn/images/features/addCustomEngine.gif)
 
 ## 📋 環境要件
 
@@ -57,6 +57,13 @@
   ![alt text](./assets/images/config.jpg)
 
 > Google・Bing は追加設定不要でそのまま使えます。その他のエンジンは設定で API キーを構成してください。
+
+### 🌐 プラグインのローカライズ表示（日本語モード）
+
+1. インストール：[VSCode 日本語言語パック]](https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-ja)
+  
+2. Translate Pro を v1.9.4 以降のバージョンにアップデートしてください
+    ![alt text](./assets/images/i10n-japanese.gif)
 
 ### 📝 設定チュートリアル
 - [百度翻訳の設定](./course/zh/config-engine/baidu.md)
