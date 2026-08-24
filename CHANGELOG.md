@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.10.0
+
+
+
+### 🩹 Fixes
+
+- **docs:** Corrected an error in the Markdown link URL 
+
+### ❤️ Contributors
+
+- Yxw007 ([@yxw007](http://github.com/yxw007))
+
 ## v1.9.5
 
 
