@@ -27,7 +27,7 @@
 - **选中文本翻译**
   ![translateText](https://translate.yanxuewen.cn/images/features/text-replace-translate.gif)
 - **自定义翻译引擎** — 随心接入各种翻译服务
-  ![addCustomEngine](	https://translate.yanxuewen.cn/images/features/addCustomEngine.gif)
+  ![addCustomEngine](https://translate.yanxuewen.cn/images/features/addCustomEngine.gif)
 
 ## 📋 环境要求
 

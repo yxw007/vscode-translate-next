@@ -26,7 +26,7 @@ A powerful VSCode translation extension that breaks language barriers and lets y
 - **Selected Text Translation** — Select any text and translate on the fly
   ![translateText](https://translate.yanxuewen.cn/images/features/text-replace-translate.gif)
 - **Custom Translation Engine** — Bring your own translation service
-  ![addCustomEngine](	https://translate.yanxuewen.cn/images/features/addCustomEngine.gif)
+  ![addCustomEngine](https://translate.yanxuewen.cn/images/features/addCustomEngine.gif)
 
 
 ## 📋 Requirements
