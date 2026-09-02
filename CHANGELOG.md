@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.10.1
+
+
+
+### 🩹 Fixes
+
+- Prevent continued invalid token refreshes when an account expires 
+
+### ❤️ Contributors
+
+- Yxw007 ([@yxw007](http://github.com/yxw007))
+
 ## v1.10.0
 
 
