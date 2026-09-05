@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v1.10.2
+
+
+
+### 🩹 Fixes
+
+- Incorrect token refresh rule 
+- The MD files under .github where the Markdown translation icon was not displayed 
+
+### ❤️ Contributors
+
+- Yxw007 ([@yxw007](http://github.com/yxw007))
+
 ## v1.10.1
 
 
