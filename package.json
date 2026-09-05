@@ -202,7 +202,7 @@
       "editor/title": [
         {
           "command": "extension.mdPreviewTranslate",
-          "when": "resourceLangId == markdown",
+          "when": "resourceLangId =~ /^(markdown|instructions|prompt|skill|chatagent)$/",
           "group": "navigation"
         }
       ],
