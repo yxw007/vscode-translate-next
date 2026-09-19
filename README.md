@@ -51,11 +51,11 @@
 1. **安装插件** — 从 [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=yxw007.vscode-translate-next) 下载
 2. **注册账号** — 访问 [translate.yanxuewen.cn](https://translate.yanxuewen.cn) 注册
 3. **登录**
-   ![login](./assets/images/login.gif)
+   ![login](https://translate.yanxuewen.cn/images/features/login.gif)
 
 ### ⚙️ 配置翻译引擎
 
-  ![alt text](./assets/images/config.jpg)
+  ![alt text](https://translate.yanxuewen.cn/images/features/config.jpg)
 
 > 提示：google、bing翻译引擎无需配置开箱即用，注意google翻译需可访问google才可正常使用。其他翻译Engine需要进行配置才可使用。
 
@@ -64,7 +64,7 @@
 1. 安装：[vscode 中文语言包](https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-zh-hans)
   
 2. Translate Pro 升级至v1.6.0 以上版本即可
-    ![alt text](./assets/images/i18n.gif)
+    ![alt text](https://translate.yanxuewen.cn/images/features/i18n.gif)
 
 ### 📝 图文教程
 - [配置百度翻译](./course/zh/config-engine/baidu.md)
@@ -101,13 +101,13 @@
 
 提示：如果你的编辑器环境，快捷键有冲突，可以自己修改调整。如果忘记快捷键，可以使用底部状态栏提供的状态栏按钮，进行目标语言和默认翻译引擎切换，如下图所示：
 
-![alt text](./assets/images/image.png)
+![alt text](https://translate.yanxuewen.cn/images/features/bottom-bar.png)
 
 ## ❓ 常见问题
 
 ### 1. 提示 `fetch failed` 错误
  
- ![alt text](./assets/images/error-1.png)
+ ![error-1](https://translate.yanxuewen.cn/images/features/error-1.png)
 
 > 答：如果你没有切换过default engine 那么你就是使用的google，而此时你电脑无法访问google就会报此错误
 
@@ -120,16 +120,16 @@
  - 可能情况2：快捷键与外部软件快捷键冲突，逐步退出外部软件，排查冲突软件，然后修改快捷键
  - 隐藏功能：
    - 编辑视图可以右键替换选中翻译
-      ![alt text](./assets/images/right-click-translate.gif)
+      ![right-click-translate](https://translate.yanxuewen.cn/images/features/right-click-translate.gif)
    - 终端选中文本翻译，可以在设置界面中将其打开在底部栏显示
-      ![alt text](./assets/images/click-bottom-translate-bar.gif)
+      ![click-bottom-translate-bar](https://translate.yanxuewen.cn/images/features/click-bottom-translate-bar.gif)
 
 ### 4. 如何避免消耗过多翻译字符？
 
 - **加大缓存时间**，减少重复翻译
-  ![alt text](./assets/images/add-cache-time.png)
+  ![add-cache-time](https://translate.yanxuewen.cn/images/features/add-cache-time.png)
 - **按需开启翻译功能**，关闭不需要的特性
-  ![alt text](./assets/images/custom-feature.png)
+  ![custom-feature](https://translate.yanxuewen.cn/images/features/custom-feature.png)
 - **避免大量选中文本后悬停** — 选中大段文本再触发 Hover 翻译会快速消耗字符
 
 ### 5. 怎么点击底部栏`登录`按钮无反应？
@@ -151,7 +151,7 @@
 - [成为 GitHub Sponsors](https://github.com/sponsors/yxw007)
 - **请我喝杯咖啡 ☕** — 每一份心意都会带来持续的改进
 
-  ![alt text](./assets/images/give_a_reward.jpg)
+  ![alt text](https://translate.yanxuewen.cn/images/features/give_a_reward.jpg)
 
 - 在 B 站**关注 + 一键三连** ([向往自由的码](https://space.bilibili.com/3546754775517426?spm_id_from=333.788.0.0))
 - 在 GitHub **点个 Star ⭐**，推荐给身边的开发者

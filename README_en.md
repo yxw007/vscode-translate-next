@@ -35,7 +35,7 @@ A powerful VSCode translation extension that breaks language barriers and lets y
 
 ### ⚙️ Configure Translation Engine
 
-  ![alt text](./assets/images/config.jpg)
+  ![alt text](https://translate.yanxuewen.cn/images/features/config.jpg)
 
 > Google and Bing work out of the box. For other engines, configure your API keys in settings.
 
@@ -78,7 +78,7 @@ Controlled by `Translate-next.hover.extensions`:
 1. **Install** — Get it from [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=yxw007.vscode-translate-next)
 2. **Register** — Create an account at [translate.yanxuewen.cn](https://translate.yanxuewen.cn)
 3. **Sign in**
-   ![login](./assets/images/login.gif)
+   ![login](https://translate.yanxuewen.cn/images/features/login.gif)
 
 ### ⌨️ Shortcuts
 
@@ -96,14 +96,14 @@ Controlled by `Translate-next.hover.extensions`:
 
 > Shortcuts conflict? Adjust them in VS Code. You can also use the status bar buttons to switch language and engine:
 
-![alt text](./assets/images/image.png)
+![alt text](https://translate.yanxuewen.cn/images/features/bottom-bar.png)
 
 
 ## ❓ FAQ
 
 ### 1. `fetch failed` Error
 
-![alt text](./assets/images/error-1.png)
+![alt text](https://translate.yanxuewen.cn/images/features/error-1.png)
 
 > **Answer**: If you haven't changed the default engine, Google is used. When your network can't reach Google, this error appears. Switch to another engine.
 
@@ -117,16 +117,16 @@ Controlled by `Translate-next.hover.extensions`:
 - **Cause 2**: Conflicts with external software → exit apps one by one to identify the conflict
 - **Hidden tricks**:
   - Right-click in the editor to replace selected text with translation
-    ![alt text](./assets/images/right-click-translate.gif)
+    ![alt text](https://translate.yanxuewen.cn/images/features/right-click-translate.gif)
   - Enable terminal translation button in the bottom bar via settings
-    ![alt text](./assets/images/click-bottom-translate-bar.gif)
+    ![alt text](https://translate.yanxuewen.cn/images/features/click-bottom-translate-bar.gif)
 
 ### 4. How to Avoid Excessive Character Usage?
 
 - **Increase cache duration** to reduce repeated translations
-  ![alt text](./assets/images/add-cache-time.png)
+  ![alt text](https://translate.yanxuewen.cn/images/features/add-cache-time.png)
 - **Enable only the features you need**
-  ![alt text](./assets/images/custom-feature.png)
+  ![alt text](https://translate.yanxuewen.cn/images/features/custom-feature.png)
 - **Avoid hovering over large selections** — selecting a large block and triggering hover translation consumes characters quickly
 
 ### 5. Why doesn't the "Log In" button in the bottom bar respond when I click it?
@@ -148,7 +148,7 @@ If this tool has saved you time, consider supporting continued development:
 - [Become a GitHub Sponsor](https://github.com/sponsors/yxw007)
 - **Buy me a coffee ☕** — every contribution helps drive improvements
 
-  ![alt text](./assets/images/give_a_reward.jpg)
+  ![alt text](https://translate.yanxuewen.cn/images/features/give_a_reward.jpg)
 
 - Follow and support my videos on Bilibili: [向往自由的码](https://space.bilibili.com/3546754775517426?spm_id_from=333.788.0.0)
 - **Star ⭐** the project on GitHub and share it with other developers

@@ -1,6 +1,6 @@
 {
   "name": "vscode-translate-next",
-  "version": "1.10.2",
+  "version": "1.11.0",
   "displayName": "%app.displayName%",
   "publisher": "yxw007",
   "author": {
@@ -156,7 +156,7 @@
         {
           "id": "translateTerminalLogs",
           "title": "%view.container.translateTerminalLogs.title%",
-          "icon": "icon.png"
+          "icon": "$(translate-selected)"
         }
       ]
     },
@@ -166,7 +166,7 @@
           "type": "webview",
           "id": "translateTerminalLogView",
           "name": "%view.translateTerminalLogView.name%",
-          "icon": "icon.png"
+          "icon": "$(translate-selected)"
         }
       ]
     },
@@ -289,7 +289,10 @@
       {
         "command": "extension.mdPreviewTranslate",
         "title": "%cmd.extension.mdPreviewTranslate.title%",
-        "icon": "assets/images/md-preview.svg"
+        "icon": {
+          "light": "assets/images/md-preview-light.svg",
+          "dark": "assets/images/md-preview-dark.svg"
+        }
       },
       {
         "command": "extension.translateAllComments",

@@ -1,6 +1,26 @@
 # Changelog
 
 
+## v1.11.0
+
+
+
+### 🚀 Enhancements
+
+- Supports dark and light themes to prevent display issues 
+
+### 📖 Documentation
+
+- Optimize document display 
+
+### 🏡 Chore
+
+- Plugin details and markdown preview translation, using appropriate icons 
+
+### ❤️ Contributors
+
+- Yxw007 ([@yxw007](http://github.com/yxw007))
+
 ## v1.10.2
 
 

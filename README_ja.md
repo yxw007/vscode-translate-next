@@ -50,11 +50,11 @@
 1. **インストール** — [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=yxw007.vscode-translate-next) からダウンロード
 2. **アカウント登録** — [translate.yanxuewen.cn](https://translate.yanxuewen.cn) で登録
 3. **ログイン**
-   ![login](./assets/images/login.gif)
+   ![login](https://translate.yanxuewen.cn/images/features/login.gif)
 
 ### ⚙️ 翻訳エンジンの設定
 
-  ![alt text](./assets/images/config.jpg)
+  ![alt text](https://translate.yanxuewen.cn/images/features/config.jpg)
 
 > Google・Bing は追加設定不要でそのまま使えます。その他のエンジンは設定で API キーを構成してください。
 
@@ -63,7 +63,7 @@
 1. インストール：[VSCode 日本語言語パック]](https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-ja)
   
 2. Translate Pro を v1.9.4 以降のバージョンにアップデートしてください
-    ![alt text](./assets/images/i10n-japanese.gif)
+    ![alt text](https://translate.yanxuewen.cn/images/features/i10n-japanese.gif)
 
 ### 📝 設定チュートリアル
 - [百度翻訳の設定](./course/zh/config-engine/baidu.md)
@@ -102,14 +102,14 @@
 
 > ショートカットが競合する場合は VS Code 側で変更してください。ステータスバーのボタンからも言語とエンジンを切り替えられます：
 
-![alt text](./assets/images/image.png)
+![alt text](https://translate.yanxuewen.cn/images/features/bottom-bar.png)
 
 
 ## ❓ FAQ
 
 ### 1. `fetch failed` エラーが表示される
 
-![alt text](./assets/images/error-1.png)
+![alt text](https://translate.yanxuewen.cn/images/features/error-1.png)
 
 > **答え**: 既定のエンジンを変更していない場合、Google が使われています。Google にアクセスできない環境だとこのエラーが発生します。別のエンジンに切り替えてください。
 
@@ -123,16 +123,16 @@
 - **原因 2**: 外部ソフトと競合 → アプリを順に終了して原因を特定
 - **隠し機能**:
   - エディタで右クリック → 選択テキストを翻訳置換
-    ![alt text](./assets/images/right-click-translate.gif)
+    ![alt text](https://translate.yanxuewen.cn/images/features/right-click-translate.gif)
   - ターミナル翻訳ボタンを設定から下部バーに表示可能
-    ![alt text](./assets/images/click-bottom-translate-bar.gif)
+    ![alt text](https://translate.yanxuewen.cn/images/features/click-bottom-translate-bar.gif)
 
 ### 4. 翻訳文字数の消費を抑えるには？
 
 - **キャッシュ時間を延長** して重複翻訳を削減
-  ![alt text](./assets/images/add-cache-time.png)
+  ![alt text](https://translate.yanxuewen.cn/images/features/add-cache-time.png)
 - **必要な機能だけ有効** にする
-  ![alt text](./assets/images/custom-feature.png)
+  ![alt text](https://translate.yanxuewen.cn/images/features/custom-feature.png)
 - **大量テキストの選択＋Hover を避ける** — 大きな選択範囲で Hover 翻訳を起動すると文字数を急激に消費します
 
 ### 5. 画面下部の「ログイン」ボタンをクリックしても反応がないのはなぜですか？
@@ -154,7 +154,7 @@
 - [GitHub Sponsors になる](https://github.com/sponsors/yxw007)
 - **コーヒーをごちそうする ☕** — 支援は継続的な改善につながります
 
-  ![alt text](./assets/images/give_a_reward.jpg)
+  ![alt text](https://translate.yanxuewen.cn/images/features/give_a_reward.jpg)
 
 - Bilibili で**フォロー＋高評価** ([向往自由的码](https://space.bilibili.com/3546754775517426?spm_id_from=333.788.0.0))
 - GitHub で **Star ⭐** を付け、他の開発者にシェア
