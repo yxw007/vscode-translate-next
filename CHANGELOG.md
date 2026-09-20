@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.11.1
+
+
+
+### 🩹 Fixes
+
+- Cannot open multiple MD Preview translation windows 
+
+### ❤️ Contributors
+
+- Yxw007 ([@yxw007](http://github.com/yxw007))
+
 ## v1.11.0
 
 
