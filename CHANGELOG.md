@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.11.2
+
+
+
+### 🩹 Fixes
+
+- Default engine is not Bing, can't to switch to Bing engine for details and md translations 
+
+### ❤️ Contributors
+
+- Yxw007 ([@yxw007](http://github.com/yxw007))
+
 ## v1.11.1
 
 
