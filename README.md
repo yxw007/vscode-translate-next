@@ -1,3 +1,5 @@
+
+
 # vscode-translate-next
 
 简体中文 | [日語](README_ja.md) | [English](README_en.md)
@@ -31,7 +33,7 @@
 
 ## 📋 环境要求
 
-- VSCode >= 1.91.0
+- VSCode >= 1.93.0
 
 ## 💻 支持的翻译引擎
 
