@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.11.3
+
+
+
+### 🩹 Fixes
+
+- Improve translation resilience, error feedback and Bing engine stability 
+
+### ❤️ Contributors
+
+- Yxw007 ([@yxw007](http://github.com/yxw007))
+
 ## v1.11.2
 
 
