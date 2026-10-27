@@ -170,6 +170,12 @@
         }
       ]
     },
+    "submenus": [
+      {
+        "id": "translateNext.editorContext",
+        "label": "%submenu.translateNext.label%"
+      }
+    ],
     "menus": {
       "view/title": [
         {
@@ -190,13 +196,26 @@
       ],
       "editor/context": [
         {
+          "submenu": "translateNext.editorContext",
+          "when": "editorTextFocus",
+          "group": "1_translate@1"
+        }
+      ],
+      "translateNext.editorContext": [
+        {
           "command": "extension.replaceTranslateSelectedText",
-          "when": "editorTextFocus && editorHasSelection"
+          "when": "editorTextFocus && editorHasSelection",
+          "group": "translate@1"
+        },
+        {
+          "command": "extension.translateSelectedComments",
+          "when": "editorTextFocus && editorHasSelection",
+          "group": "translate@2"
         },
         {
           "command": "extension.translateAllComments",
           "when": "editorTextFocus",
-          "group": "1_translate@1"
+          "group": "translate@3"
         }
       ],
       "editor/title": [
@@ -296,7 +315,13 @@
       },
       {
         "command": "extension.translateAllComments",
-        "title": "%cmd.extension.translateAllComments.title%"
+        "title": "%cmd.extension.translateAllComments.title%",
+        "category": "Translate-next"
+      },
+      {
+        "command": "extension.translateSelectedComments",
+        "title": "%cmd.extension.translateSelectedComments.title%",
+        "category": "Translate-next"
       }
     ],
     "configuration": {
@@ -869,6 +894,20 @@
         "mac": "cmd+alt+e",
         "when": "editorTextFocus",
         "description": "%keybinding.hover.enable.description%"
+      },
+      {
+        "command": "extension.translateAllComments",
+        "key": "ctrl+alt+shift+c",
+        "mac": "cmd+alt+shift+c",
+        "when": "editorTextFocus",
+        "description": "%keybinding.translateAllComments.description%"
+      },
+      {
+        "command": "extension.translateSelectedComments",
+        "key": "alt+shift+c",
+        "mac": "alt+shift+c",
+        "when": "editorTextFocus && editorHasSelection",
+        "description": "%keybinding.translateSelectedComments.description%"
       }
     ],
     "icons": {

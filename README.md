@@ -16,6 +16,8 @@
   ![hover-comment-replace](https://translate.yanxuewen.cn/images/features/hover-comment-replace.gif)
 - **一键替换所有注释** — 批量翻译项目注释
   ![comment-replace-all](https://translate.yanxuewen.cn/images/features/comment-replace-all.gif)
+- **段落选中注释替换翻译** — 选中一段代码，批量翻译选中范围内的注释
+  ![select-comment-translate.gif](https://translate.yanxuewen.cn/images/features/select-comment-translate.gif)
 - **翻译终端文本** — 选中即译，快捷键失效时可点击底部栏按钮
   ![translate-terminal-text](https://translate.yanxuewen.cn/images/features/translate-terminal-text.gif)
   (提示：如果快捷键失效，可以点底部栏终端文本翻译按钮)

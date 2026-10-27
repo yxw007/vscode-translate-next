@@ -16,6 +16,8 @@
   ![hover-comment-replace](https://translate.yanxuewen.cn/images/features/hover-comment-replace.gif)
 - **全コメント一括置換** — プロジェクト内のコメントを一括翻訳
   ![comment-replace-all](https://translate.yanxuewen.cn/images/features/comment-replace-all.gif)
+- **選択段落のコメント置換翻訳** — コードを選択して、その範囲内のコメントを一括翻訳
+  ![select-comment-translate.gif](https://translate.yanxuewen.cn/images/features/select-comment-translate.gif)
 - **ターミナル翻訳** — ターミナルで選択したテキストを翻訳
   ![translate-terminal-text](https://translate.yanxuewen.cn/images/features/translate-terminal-text.gif)
   ![translate-terminal-shortcut-bnt](./assets/images/terminalShortcutBtn.jpg)

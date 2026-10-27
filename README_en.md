@@ -16,6 +16,8 @@ A powerful VSCode translation extension that breaks language barriers and lets y
   ![hover-comment-replace](https://translate.yanxuewen.cn/images/features/hover-comment-replace.gif)
 - **Replace All Comments** — Batch translate all comments in your project
   ![comment-replace-all](https://translate.yanxuewen.cn/images/features/comment-replace-all.gif)
+- **Replace Selected Paragraph Comments** — Select a block of code and batch translate the comments inside it
+  ![select-comment-translate.gif](https://translate.yanxuewen.cn/images/features/select-comment-translate.gif)
 - **Translate Terminal Text** — Select text in the terminal and translate instantly
   ![translate-terminal-text](https://translate.yanxuewen.cn/images/features/translate-terminal-text.gif)
   ![translate-terminal-shortcut-bnt](./assets/images/terminalShortcutBtn.jpg)
