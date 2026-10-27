@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v1.12.0
+
+
+
+### 🚀 Enhancements
+
+- Translate comments in selected paragraphs 
+
+### 🏡 Chore
+
+- Add AI coding IDE keywords to package manifest 
+
+### ❤️ Contributors
+
+- Yxw007 ([@yxw007](http://github.com/yxw007))
+
 ## v1.11.3
 
 
