@@ -13,7 +13,7 @@ Custom Engine 的目的就是完全让用户自定义配置什么作为翻译Eng
   
 4. 插件配置DeepSeek Engine
    替换成第3步创建出来的Api Key
-   ![](../../assets/config-engine/custom/addCustomEngine.jpg.jpg)
+   ![](../../assets/config-engine/custom/addCustomEngine.jpg)
    ![](../../assets/config-engine/custom/deepseek/6.jpg)
 
 具体配置内容

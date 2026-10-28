@@ -68,9 +68,11 @@
     ![alt text](https://translate.yanxuewen.cn/images/features/i10n-japanese.gif)
 
 ### 📝 設定チュートリアル
-- [百度翻訳の設定](./course/zh/config-engine/baidu.md)
-- [Tencent 翻訳の設定](./course/zh/config-engine/tencent.md)
-- [カスタム翻訳エンジンの設定](./course/zh/config-engine/custom.md)（DeepSeek、Zhipu、Qwen、Xiaomi MiMo 対応）
+- [百度翻訳の設定](./course/ja/config-engine/baidu.md)
+- [Tencent 翻訳の設定](./course/ja/config-engine/tencent.md)
+- [Azure 機械翻訳の設定](./course/ja/config-engine/azure.md)
+- [DeepL 機械翻訳の設定](./course/ja/config-engine/deepl.md)
+- [カスタム翻訳エンジンの設定](./course/ja/config-engine/custom.md)（DeepSeek、Zhipu、Qwen、Xiaomi MiMo 対応）
 
 > チュートリアルに記載のキーはデモ用です。すべて無効です。
 
@@ -101,6 +103,8 @@
 | ターミナル翻訳ログをクリア   | `Alt + C`                | `Alt + C`               |
 | ターミナル翻訳パネルを開く   | `Alt + Shift + O`        | `Alt + Shift + O`       |
 | Hover 翻訳の有効/無効        | `Ctrl + Alt + E`         | `Ctrl + Alt + E`        |
+| 全コメントを一括置換         | `Ctrl + Alt + Shift + C` | `Cmd + Alt + Shift + C` |
+| 選択段落のコメントを置換翻訳 | `Alt + Shift + C`        | `Alt + Shift + C`       |
 
 > ショートカットが競合する場合は VS Code 側で変更してください。ステータスバーのボタンからも言語とエンジンを切り替えられます：
 

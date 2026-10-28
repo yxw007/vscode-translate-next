@@ -71,6 +71,8 @@
 ### 📝 图文教程
 - [配置百度翻译](./course/zh/config-engine/baidu.md)
 - [配置腾讯翻译](./course/zh/config-engine/tencent.md)
+- [配置Azure机器翻译](./course/zh/config-engine/azure.md)
+- [配置Deepl机器翻译](./course/zh/config-engine/deepl.md)
 - [配置自定义翻译引擎](./course/zh/config-engine/custom.md)（内含 DeepSeek、智谱、千问、Xiaomi MiMo 等配置）
 
 > 提示：教程暴露的key仅供演示使用，请勿担心都已失效。
@@ -100,6 +102,8 @@
 | 清理终端翻译日志     | `Alt + C`                | `Alt + C`               |
 | 打开终端翻译面板     | `Alt + Shift + O`        | `Alt + Shift + O`       |
 | 启用/禁用 Hover 翻译 | `Ctrl + Alt + E`         | `Ctrl + Alt + E`        |
+| 一键替换所有注释     | `Ctrl + Alt + Shift + C` | `Cmd + Alt + Shift + C` |
+| 段落选中注释替换翻译 | `Alt + Shift + C`        | `Alt + Shift + C`       |
 
 提示：如果你的编辑器环境，快捷键有冲突，可以自己修改调整。如果忘记快捷键，可以使用底部状态栏提供的状态栏按钮，进行目标语言和默认翻译引擎切换，如下图所示：
 

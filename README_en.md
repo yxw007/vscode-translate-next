@@ -42,9 +42,11 @@ A powerful VSCode translation extension that breaks language barriers and lets y
 > Google and Bing work out of the box. For other engines, configure your API keys in settings.
 
 ### 📝 Tutorials
-- [Configure Baidu Translation](./course/zh/config-engine/baidu.md)
-- [Configure Tencent Translation](./course/zh/config-engine/tencent.md)
-- [Configure Custom Translation Engine](./course/zh/config-engine/custom.md) (DeepSeek, Zhipu, Qwen, Xiaomi MiMo)
+- [Configure Baidu Translation](./course/en/config-engine/baidu.md)
+- [Configure Tencent Translation](./course/en/config-engine/tencent.md)
+- [Configure Azure Machine Translation](./course/en/config-engine/azure.md)
+- [Configure DeepL Machine Translation](./course/en/config-engine/deepl.md)
+- [Configure Custom Translation Engine](./course/en/config-engine/custom.md) (DeepSeek, Zhipu, Qwen, Xiaomi MiMo)
 
 > Keys shown in tutorials are for demonstration only — all have expired.
 
@@ -95,6 +97,8 @@ Controlled by `Translate-next.hover.extensions`:
 | Clear terminal translation logs        | `Alt + C`                | `Alt + C`               |
 | Open terminal translation panel        | `Alt + Shift + O`        | `Alt + Shift + O`       |
 | Enable/disable hover translation       | `Ctrl + Alt + E`         | `Ctrl + Alt + E`        |
+| Replace all comments                   | `Ctrl + Alt + Shift + C` | `Cmd + Alt + Shift + C` |
+| Replace comments in selected paragraph | `Alt + Shift + C`        | `Alt + Shift + C`       |
 
 > Shortcuts conflict? Adjust them in VS Code. You can also use the status bar buttons to switch language and engine:
 

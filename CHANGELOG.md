@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.12.1
+
+
+
+### 📖 Documentation
+
+- Add multi-language engine config tutorials and shortcut references 
+
+### ❤️ Contributors
+
+- Yxw007 <aa4790139@gmail.com>
+
 ## v1.12.0
 
 
