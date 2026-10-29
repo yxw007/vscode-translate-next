@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.12.2
+
+
+
+### 📖 Documentation
+
+- Update DeepL free quota to 1M characters per month 
+
+### ❤️ Contributors
+
+- Yxw007 ([@yxw007](http://github.com/yxw007))
+
 ## v1.12.1
 
 

@@ -66,16 +66,16 @@ Controlled by `Translate-next.hover.extensions`:
 
 ## 💻 Supported Translation Engines
 
-| Engine           | Pricing               | Rating | Description                                         |
-| ---------------- | --------------------- | ------ | --------------------------------------------------- |
-| Google           | Free                  | ⭐⭐⭐⭐   | Great results, requires access to Google            |
-| Bing             | Free                  | ⭐⭐⭐⭐   | No network restrictions, ready to use, a bit slow   |
-| Azure Translate  | 2M chars/month free   | ⭐⭐⭐⭐⭐  | Great results, fast                                 |
-| Amazon Translate | 2M chars/month free   | ⭐⭐⭐⭐⭐  | Great results, fast                                 |
-| Baidu            | 1M chars/month free   | ⭐⭐⭐⭐⭐  | Great results, fast                                 |
-| DeepL            | 500K chars/month free | ⭐⭐⭐⭐⭐  | Great results, fast, lower free quota               |
-| Tencent          | 5M chars/month free   | ⭐⭐⭐⭐   | No longer recommended, service ends 2026/07/31      |
-| Custom Engine    | Fully customizable    | ⭐⭐⭐    | Depends on your API, recommended: DeepSeek-v4-flash |
+| Engine           | Pricing             | Rating | Description                                         |
+| ---------------- | ------------------- | ------ | --------------------------------------------------- |
+| Google           | Free                | ⭐⭐⭐⭐   | Great results, requires access to Google            |
+| Bing             | Free                | ⭐⭐⭐⭐   | No network restrictions, ready to use, a bit slow   |
+| Azure Translate  | 2M chars/month free | ⭐⭐⭐⭐⭐  | Great results, fast                                 |
+| Amazon Translate | 2M chars/month free | ⭐⭐⭐⭐⭐  | Great results, fast                                 |
+| Baidu            | 1M chars/month free | ⭐⭐⭐⭐⭐  | Great results, fast                                 |
+| DeepL            | 1M chars/month free | ⭐⭐⭐⭐⭐  | Great results, fast                                 |
+| Tencent          | 5M chars/month free | ⭐⭐⭐⭐   | No longer recommended, service ends 2026/07/31      |
+| Custom Engine    | Fully customizable  | ⭐⭐⭐    | Depends on your API, recommended: DeepSeek-v4-flash |
 
 ## 🛠️ Quick Start
 
