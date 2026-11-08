@@ -28,6 +28,8 @@
   ![markdown-preview-translate](https://translate.yanxuewen.cn/images/features/markdown-preview-translate.gif)
 - **选中文本翻译**
   ![translateText](https://translate.yanxuewen.cn/images/features/text-replace-translate.gif)
+- **根据选中文本，智能生成变量** — 选中中文/外文文本，一键生成符合当前语言命名规范的标识符
+  ![selectTextToVariableName](https://translate.yanxuewen.cn/images/features/selectTextToVariableName.gif)
 - **自定义翻译引擎** — 随心接入各种翻译服务
   ![addCustomEngine](https://translate.yanxuewen.cn/images/features/addCustomEngine.gif)
 
@@ -81,6 +83,20 @@
 - [VSCode 必备插件神器，让你沉浸式写代码](https://www.bilibili.com/video/BV1Y1zMYQEbi/?vd_source=eaea9ad794278c4e15f13efa6d046736)
 - [快速上手 VSCode 翻译神器](https://www.bilibili.com/video/BV1eVzZYoEkf/?vd_source=eaea9ad794278c4e15f13efa6d046736)
 
+### 🧠 根据选中文本，智能生成变量
+
+1. 在代码中选中一段中文（或其它非英文）文本，例如 `获取用户信息`
+2. 按 `Ctrl + Alt + Shift + T`（macOS 为 `Cmd + Alt + Shift + T`），或右键 → **Translate-next** → **选中文本转标识符命名**
+3. 处理期间选区会被标红；完成后首选候选（如 `getUserInformation`）已写入选区，并弹出候选列表
+4. 回车保留首选风格；按 `↓` 选用 `GetUserInformation` / `get_user_information` 等其它风格；`Ctrl + Z` 撤销回原文
+
+- 自动识别语义：变量、常量、类、接口、函数、类型别名、CSS 类，并按种类调整候选排序
+- 选中的文本已是英文（如 `getUserInfo`）时不再发起翻译请求，直接转成其它命名风格
+- 可通过设置 `Translate-next.namingConventions` 按语言指定首选命名风格，例如：
+  ```json
+  { "python": { "variable": "snake_case", "function": "snake_case" } }
+  ```
+
 ### 🖱️ Hover 支持的语言/文件类型（自定义）
 
 - `Translate-next.hover.extensions`
@@ -104,6 +120,7 @@
 | 启用/禁用 Hover 翻译 | `Ctrl + Alt + E`         | `Ctrl + Alt + E`        |
 | 一键替换所有注释     | `Ctrl + Alt + Shift + C` | `Cmd + Alt + Shift + C` |
 | 段落选中注释替换翻译 | `Alt + Shift + C`        | `Alt + Shift + C`       |
+| 选中文本转变量命名   | `Ctrl + Alt + Shift + T` | `Cmd + Alt + Shift + T` |
 
 提示：如果你的编辑器环境，快捷键有冲突，可以自己修改调整。如果忘记快捷键，可以使用底部状态栏提供的状态栏按钮，进行目标语言和默认翻译引擎切换，如下图所示：
 

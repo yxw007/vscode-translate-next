@@ -213,14 +213,19 @@
           "group": "translate@1"
         },
         {
-          "command": "extension.translateSelectedComments",
+          "command": "extension.namingFromSelectedText",
           "when": "editorTextFocus && editorHasSelection",
           "group": "translate@2"
         },
         {
+          "command": "extension.translateSelectedComments",
+          "when": "editorTextFocus && editorHasSelection",
+          "group": "translate@3"
+        },
+        {
           "command": "extension.translateAllComments",
           "when": "editorTextFocus",
-          "group": "translate@3"
+          "group": "translate@4"
         }
       ],
       "editor/title": [
@@ -326,6 +331,11 @@
       {
         "command": "extension.translateSelectedComments",
         "title": "%cmd.extension.translateSelectedComments.title%",
+        "category": "Translate-next"
+      },
+      {
+        "command": "extension.namingFromSelectedText",
+        "title": "%cmd.extension.namingFromSelectedText.title%",
         "category": "Translate-next"
       }
     ],
@@ -598,6 +608,131 @@
           "default": 500,
           "description": "%config.optimize.translateBatchSize.description%",
           "order": 18
+        },
+        "Translate-next.namingConventions": {
+          "type": "object",
+          "order": 19,
+          "markdownDescription": "%config.namingConventions.markdownDescription%",
+          "default": {
+            "default": {
+              "variable": "camelCase",
+              "constant": "UPPER_SNAKE_CASE",
+              "class": "PascalCase",
+              "function": "camelCase",
+              "interface": "PascalCase",
+              "typeAlias": "PascalCase"
+            },
+            "typescript": {
+              "variable": "camelCase",
+              "constant": "UPPER_SNAKE_CASE",
+              "class": "PascalCase",
+              "function": "camelCase",
+              "interface": "PascalCase",
+              "typeAlias": "PascalCase"
+            },
+            "javascript": {
+              "variable": "camelCase",
+              "constant": "UPPER_SNAKE_CASE",
+              "class": "PascalCase",
+              "function": "camelCase",
+              "interface": "PascalCase",
+              "typeAlias": "PascalCase"
+            },
+            "python": {
+              "variable": "snake_case",
+              "constant": "UPPER_SNAKE_CASE",
+              "class": "PascalCase",
+              "function": "snake_case",
+              "interface": "PascalCase",
+              "typeAlias": "PascalCase"
+            },
+            "java": {
+              "variable": "camelCase",
+              "constant": "UPPER_SNAKE_CASE",
+              "class": "PascalCase",
+              "function": "camelCase",
+              "interface": "PascalCase",
+              "typeAlias": "PascalCase"
+            },
+            "go": {
+              "variable": "camelCase",
+              "constant": "camelCase",
+              "class": "PascalCase",
+              "function": "camelCase",
+              "interface": "PascalCase",
+              "typeAlias": "PascalCase"
+            },
+            "rust": {
+              "variable": "snake_case",
+              "constant": "UPPER_SNAKE_CASE",
+              "class": "PascalCase",
+              "function": "snake_case",
+              "interface": "PascalCase",
+              "typeAlias": "PascalCase"
+            },
+            "csharp": {
+              "variable": "camelCase",
+              "constant": "PascalCase",
+              "class": "PascalCase",
+              "function": "PascalCase",
+              "interface": "PascalCase",
+              "typeAlias": "PascalCase"
+            },
+            "kotlin": {
+              "variable": "camelCase",
+              "constant": "UPPER_SNAKE_CASE",
+              "class": "PascalCase",
+              "function": "camelCase",
+              "interface": "PascalCase",
+              "typeAlias": "PascalCase"
+            },
+            "swift": {
+              "variable": "camelCase",
+              "constant": "camelCase",
+              "class": "PascalCase",
+              "function": "camelCase",
+              "interface": "PascalCase",
+              "typeAlias": "PascalCase"
+            },
+            "php": {
+              "variable": "camelCase",
+              "constant": "UPPER_SNAKE_CASE",
+              "class": "PascalCase",
+              "function": "camelCase",
+              "interface": "PascalCase",
+              "typeAlias": "PascalCase"
+            },
+            "ruby": {
+              "variable": "snake_case",
+              "constant": "UPPER_SNAKE_CASE",
+              "class": "PascalCase",
+              "function": "snake_case",
+              "interface": "PascalCase",
+              "typeAlias": "PascalCase"
+            },
+            "css": {
+              "variable": "kebab-case",
+              "cssClass": "kebab-case"
+            },
+            "scss": {
+              "variable": "kebab-case",
+              "cssClass": "kebab-case"
+            },
+            "less": {
+              "variable": "kebab-case",
+              "cssClass": "kebab-case"
+            },
+            "html": {
+              "cssClass": "kebab-case"
+            }
+          },
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "enum": ["camelCase", "PascalCase", "snake_case", "UPPER_SNAKE_CASE", "kebab-case"]
+            }
+          }
         },
         "Translate-next.deepl.key": {
           "type": "string",
@@ -913,6 +1048,13 @@
         "mac": "alt+shift+c",
         "when": "editorTextFocus && editorHasSelection",
         "description": "%keybinding.translateSelectedComments.description%"
+      },
+      {
+        "command": "extension.namingFromSelectedText",
+        "key": "ctrl+alt+shift+t",
+        "mac": "cmd+alt+shift+t",
+        "when": "editorTextFocus && editorHasSelection",
+        "description": "%keybinding.namingFromSelectedText.description%"
       }
     ],
     "icons": {

@@ -27,6 +27,8 @@ A powerful VSCode translation extension that breaks language barriers and lets y
   ![markdown-preview-translate](https://translate.yanxuewen.cn/images/features/markdown-preview-translate.gif)
 - **Selected Text Translation** — Select any text and translate on the fly
   ![translateText](https://translate.yanxuewen.cn/images/features/text-replace-translate.gif)
+- **Smart Identifier from Selection** — Turn Chinese or other non-English text into naming-convention-aware identifiers
+  ![selectTextToVariableName](https://translate.yanxuewen.cn/images/features/selectTextToVariableName.gif)
 - **Custom Translation Engine** — Bring your own translation service
   ![addCustomEngine](https://translate.yanxuewen.cn/images/features/addCustomEngine.gif)
 
@@ -54,6 +56,20 @@ A powerful VSCode translation extension that breaks language barriers and lets y
 
 - [A Must-Have VS Code Extension for Immersive Coding](https://www.bilibili.com/video/BV1Y1zMYQEbi/?vd_source=eaea9ad794278c4e15f13efa6d046736)
 - [Quick Start Guide for VS Code Translation Extension](https://www.bilibili.com/video/BV1eVzZYoEkf/?vd_source=eaea9ad794278c4e15f13efa6d046736)
+
+### 🧠 Smart Identifier from Selected Text
+
+1. Select some Chinese (or other non-English) text in your code, e.g. `获取用户信息`
+2. Press `Ctrl + Alt + Shift + T` (`Cmd + Alt + Shift + T` on macOS), or right-click → **Translate-next** → **Translate Selection to Identifier Name**
+3. The selection is highlighted in red while processing; the first candidate (e.g. `getUserInformation`) is written to the selection and the suggestion list pops up
+4. Press Enter to keep the top candidate, press `↓` to pick `GetUserInformation` / `get_user_information` etc., or `Ctrl + Z` to revert
+
+- Detects the semantic role (variable, constant, class, interface, function, type alias, CSS class) and reorders candidates accordingly
+- If the selection is already English (e.g. `getUserInfo`), no translation request is made — it is converted to the other styles directly
+- Configure preferred styles per language with `Translate-next.namingConventions`, e.g.:
+  ```json
+  { "python": { "variable": "snake_case", "function": "snake_case" } }
+  ```
 
 ### 🖱️ Hover Scope (Customizable)
 
@@ -99,6 +115,7 @@ Controlled by `Translate-next.hover.extensions`:
 | Enable/disable hover translation       | `Ctrl + Alt + E`         | `Ctrl + Alt + E`        |
 | Replace all comments                   | `Ctrl + Alt + Shift + C` | `Cmd + Alt + Shift + C` |
 | Replace comments in selected paragraph | `Alt + Shift + C`        | `Alt + Shift + C`       |
+| Selection to identifier name           | `Ctrl + Alt + Shift + T` | `Cmd + Alt + Shift + T` |
 
 > Shortcuts conflict? Adjust them in VS Code. You can also use the status bar buttons to switch language and engine:
 

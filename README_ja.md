@@ -27,6 +27,8 @@
   ![markdown-preview-translate](https://translate.yanxuewen.cn/images/features/markdown-preview-translate.gif)
 - **選択テキスト翻訳** — テキストを選択してその場で翻訳
   ![translateText](https://translate.yanxuewen.cn/images/features/text-replace-translate.gif)
+- **選択テキストから変数名を自動生成** — 中国語など非英語テキストから、命名規則に沿った識別子を生成
+  ![selectTextToVariableName](https://translate.yanxuewen.cn/images/features/selectTextToVariableName.gif)
 - **カスタム翻訳エンジン** — 自分好みの翻訳サービスを追加
   ![addCustomEngine](https://translate.yanxuewen.cn/images/features/addCustomEngine.gif)
 
@@ -81,6 +83,17 @@
 - [VSCode に欠かせない翻訳拡張で、より没入感のあるコーディングを](https://www.bilibili.com/video/BV1Y1zMYQEbi/?vd_source=eaea9ad794278c4e15f13efa6d046736)
 - [VSCode 翻訳拡張のクイックスタート](https://www.bilibili.com/video/BV1eVzZYoEkf/?vd_source=eaea9ad794278c4e15f13efa6d046736)
 
+### 🧠 選択テキストから変数名を自動生成
+
+1. コード内で中国語（またはその他の非英語）テキストを選択します（例：`获取用户信息`）
+2. `Ctrl + Alt + Shift + T`（macOS は `Cmd + Alt + Shift + T`）を押すか、右クリック → **Translate-next** → **選択テキストを識別子名に変換**
+3. 処理中は選択範囲が赤く表示されます。完了すると先頭候補（例：`getUserInformation`）が選択範囲に書き込まれ、候補リストが表示されます
+4. Enter で先頭候補を確定、`↓` で `GetUserInformation` / `get_user_information` など別スタイルを選択、`Ctrl + Z` で元に戻せます
+
+- 変数・定数・クラス・インターフェース・関数・型エイリアス・CSS クラスを自動判定し、候補の並び順を調整します
+- 選択テキストが既に英語（例：`getUserInfo`）の場合、翻訳リクエストは行わず、そのまま他の命名スタイルへ変換します
+- `Translate-next.namingConventions` で言語ごとの優先スタイルを設定できます（例：`{ "python": { "variable": "snake_case", "function": "snake_case" } }`）
+
 ### 🖱️ Hover 翻訳範囲（カスタム）
 
 `Translate-next.hover.extensions` で制御：
@@ -105,6 +118,7 @@
 | Hover 翻訳の有効/無効        | `Ctrl + Alt + E`         | `Ctrl + Alt + E`        |
 | 全コメントを一括置換         | `Ctrl + Alt + Shift + C` | `Cmd + Alt + Shift + C` |
 | 選択段落のコメントを置換翻訳 | `Alt + Shift + C`        | `Alt + Shift + C`       |
+| 選択テキストを識別子名に変換 | `Ctrl + Alt + Shift + T` | `Cmd + Alt + Shift + T` |
 
 > ショートカットが競合する場合は VS Code 側で変更してください。ステータスバーのボタンからも言語とエンジンを切り替えられます：
 
