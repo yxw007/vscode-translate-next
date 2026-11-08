@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.13.0
+
+
+
+### 🚀 Enhancements
+
+- Intelligently generate variables based on the selected text 
+
+### ❤️ Contributors
+
+- Yxw007 ([@yxw007](http://github.com/yxw007))
+
 ## v1.12.2
 
 

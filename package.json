@@ -1,6 +1,6 @@
 {
   "name": "vscode-translate-next",
-  "version": "1.12.2",
+  "version": "1.13.0",
   "displayName": "%app.displayName%",
   "publisher": "yxw007",
   "author": {
@@ -730,7 +730,13 @@
             "type": "object",
             "additionalProperties": {
               "type": "string",
-              "enum": ["camelCase", "PascalCase", "snake_case", "UPPER_SNAKE_CASE", "kebab-case"]
+              "enum": [
+                "camelCase",
+                "PascalCase",
+                "snake_case",
+                "UPPER_SNAKE_CASE",
+                "kebab-case"
+              ]
             }
           }
         },
